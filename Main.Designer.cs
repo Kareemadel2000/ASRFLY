@@ -233,7 +233,6 @@
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(1132, 463);
             panelContainer.TabIndex = 1;
-            
             // 
             // Main
             // 
@@ -249,7 +248,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ASRFLY";
             WindowState = FormWindowState.Maximized;
-            
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }

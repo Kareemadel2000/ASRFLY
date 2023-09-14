@@ -18,6 +18,6 @@ public partial class Main : Form
     {
         // load Home page 
         pageManager.LoadPage(HomeUserControl.Instance());
-    } 
+    }
     #endregion
 }

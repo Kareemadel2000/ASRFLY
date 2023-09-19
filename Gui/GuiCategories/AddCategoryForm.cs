@@ -16,5 +16,15 @@ namespace ASRFLY.Gui.GuiCategories
         {
             InitializeComponent();
         }
+
+        private void AddCategoryForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

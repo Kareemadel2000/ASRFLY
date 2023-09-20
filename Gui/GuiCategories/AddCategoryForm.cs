@@ -7,24 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+namespace ASRFLY.Gui.GuiCategories;
 
-namespace ASRFLY.Gui.GuiCategories
+public partial class AddCategoryForm : Form
 {
-    public partial class AddCategoryForm : Form
+    public AddCategoryForm()
     {
-        public AddCategoryForm()
-        {
-            InitializeComponent();
-        }
-
-        private void AddCategoryForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonExport_Click(object sender, EventArgs e)
-        {
-
-        }
+        InitializeComponent();
     }
+
+    #region Events
+    private void buttonSaveAndClose_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonSave_Click(object sender, EventArgs e)
+    {
+
+    }
+    #endregion
 }

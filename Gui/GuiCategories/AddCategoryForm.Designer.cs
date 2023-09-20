@@ -29,40 +29,76 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            buttonSave = new Button();
+            buttonSaveAndClose = new Button();
             groupBox1 = new GroupBox();
-            richTextBox1 = new RichTextBox();
-            comboBox1 = new ComboBox();
-            textBox4 = new TextBox();
+            richTextBoxDetails = new RichTextBox();
+            comboBoxType = new ComboBox();
+            textBoxBalance = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            textBoxName = new TextBox();
             label1 = new Label();
-            buttonExport = new Button();
-            button1 = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(buttonExport);
+            panel1.Controls.Add(buttonSave);
+            panel1.Controls.Add(buttonSaveAndClose);
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 523);
             panel1.Name = "panel1";
             panel1.Size = new Size(606, 83);
             panel1.TabIndex = 0;
             // 
+            // buttonSave
+            // 
+            buttonSave.BackColor = Color.White;
+            buttonSave.FlatAppearance.BorderSize = 0;
+            buttonSave.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSave.ForeColor = Color.Black;
+            buttonSave.Image = Properties.Resources.Save_1;
+            buttonSave.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonSave.Location = new Point(16, 14);
+            buttonSave.Margin = new Padding(5);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Padding = new Padding(5);
+            buttonSave.Size = new Size(124, 55);
+            buttonSave.TabIndex = 6;
+            buttonSave.Text = "حفظ";
+            buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
+            // 
+            // buttonSaveAndClose
+            // 
+            buttonSaveAndClose.BackColor = Color.White;
+            buttonSaveAndClose.FlatAppearance.BorderSize = 0;
+            buttonSaveAndClose.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSaveAndClose.ForeColor = Color.Black;
+            buttonSaveAndClose.Image = Properties.Resources.Save;
+            buttonSaveAndClose.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonSaveAndClose.Location = new Point(380, 14);
+            buttonSaveAndClose.Margin = new Padding(5);
+            buttonSaveAndClose.Name = "buttonSaveAndClose";
+            buttonSaveAndClose.Padding = new Padding(5);
+            buttonSaveAndClose.Size = new Size(221, 55);
+            buttonSaveAndClose.TabIndex = 5;
+            buttonSaveAndClose.Text = "حفظ وغلق";
+            buttonSaveAndClose.UseVisualStyleBackColor = true;
+            buttonSaveAndClose.Click += buttonSaveAndClose_Click;
+            // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(richTextBox1);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(richTextBoxDetails);
+            groupBox1.Controls.Add(comboBoxType);
+            groupBox1.Controls.Add(textBoxBalance);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(textBoxName);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 11);
             groupBox1.Name = "groupBox1";
@@ -71,33 +107,33 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "معلومات الصنف";
             // 
-            // richTextBox1
+            // richTextBoxDetails
             // 
-            richTextBox1.Location = new Point(6, 238);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(570, 153);
-            richTextBox1.TabIndex = 9;
-            richTextBox1.Text = "";
+            richTextBoxDetails.Location = new Point(6, 238);
+            richTextBoxDetails.Name = "richTextBoxDetails";
+            richTextBoxDetails.Size = new Size(570, 153);
+            richTextBoxDetails.TabIndex = 9;
+            richTextBoxDetails.Text = "";
             // 
-            // comboBox1
+            // comboBoxType
             // 
-            comboBox1.BackColor = SystemColors.Window;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "صرف ", "قبض" });
-            comboBox1.Location = new Point(6, 169);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(570, 27);
-            comboBox1.TabIndex = 8;
+            comboBoxType.BackColor = SystemColors.Window;
+            comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxType.FormattingEnabled = true;
+            comboBoxType.Items.AddRange(new object[] { "صرف ", "قبض" });
+            comboBoxType.Location = new Point(6, 169);
+            comboBoxType.Name = "comboBoxType";
+            comboBoxType.Size = new Size(570, 27);
+            comboBoxType.TabIndex = 8;
             // 
-            // textBox4
+            // textBoxBalance
             // 
-            textBox4.Enabled = false;
-            textBox4.Location = new Point(6, 449);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(570, 27);
-            textBox4.TabIndex = 7;
-            textBox4.TextAlign = HorizontalAlignment.Right;
+            textBoxBalance.Enabled = false;
+            textBoxBalance.Location = new Point(6, 449);
+            textBoxBalance.Name = "textBoxBalance";
+            textBoxBalance.Size = new Size(570, 27);
+            textBoxBalance.TabIndex = 7;
+            textBoxBalance.TextAlign = HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -126,13 +162,13 @@
             label2.TabIndex = 2;
             label2.Text = "التفاصيل";
             // 
-            // textBox1
+            // textBoxName
             // 
-            textBox1.Location = new Point(6, 69);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(570, 27);
-            textBox1.TabIndex = 1;
-            textBox1.TextAlign = HorizontalAlignment.Right;
+            textBoxName.Location = new Point(6, 69);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(570, 27);
+            textBoxName.TabIndex = 1;
+            textBoxName.TextAlign = HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -142,41 +178,6 @@
             label1.Size = new Size(72, 19);
             label1.TabIndex = 0;
             label1.Text = "اسم الصنف";
-            // 
-            // buttonExport
-            // 
-            buttonExport.BackColor = Color.White;
-            buttonExport.FlatAppearance.BorderSize = 0;
-            buttonExport.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonExport.ForeColor = Color.Black;
-            buttonExport.Image = Properties.Resources.Save;
-            buttonExport.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonExport.Location = new Point(380, 14);
-            buttonExport.Margin = new Padding(5);
-            buttonExport.Name = "buttonExport";
-            buttonExport.Padding = new Padding(5);
-            buttonExport.Size = new Size(221, 55);
-            buttonExport.TabIndex = 5;
-            buttonExport.Text = "حفظ وغلق";
-            buttonExport.UseVisualStyleBackColor = true;
-            buttonExport.Click += buttonExport_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.White;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.Black;
-            button1.Image = Properties.Resources.Save_1;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(16, 14);
-            button1.Margin = new Padding(5);
-            button1.Name = "button1";
-            button1.Padding = new Padding(5);
-            button1.Size = new Size(124, 55);
-            button1.TabIndex = 6;
-            button1.Text = "حفظ";
-            button1.UseVisualStyleBackColor = true;
             // 
             // AddCategoryForm
             // 
@@ -198,7 +199,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "أضافة / تعديل صنف";
             TopMost = true;
-            Load += AddCategoryForm_Load;
             panel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -209,15 +209,15 @@
 
         private Panel panel1;
         private GroupBox groupBox1;
-        private TextBox textBox1;
+        private TextBox textBoxName;
         private Label label1;
-        private TextBox textBox4;
+        private TextBox textBoxBalance;
         private Label label4;
         private Label label3;
         private Label label2;
-        private ComboBox comboBox1;
-        private RichTextBox richTextBox1;
-        private Button buttonExport;
-        private Button button1;
+        private ComboBox comboBoxType;
+        private RichTextBox richTextBoxDetails;
+        private Button buttonSaveAndClose;
+        private Button buttonSave;
     }
 }

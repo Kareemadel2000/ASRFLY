@@ -19,5 +19,12 @@ public partial class Main : Form
         // load Home page 
         pageManager.LoadPage(HomeUserControl.Instance());
     }
+    private void buttonCategory_Click(object sender, EventArgs e)
+    {
+        // load Categories page 
+        pageManager.LoadPage(CategoryUserControl.Instance());
+    }
     #endregion
+
+
 }

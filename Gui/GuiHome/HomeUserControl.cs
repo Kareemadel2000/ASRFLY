@@ -2,7 +2,7 @@
 
 public partial class HomeUserControl : UserControl
 {
-    private static  HomeUserControl _homeUserControl;
+    private static HomeUserControl _homeUserControl;
     public HomeUserControl()
     {
         InitializeComponent();

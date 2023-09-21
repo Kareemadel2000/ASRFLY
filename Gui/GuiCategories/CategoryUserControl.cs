@@ -1,7 +1,12 @@
-﻿namespace ASRFLY.Gui.GuiCategories;
+﻿using ASRFLY.Gui.GuiHome;
+
+namespace ASRFLY.Gui.GuiCategories;
 
 public partial class CategoryUserControl : UserControl
 {
+    //variables
+    private static CategoryUserControl? _CategoryUserControl;
+    //ctor
     public CategoryUserControl()
     {
         InitializeComponent();
@@ -10,12 +15,13 @@ public partial class CategoryUserControl : UserControl
     #region Events
     private void buttonAdd_Click(object sender, EventArgs e)
     {
-
+        AddCategoryForm addCategoryForm = new AddCategoryForm();
+        addCategoryForm.Show();
     }
 
     private void buttonEdit_Click(object sender, EventArgs e)
     {
-
+        MassageCollection.ShowEmptyDataMassage();
     }
 
     private void buttonDelete_Click(object sender, EventArgs e)
@@ -43,4 +49,9 @@ public partial class CategoryUserControl : UserControl
 
     }
     #endregion
+
+    public static CategoryUserControl Instance()
+    {
+        return _CategoryUserControl ?? (new CategoryUserControl());
+    }
 }

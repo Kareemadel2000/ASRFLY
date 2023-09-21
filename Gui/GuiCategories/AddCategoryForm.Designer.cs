@@ -60,7 +60,7 @@
             buttonSave.FlatAppearance.BorderSize = 0;
             buttonSave.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSave.ForeColor = Color.Black;
-            buttonSave.Image = Properties.Resources.Save_1;
+            buttonSave.Image = Resources.Save_1;
             buttonSave.ImageAlign = ContentAlignment.MiddleLeft;
             buttonSave.Location = new Point(16, 14);
             buttonSave.Margin = new Padding(5);
@@ -78,7 +78,7 @@
             buttonSaveAndClose.FlatAppearance.BorderSize = 0;
             buttonSaveAndClose.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSaveAndClose.ForeColor = Color.Black;
-            buttonSaveAndClose.Image = Properties.Resources.Save;
+            buttonSaveAndClose.Image = Resources.Save;
             buttonSaveAndClose.ImageAlign = ContentAlignment.MiddleLeft;
             buttonSaveAndClose.Location = new Point(380, 14);
             buttonSaveAndClose.Margin = new Padding(5);
@@ -123,7 +123,7 @@
             comboBoxType.Items.AddRange(new object[] { "صرف ", "قبض" });
             comboBoxType.Location = new Point(6, 169);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(570, 27);
+            comboBoxType.Size = new Size(570, 32);
             comboBoxType.TabIndex = 8;
             // 
             // textBoxBalance
@@ -131,7 +131,7 @@
             textBoxBalance.Enabled = false;
             textBoxBalance.Location = new Point(6, 449);
             textBoxBalance.Name = "textBoxBalance";
-            textBoxBalance.Size = new Size(570, 27);
+            textBoxBalance.Size = new Size(570, 32);
             textBoxBalance.TabIndex = 7;
             textBoxBalance.TextAlign = HorizontalAlignment.Right;
             // 
@@ -140,7 +140,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(253, 414);
             label4.Name = "label4";
-            label4.Size = new Size(46, 19);
+            label4.Size = new Size(56, 24);
             label4.TabIndex = 6;
             label4.Text = "الرصيد";
             // 
@@ -149,7 +149,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(241, 118);
             label3.Name = "label3";
-            label3.Size = new Size(68, 19);
+            label3.Size = new Size(86, 24);
             label3.TabIndex = 4;
             label3.Text = "نوع الصنف";
             // 
@@ -158,7 +158,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(241, 207);
             label2.Name = "label2";
-            label2.Size = new Size(58, 19);
+            label2.Size = new Size(71, 24);
             label2.TabIndex = 2;
             label2.Text = "التفاصيل";
             // 
@@ -166,22 +166,22 @@
             // 
             textBoxName.Location = new Point(6, 69);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(570, 27);
+            textBoxName.Size = new Size(570, 32);
             textBoxName.TabIndex = 1;
-            textBoxName.TextAlign = HorizontalAlignment.Right;
+            textBoxName.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(241, 33);
             label1.Name = "label1";
-            label1.Size = new Size(72, 19);
+            label1.Size = new Size(91, 24);
             label1.TabIndex = 0;
             label1.Text = "اسم الصنف";
             // 
             // AddCategoryForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(606, 606);
             Controls.Add(groupBox1);

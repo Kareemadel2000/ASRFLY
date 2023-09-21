@@ -141,6 +141,24 @@ namespace ASRFLY.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لا يوجد بيانات .
+        /// </summary>
+        internal static string EmptyMassageCaption {
+            get {
+                return ResourceManager.GetString("EmptyMassageCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to يبدو ان شبكة عرض البيانات فارغة , لا يمكن تنفيذ هذا الاجراء.
+        /// </summary>
+        internal static string EmptyMassageText {
+            get {
+                return ResourceManager.GetString("EmptyMassageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Export {

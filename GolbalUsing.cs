@@ -5,6 +5,9 @@ global using System.Text;
 global using System.Threading.Tasks;
 global using ASRFLY.Code;
 global using ASRFLY.Gui.GuiHome;
+global using ASRFLY.Properties;
+global using ASRFLY.Gui.GuiCategories;
+
 
 
 

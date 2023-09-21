@@ -56,8 +56,8 @@
             flowLayoutPanel1.Controls.Add(buttonSettings);
             flowLayoutPanel1.Controls.Add(buttonLogOut);
             flowLayoutPanel1.Controls.Add(buttonHelp);
-            flowLayoutPanel1.Dock = DockStyle.Top;
-            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Dock = DockStyle.Bottom;
+            flowLayoutPanel1.Location = new Point(0, 463);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(5);
             flowLayoutPanel1.Size = new Size(1132, 77);
@@ -68,7 +68,7 @@
             buttonHome.BackColor = Color.White;
             buttonHome.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonHome.ForeColor = Color.Black;
-            buttonHome.Image = Properties.Resources.Home;
+            buttonHome.Image = Resources.Home;
             buttonHome.ImageAlign = ContentAlignment.MiddleLeft;
             buttonHome.Location = new Point(935, 10);
             buttonHome.Margin = new Padding(5);
@@ -85,7 +85,7 @@
             buttonCategory.BackColor = Color.White;
             buttonCategory.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCategory.ForeColor = Color.Black;
-            buttonCategory.Image = Properties.Resources.Categorize;
+            buttonCategory.Image = Resources.Categorize;
             buttonCategory.ImageAlign = ContentAlignment.MiddleLeft;
             buttonCategory.Location = new Point(760, 10);
             buttonCategory.Margin = new Padding(5);
@@ -95,13 +95,14 @@
             buttonCategory.TabIndex = 1;
             buttonCategory.Text = "الاصناف";
             buttonCategory.UseVisualStyleBackColor = true;
+            buttonCategory.Click += buttonCategory_Click;
             // 
             // buttonCustomers
             // 
             buttonCustomers.BackColor = Color.White;
             buttonCustomers.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCustomers.ForeColor = Color.Black;
-            buttonCustomers.Image = Properties.Resources.Users;
+            buttonCustomers.Image = Resources.Users;
             buttonCustomers.ImageAlign = ContentAlignment.MiddleLeft;
             buttonCustomers.Location = new Point(585, 10);
             buttonCustomers.Margin = new Padding(5);
@@ -117,7 +118,7 @@
             buttonSuppliers.BackColor = Color.White;
             buttonSuppliers.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSuppliers.ForeColor = Color.Black;
-            buttonSuppliers.Image = Properties.Resources.Crowd;
+            buttonSuppliers.Image = Resources.Crowd;
             buttonSuppliers.ImageAlign = ContentAlignment.MiddleLeft;
             buttonSuppliers.Location = new Point(410, 10);
             buttonSuppliers.Margin = new Padding(5);
@@ -133,7 +134,7 @@
             buttonProjects.BackColor = Color.White;
             buttonProjects.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonProjects.ForeColor = Color.Black;
-            buttonProjects.Image = Properties.Resources.Group_of_Projects_1;
+            buttonProjects.Image = Resources.Group_of_Projects_1;
             buttonProjects.ImageAlign = ContentAlignment.MiddleLeft;
             buttonProjects.Location = new Point(235, 10);
             buttonProjects.Margin = new Padding(5);
@@ -149,7 +150,7 @@
             buttonUsers.BackColor = Color.White;
             buttonUsers.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonUsers.ForeColor = Color.Black;
-            buttonUsers.Image = Properties.Resources.Conference_Skin_Type_7;
+            buttonUsers.Image = Resources.Conference_Skin_Type_7;
             buttonUsers.ImageAlign = ContentAlignment.MiddleLeft;
             buttonUsers.Location = new Point(60, 10);
             buttonUsers.Margin = new Padding(5);
@@ -165,7 +166,7 @@
             buttonAbouts.BackColor = Color.White;
             buttonAbouts.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAbouts.ForeColor = Color.Black;
-            buttonAbouts.Image = Properties.Resources.About;
+            buttonAbouts.Image = Resources.About;
             buttonAbouts.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAbouts.Location = new Point(935, 75);
             buttonAbouts.Margin = new Padding(5);
@@ -181,7 +182,7 @@
             buttonSettings.BackColor = Color.White;
             buttonSettings.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSettings.ForeColor = Color.Black;
-            buttonSettings.Image = Properties.Resources.Automatic;
+            buttonSettings.Image = Resources.Automatic;
             buttonSettings.ImageAlign = ContentAlignment.MiddleLeft;
             buttonSettings.Location = new Point(760, 75);
             buttonSettings.Margin = new Padding(5);
@@ -197,7 +198,7 @@
             buttonLogOut.BackColor = Color.White;
             buttonLogOut.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonLogOut.ForeColor = Color.Black;
-            buttonLogOut.Image = Properties.Resources.Logout_1;
+            buttonLogOut.Image = Resources.Logout_1;
             buttonLogOut.ImageAlign = ContentAlignment.MiddleLeft;
             buttonLogOut.Location = new Point(585, 75);
             buttonLogOut.Margin = new Padding(5);
@@ -213,7 +214,7 @@
             buttonHelp.BackColor = Color.White;
             buttonHelp.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonHelp.ForeColor = Color.Black;
-            buttonHelp.Image = Properties.Resources.Help;
+            buttonHelp.Image = Resources.Help;
             buttonHelp.ImageAlign = ContentAlignment.MiddleLeft;
             buttonHelp.Location = new Point(410, 75);
             buttonHelp.Margin = new Padding(5);
@@ -229,7 +230,7 @@
             panelContainer.BackColor = Color.White;
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            panelContainer.Location = new Point(0, 77);
+            panelContainer.Location = new Point(0, 0);
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(1132, 463);
             panelContainer.TabIndex = 1;

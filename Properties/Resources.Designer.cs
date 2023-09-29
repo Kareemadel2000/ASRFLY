@@ -211,6 +211,16 @@ namespace ASRFLY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Loading_2 {
+            get {
+                object obj = ResourceManager.GetObject("Loading_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logout_1 {
             get {
                 object obj = ResourceManager.GetObject("Logout_1", resourceCulture);
@@ -255,6 +265,24 @@ namespace ASRFLY.Properties {
             get {
                 object obj = ResourceManager.GetObject("Search_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطأ اتصال في السيرفر.
+        /// </summary>
+        internal static string ServerErrorCaption {
+            get {
+                return ResourceManager.GetString("ServerErrorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to يبدو أن لديك خطأ اتصال في السيرفر , حاول مجددا او اعد ضبط الاتصال من اعدادات النظام.
+        /// </summary>
+        internal static string ServerErrorText {
+            get {
+                return ResourceManager.GetString("ServerErrorText", resourceCulture);
             }
         }
         

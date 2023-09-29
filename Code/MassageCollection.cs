@@ -7,4 +7,10 @@ public static class MassageCollection
         MessageBox.Show(Resources.EmptyMassageText, Resources.EmptyMassageCaption,
             MessageBoxButtons.OK,MessageBoxIcon.Information);
     }
+
+    public static void ShowErrorServer()
+    {
+        MessageBox.Show(Resources.ServerErrorText, Resources.ServerErrorCaption,
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
 }

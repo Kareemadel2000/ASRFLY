@@ -28,9 +28,9 @@ partial class CategoryUserControl
     /// </summary>
     private void InitializeComponent()
     {
-        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
         flowLayoutPanel1 = new FlowLayoutPanel();
         buttonAdd = new Button();
         buttonEdit = new Button();
@@ -40,6 +40,7 @@ partial class CategoryUserControl
         textBoxSearch = new TextBox();
         buttonSearch = new Button();
         dataGridView1 = new DataGridView();
+        buttonUpdate = new Button();
         flowLayoutPanel1.SuspendLayout();
         panel1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -52,6 +53,7 @@ partial class CategoryUserControl
         flowLayoutPanel1.Controls.Add(buttonAdd);
         flowLayoutPanel1.Controls.Add(buttonEdit);
         flowLayoutPanel1.Controls.Add(buttonDelete);
+        flowLayoutPanel1.Controls.Add(buttonUpdate);
         flowLayoutPanel1.Controls.Add(buttonExport);
         flowLayoutPanel1.Controls.Add(panel1);
         flowLayoutPanel1.Dock = DockStyle.Top;
@@ -67,7 +69,7 @@ partial class CategoryUserControl
         buttonAdd.FlatAppearance.BorderSize = 0;
         buttonAdd.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         buttonAdd.ForeColor = Color.Black;
-        buttonAdd.Image = Properties.Resources.Add;
+        buttonAdd.Image = Resources.Add;
         buttonAdd.ImageAlign = ContentAlignment.MiddleLeft;
         buttonAdd.Location = new Point(1105, 10);
         buttonAdd.Margin = new Padding(5);
@@ -85,7 +87,7 @@ partial class CategoryUserControl
         buttonEdit.FlatAppearance.BorderSize = 0;
         buttonEdit.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         buttonEdit.ForeColor = Color.Black;
-        buttonEdit.Image = Properties.Resources.Edit;
+        buttonEdit.Image = Resources.Edit;
         buttonEdit.ImageAlign = ContentAlignment.MiddleLeft;
         buttonEdit.Location = new Point(953, 10);
         buttonEdit.Margin = new Padding(5);
@@ -103,7 +105,7 @@ partial class CategoryUserControl
         buttonDelete.FlatAppearance.BorderSize = 0;
         buttonDelete.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         buttonDelete.ForeColor = Color.Black;
-        buttonDelete.Image = Properties.Resources.Delete;
+        buttonDelete.Image = Resources.Delete;
         buttonDelete.ImageAlign = ContentAlignment.MiddleLeft;
         buttonDelete.Location = new Point(801, 10);
         buttonDelete.Margin = new Padding(5);
@@ -121,9 +123,9 @@ partial class CategoryUserControl
         buttonExport.FlatAppearance.BorderSize = 0;
         buttonExport.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         buttonExport.ForeColor = Color.Black;
-        buttonExport.Image = Properties.Resources.Export;
+        buttonExport.Image = Resources.Export;
         buttonExport.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonExport.Location = new Point(649, 10);
+        buttonExport.Location = new Point(497, 10);
         buttonExport.Margin = new Padding(5);
         buttonExport.Name = "buttonExport";
         buttonExport.Padding = new Padding(5);
@@ -138,7 +140,7 @@ partial class CategoryUserControl
         panel1.BorderStyle = BorderStyle.FixedSingle;
         panel1.Controls.Add(textBoxSearch);
         panel1.Controls.Add(buttonSearch);
-        panel1.Location = new Point(216, 8);
+        panel1.Location = new Point(64, 8);
         panel1.Name = "panel1";
         panel1.Size = new Size(425, 57);
         panel1.TabIndex = 6;
@@ -146,10 +148,10 @@ partial class CategoryUserControl
         // textBoxSearch
         // 
         textBoxSearch.Font = new Font("Calibri", 30F, FontStyle.Bold, GraphicsUnit.Point);
-        textBoxSearch.Location = new Point(92, 0);
+        textBoxSearch.Location = new Point(91, -4);
         textBoxSearch.Margin = new Padding(5);
         textBoxSearch.Name = "textBoxSearch";
-        textBoxSearch.Size = new Size(333, 56);
+        textBoxSearch.Size = new Size(333, 69);
         textBoxSearch.TabIndex = 7;
         textBoxSearch.TextAlign = HorizontalAlignment.Center;
         textBoxSearch.TextChanged += textBoxSearch_TextChanged;
@@ -162,7 +164,7 @@ partial class CategoryUserControl
         buttonSearch.FlatStyle = FlatStyle.Flat;
         buttonSearch.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         buttonSearch.ForeColor = Color.Black;
-        buttonSearch.Image = Properties.Resources.Search_2;
+        buttonSearch.Image = Resources.Search_2;
         buttonSearch.ImageAlign = ContentAlignment.MiddleLeft;
         buttonSearch.Location = new Point(0, 0);
         buttonSearch.Margin = new Padding(5);
@@ -180,36 +182,54 @@ partial class CategoryUserControl
         dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         dataGridView1.BackgroundColor = Color.White;
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle1.BackColor = SystemColors.Window;
-        dataGridViewCellStyle1.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-        dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-        dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+        dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle7.BackColor = SystemColors.Window;
+        dataGridViewCellStyle7.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+        dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+        dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
         dataGridView1.Dock = DockStyle.Fill;
         dataGridView1.Location = new Point(0, 76);
         dataGridView1.Name = "dataGridView1";
-        dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle2.BackColor = SystemColors.Control;
-        dataGridViewCellStyle2.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-        dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-        dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+        dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle8.BackColor = SystemColors.Control;
+        dataGridViewCellStyle8.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+        dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
         dataGridView1.RowHeadersWidth = 51;
-        dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+        dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle9;
         dataGridView1.RowTemplate.Height = 25;
         dataGridView1.Size = new Size(1262, 524);
         dataGridView1.TabIndex = 3;
         dataGridView1.CellContentClick += dataGridView1_CellContentClick;
         // 
+        // buttonUpdate
+        // 
+        buttonUpdate.BackColor = Color.White;
+        buttonUpdate.FlatAppearance.BorderSize = 0;
+        buttonUpdate.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        buttonUpdate.ForeColor = Color.Black;
+        buttonUpdate.Image = Resources.Refresh;
+        buttonUpdate.ImageAlign = ContentAlignment.MiddleLeft;
+        buttonUpdate.Location = new Point(649, 10);
+        buttonUpdate.Margin = new Padding(5);
+        buttonUpdate.Name = "buttonUpdate";
+        buttonUpdate.Padding = new Padding(5);
+        buttonUpdate.Size = new Size(142, 55);
+        buttonUpdate.TabIndex = 7;
+        buttonUpdate.Text = "تحديث";
+        buttonUpdate.UseVisualStyleBackColor = true;
+        buttonUpdate.Click += buttonUpdate_Click;
+        // 
         // CategoryUserControl
         // 
-        AutoScaleDimensions = new SizeF(10F, 23F);
+        AutoScaleDimensions = new SizeF(12F, 29F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.White;
         Controls.Add(dataGridView1);
@@ -237,4 +257,5 @@ partial class CategoryUserControl
     private Button buttonSearch;
     private TextBox textBoxSearch;
     private DataGridView dataGridView1;
+    private Button buttonUpdate;
 }

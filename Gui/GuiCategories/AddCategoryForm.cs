@@ -2,13 +2,14 @@
 
 public partial class AddCategoryForm : Form
 {
+    //variables
     private readonly int ID;
     private readonly CategoryUserControl _categoryuserControl;
     private Categories categories;
     private readonly IDataHelper<Categories> _dataHelper;
     private readonly LoadingForm loadingForm;
-
-
+    private bool IsSaveDataSuccess;
+    //ctor
     public AddCategoryForm(int Id, CategoryUserControl categoryuserControl)
     {
         InitializeComponent();
@@ -22,50 +23,48 @@ public partial class AddCategoryForm : Form
     #region Events
     private void buttonSaveAndClose_Click(object sender, EventArgs e)
     {
-
+        if (!SavaData())
+        {
+            Close();
+        }
+        IsSaveDataSuccess = false;
     }
 
-    private async void buttonSave_Click(object sender, EventArgs e)
+    private void buttonSave_Click(object sender, EventArgs e)
+    {
+        SavaData();
+        IsSaveDataSuccess = false;
+    }
+    #endregion
+
+    //Method 
+    #region SavaData
+    private bool SavaData()
     {
         //Check field is Empty
         if (IsFiledsEmpty())
         {
             MassageCollection.ShowFieldsRquired();
+
         }
         else
         {
+            loadingForm.Show();
             if (ID == 0)    //Add 
             {
-                // Set Data 
-                categories = new Categories
-                {
-                    Name = textBoxName.Text,
-                    Type = comboBoxType.SelectedItem.ToString()!,
-                    Details = richTextBoxDetails.Text,
-                    AddedDate = DateTime.Now
-                };
-                // Sumbit
-                loadingForm.Show();
-                var result = await _dataHelper.AddAsync(categories);
-                if (result == 1)
-                {
-                    //toast
-                }
-                else
-                {
-                    MassageCollection.ShowErrorServer();
-                }
-                loadingForm.Close();
+                AddData();
             }
             else        //Edit
             {
-
+                EditData();
             }
+            loadingForm.Hide();
         }
+        return IsSaveDataSuccess;
     }
     #endregion
 
-    //Method 
+    #region IsFiledsEmpty
     private bool IsFiledsEmpty()
     {
         if (textBoxName.Text == string.Empty || comboBoxType.Text == string.Empty)
@@ -77,5 +76,64 @@ public partial class AddCategoryForm : Form
             return false;
         }
     }
+    #endregion
 
+    #region AddData
+    private async void AddData()
+    {
+        // Set Data 
+        categories = new Categories
+        {
+            Name = textBoxName.Text,
+            Type = comboBoxType.SelectedItem.ToString()!,
+            Details = richTextBoxDetails.Text,
+            AddedDate = DateTime.Now
+        };
+        // Sumbit
+
+        var result = await _dataHelper.AddAsync(categories);
+        if (result == 1)
+        {
+            //toast
+            _categoryuserControl.LaodData();
+            IsSaveDataSuccess = true;
+            MessageBox.Show("تمت عملية الاضافه بنجاح..");
+        }
+        else
+        {
+            MassageCollection.ShowErrorServer();
+        }
+
+    }
+    #endregion
+
+    #region EditData
+    private async void EditData()
+    {
+        // Set Data 
+        categories = new Categories
+        {
+            Id = ID,
+            Name = textBoxName.Text,
+            Type = comboBoxType.SelectedItem.ToString()!,
+            Details = richTextBoxDetails.Text,
+            AddedDate = DateTime.Now
+        };
+        // Sumbit
+
+        var result = await _dataHelper.EditAsync(categories);
+        if (result == 1)
+        {
+            _categoryuserControl.LaodData();
+            //toast
+            MessageBox.Show("تمت عملية التعديل بنجاح..");
+            IsSaveDataSuccess = true;
+        }
+        else
+        {
+            MassageCollection.ShowErrorServer();
+        }
+
+    }
+    #endregion
 }

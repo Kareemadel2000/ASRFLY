@@ -19,7 +19,7 @@ public partial class CategoryUserControl : UserControl
     #region Events
     private void buttonAdd_Click(object sender, EventArgs e)
     {
-        AddCategoryForm addCategoryForm = new AddCategoryForm();
+        AddCategoryForm addCategoryForm = new AddCategoryForm(0, this);
         addCategoryForm.Show();
     }
 
@@ -41,6 +41,11 @@ public partial class CategoryUserControl : UserControl
     private void buttonSearch_Click(object sender, EventArgs e)
     {
 
+    }
+
+    private void buttonUpdate_Click(object sender, EventArgs e)
+    {
+        LaodData();
     }
 
     private void textBoxSearch_TextChanged(object sender, EventArgs e)
@@ -71,7 +76,7 @@ public partial class CategoryUserControl : UserControl
         {
             SetColumnsTitle();
         }
-        loadingForm.Close();
+        loadingForm.Hide();
     }
     private void SetColumnsTitle()
     {
@@ -83,4 +88,6 @@ public partial class CategoryUserControl : UserControl
         dataGridView1.Columns[5].HeaderText = "تاريخ الاضافة";
     }
     #endregion
+
+   
 }

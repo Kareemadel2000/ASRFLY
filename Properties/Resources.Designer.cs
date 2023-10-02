@@ -169,6 +169,24 @@ namespace ASRFLY.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to خطأ ادخال .
+        /// </summary>
+        internal static string FieldsRquiredCaption {
+            get {
+                return ResourceManager.GetString("FieldsRquiredCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to جميع الحقول التى تحتوى علي علامة * هى مطلوبة اعد ادخالها ثم حاول مره اخرى.
+        /// </summary>
+        internal static string FieldsRquiredText {
+            get {
+                return ResourceManager.GetString("FieldsRquiredText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Group_of_Projects_1 {

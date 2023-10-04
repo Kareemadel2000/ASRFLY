@@ -18,4 +18,19 @@ public static class MassageCollection
         MessageBox.Show(Resources.FieldsRquiredText, Resources.FieldsRquiredCaption,
             MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
+    //Dialog
+    //Notifications
+    public static void ShowAddNotifications()
+    {
+       NotificationForm notificationForm = new NotificationForm();
+        notificationForm.labelTitle.Text = "تمت عملية الاضافة بنجاح";
+        notificationForm.Show();
+    }
+
+    public static void ShowUpdateNotifications()
+    {
+        NotificationForm notificationForm = new NotificationForm();
+        notificationForm.labelTitle.Text = "تمت عملية التعديل بنجاح";
+        notificationForm.Show();
+    }
 }

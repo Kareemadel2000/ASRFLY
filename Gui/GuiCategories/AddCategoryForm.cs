@@ -32,6 +32,14 @@ public partial class AddCategoryForm : Form
             loadingForm.Show();
             if (await SavaData())
             {
+                if (ID == 0)
+                {
+                    MassageCollection.ShowAddNotifications();
+                }
+                else
+                {
+                    MassageCollection.ShowUpdateNotifications();
+                }
                 Close();
             }
             else
@@ -54,7 +62,14 @@ public partial class AddCategoryForm : Form
             loadingForm.Show();
             if (await SavaData())
             {
-
+                if(ID == 0)
+                {
+                    MassageCollection.ShowAddNotifications();
+                }
+                else
+                {
+                    MassageCollection.ShowUpdateNotifications();
+                }
             }
             else
             {

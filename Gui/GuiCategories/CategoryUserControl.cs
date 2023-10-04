@@ -6,6 +6,7 @@ public partial class CategoryUserControl : UserControl
     //variables
     private readonly IDataHelper<Categories> _dataHelper;
     private static CategoryUserControl _CategoryUserControl;
+    private int RowId;
     private readonly LoadingForm loadingForm;
     //ctor
     public CategoryUserControl()
@@ -25,7 +26,7 @@ public partial class CategoryUserControl : UserControl
 
     private void buttonEdit_Click(object sender, EventArgs e)
     {
-        MassageCollection.ShowEmptyDataMassage();
+        Edit();
     }
 
     private void buttonDelete_Click(object sender, EventArgs e)
@@ -55,7 +56,7 @@ public partial class CategoryUserControl : UserControl
 
     private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-
+        Edit();
     }
     #endregion
 
@@ -87,7 +88,22 @@ public partial class CategoryUserControl : UserControl
         dataGridView1.Columns[4].HeaderText = "الرصيد";
         dataGridView1.Columns[5].HeaderText = "تاريخ الاضافة";
     }
+
+    private void Edit()
+    {
+        if (dataGridView1.RowCount > 0)
+        {
+            // Get Id 
+            RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            AddCategoryForm addCategoryForm = new AddCategoryForm(RowId, this);
+            addCategoryForm.Show();
+        }
+        else
+        {
+            MassageCollection.ShowEmptyDataMassage();
+        }
+    }
     #endregion
 
-   
+
 }

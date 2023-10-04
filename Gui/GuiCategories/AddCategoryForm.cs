@@ -52,7 +52,6 @@ public partial class AddCategoryForm : Form
 
     private async void buttonSave_Click(object sender, EventArgs e)
     {
-
         if (IsFiledsEmpty())
         {
             MassageCollection.ShowFieldsRquired();
@@ -62,7 +61,7 @@ public partial class AddCategoryForm : Form
             loadingForm.Show();
             if (await SavaData())
             {
-                if(ID == 0)
+                if (ID == 0)
                 {
                     MassageCollection.ShowAddNotifications();
                 }
@@ -77,6 +76,13 @@ public partial class AddCategoryForm : Form
             }
             loadingForm.Hide();
         }
+    }
+
+    private void AddCategoryForm_Load(object sender, EventArgs e)
+    {
+        loadingForm.Show();
+        SetFieldData();
+        loadingForm.Hide();
     }
     #endregion
 
@@ -165,4 +171,27 @@ public partial class AddCategoryForm : Form
 
     }
     #endregion
+
+    #region SetFieldData
+    private async void SetFieldData()
+    {
+        if (ID > 0)
+        {
+            // Set Fields
+            categories = await _dataHelper.FindAsync(ID);
+            if (categories != null)
+            {
+                textBoxName.Text = categories.Name;
+                textBoxBalance.Text = categories.Balance.ToString();
+                comboBoxType.SelectedItem = categories.Type;
+                richTextBoxDetails.Text = categories.Details;
+            }
+            else
+            {
+                MassageCollection.ShowErrorServer();
+            }
+        }
+    }
+    #endregion
+
 }

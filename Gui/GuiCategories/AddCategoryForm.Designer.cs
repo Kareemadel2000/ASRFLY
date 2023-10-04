@@ -32,6 +32,8 @@
             buttonSave = new Button();
             buttonSaveAndClose = new Button();
             groupBox1 = new GroupBox();
+            label6 = new Label();
+            label5 = new Label();
             richTextBoxDetails = new RichTextBox();
             comboBoxType = new ComboBox();
             textBoxBalance = new TextBox();
@@ -40,8 +42,6 @@
             label2 = new Label();
             textBoxName = new TextBox();
             label1 = new Label();
-            label5 = new Label();
-            label6 = new Label();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -110,6 +110,26 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "معلومات الصنف";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = Color.Red;
+            label6.Location = new Point(225, 33);
+            label6.Name = "label6";
+            label6.Size = new Size(20, 24);
+            label6.TabIndex = 11;
+            label6.Text = "*";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = Color.Red;
+            label5.Location = new Point(225, 118);
+            label5.Name = "label5";
+            label5.Size = new Size(20, 24);
+            label5.TabIndex = 10;
+            label5.Text = "*";
             // 
             // richTextBoxDetails
             // 
@@ -183,26 +203,6 @@
             label1.TabIndex = 0;
             label1.Text = "اسم الصنف";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.ForeColor = Color.Red;
-            label5.Location = new Point(225, 118);
-            label5.Name = "label5";
-            label5.Size = new Size(20, 24);
-            label5.TabIndex = 10;
-            label5.Text = "*";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.ForeColor = Color.Red;
-            label6.Location = new Point(225, 33);
-            label6.Name = "label6";
-            label6.Size = new Size(20, 24);
-            label6.TabIndex = 11;
-            label6.Text = "*";
-            // 
             // AddCategoryForm
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
@@ -223,6 +223,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "أضافة / تعديل صنف";
             TopMost = true;
+            Load += AddCategoryForm_Load;
             panel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

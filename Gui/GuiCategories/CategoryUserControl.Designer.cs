@@ -28,19 +28,21 @@ partial class CategoryUserControl
     /// </summary>
     private void InitializeComponent()
     {
-        DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
         flowLayoutPanel1 = new FlowLayoutPanel();
         buttonAdd = new Button();
         buttonEdit = new Button();
         buttonDelete = new Button();
+        buttonUpdate = new Button();
         buttonExport = new Button();
         panel1 = new Panel();
         textBoxSearch = new TextBox();
         buttonSearch = new Button();
         dataGridView1 = new DataGridView();
-        buttonUpdate = new Button();
         flowLayoutPanel1.SuspendLayout();
         panel1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -117,6 +119,24 @@ partial class CategoryUserControl
         buttonDelete.UseVisualStyleBackColor = true;
         buttonDelete.Click += buttonDelete_Click;
         // 
+        // buttonUpdate
+        // 
+        buttonUpdate.BackColor = Color.White;
+        buttonUpdate.FlatAppearance.BorderSize = 0;
+        buttonUpdate.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        buttonUpdate.ForeColor = Color.Black;
+        buttonUpdate.Image = Resources.Refresh;
+        buttonUpdate.ImageAlign = ContentAlignment.MiddleLeft;
+        buttonUpdate.Location = new Point(649, 10);
+        buttonUpdate.Margin = new Padding(5);
+        buttonUpdate.Name = "buttonUpdate";
+        buttonUpdate.Padding = new Padding(5);
+        buttonUpdate.Size = new Size(142, 55);
+        buttonUpdate.TabIndex = 7;
+        buttonUpdate.Text = "تحديث";
+        buttonUpdate.UseVisualStyleBackColor = true;
+        buttonUpdate.Click += buttonUpdate_Click;
+        // 
         // buttonExport
         // 
         buttonExport.BackColor = Color.White;
@@ -178,54 +198,48 @@ partial class CategoryUserControl
         // 
         // dataGridView1
         // 
+        dataGridView1.AllowUserToAddRows = false;
+        dataGridView1.AllowUserToDeleteRows = false;
+        dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         dataGridView1.BackgroundColor = Color.White;
+        dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle2.BackColor = SystemColors.Control;
+        dataGridViewCellStyle2.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+        dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle7.BackColor = SystemColors.Window;
-        dataGridViewCellStyle7.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
-        dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-        dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
+        dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle3.BackColor = SystemColors.Window;
+        dataGridViewCellStyle3.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+        dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+        dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
         dataGridView1.Dock = DockStyle.Fill;
         dataGridView1.Location = new Point(0, 76);
         dataGridView1.Name = "dataGridView1";
-        dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle8.BackColor = SystemColors.Control;
-        dataGridViewCellStyle8.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-        dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-        dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+        dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle4.BackColor = SystemColors.Control;
+        dataGridViewCellStyle4.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+        dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
         dataGridView1.RowHeadersWidth = 51;
-        dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle9;
+        dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
         dataGridView1.RowTemplate.Height = 25;
         dataGridView1.Size = new Size(1262, 524);
         dataGridView1.TabIndex = 3;
         dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-        // 
-        // buttonUpdate
-        // 
-        buttonUpdate.BackColor = Color.White;
-        buttonUpdate.FlatAppearance.BorderSize = 0;
-        buttonUpdate.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        buttonUpdate.ForeColor = Color.Black;
-        buttonUpdate.Image = Resources.Refresh;
-        buttonUpdate.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonUpdate.Location = new Point(649, 10);
-        buttonUpdate.Margin = new Padding(5);
-        buttonUpdate.Name = "buttonUpdate";
-        buttonUpdate.Padding = new Padding(5);
-        buttonUpdate.Size = new Size(142, 55);
-        buttonUpdate.TabIndex = 7;
-        buttonUpdate.Text = "تحديث";
-        buttonUpdate.UseVisualStyleBackColor = true;
-        buttonUpdate.Click += buttonUpdate_Click;
         // 
         // CategoryUserControl
         // 

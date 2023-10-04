@@ -8,7 +8,7 @@ public partial class AddCategoryForm : Form
     private Categories categories;
     private readonly IDataHelper<Categories> _dataHelper;
     private readonly LoadingForm loadingForm;
-    private bool IsSaveDataSuccess;
+
     //ctor
     public AddCategoryForm(int Id, CategoryUserControl categoryuserControl)
     {
@@ -21,46 +21,64 @@ public partial class AddCategoryForm : Form
     }
 
     #region Events
-    private void buttonSaveAndClose_Click(object sender, EventArgs e)
+    private async void buttonSaveAndClose_Click(object sender, EventArgs e)
     {
-        if (!SavaData())
+        if (IsFiledsEmpty())
         {
-            Close();
+            MassageCollection.ShowFieldsRquired();
         }
-        IsSaveDataSuccess = false;
+        else
+        {
+            loadingForm.Show();
+            if (await SavaData())
+            {
+                Close();
+            }
+            else
+            {
+                MassageCollection.ShowErrorServer();
+            }
+            loadingForm.Hide();
+        }
     }
 
-    private void buttonSave_Click(object sender, EventArgs e)
+    private async void buttonSave_Click(object sender, EventArgs e)
     {
-        SavaData();
-        IsSaveDataSuccess = false;
+
+        if (IsFiledsEmpty())
+        {
+            MassageCollection.ShowFieldsRquired();
+        }
+        else
+        {
+            loadingForm.Show();
+            if (await SavaData())
+            {
+
+            }
+            else
+            {
+                MassageCollection.ShowErrorServer();
+            }
+            loadingForm.Hide();
+        }
     }
     #endregion
 
     //Method 
     #region SavaData
-    private bool SavaData()
+    private async Task<bool> SavaData()
     {
-        //Check field is Empty
-        if (IsFiledsEmpty())
-        {
-            MassageCollection.ShowFieldsRquired();
 
-        }
-        else
+        if (ID == 0)    //Add 
         {
-            loadingForm.Show();
-            if (ID == 0)    //Add 
-            {
-                AddData();
-            }
-            else        //Edit
-            {
-                EditData();
-            }
-            loadingForm.Hide();
+            return await AddData();
         }
-        return IsSaveDataSuccess;
+        else        //Edit
+        {
+            return await EditData();
+        }
+
     }
     #endregion
 
@@ -79,7 +97,7 @@ public partial class AddCategoryForm : Form
     #endregion
 
     #region AddData
-    private async void AddData()
+    private async Task<bool> AddData()
     {
         // Set Data 
         categories = new Categories
@@ -94,21 +112,19 @@ public partial class AddCategoryForm : Form
         var result = await _dataHelper.AddAsync(categories);
         if (result == 1)
         {
-            //toast
             _categoryuserControl.LaodData();
-            IsSaveDataSuccess = true;
-            MessageBox.Show("تمت عملية الاضافه بنجاح..");
+            return true;
         }
         else
         {
-            MassageCollection.ShowErrorServer();
+            return false;
         }
 
     }
     #endregion
 
     #region EditData
-    private async void EditData()
+    private async Task<bool> EditData()
     {
         // Set Data 
         categories = new Categories
@@ -125,13 +141,11 @@ public partial class AddCategoryForm : Form
         if (result == 1)
         {
             _categoryuserControl.LaodData();
-            //toast
-            MessageBox.Show("تمت عملية التعديل بنجاح..");
-            IsSaveDataSuccess = true;
+            return true;
         }
         else
         {
-            MassageCollection.ShowErrorServer();
+            return false;
         }
 
     }

@@ -8,6 +8,8 @@ public partial class CategoryUserControl : UserControl
     private static CategoryUserControl _CategoryUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
+    private List<int> IdList = new List<int>();
+
     //ctor
     public CategoryUserControl()
     {
@@ -29,9 +31,44 @@ public partial class CategoryUserControl : UserControl
         Edit();
     }
 
-    private void buttonDelete_Click(object sender, EventArgs e)
+    private async void buttonDelete_Click(object sender, EventArgs e)
     {
-
+        if (dataGridView1.RowCount > 0)
+        {
+            var DeleteResult = MassageCollection.ShowDeleteDialog();
+            if (DeleteResult)
+            {
+                SetIdRowForDelete();
+                loadingForm.Show();
+                if (IdList.Count > 0)
+                {
+                    for (int i = 0; i < IdList.Count; i++)
+                    {
+                        RowId = IdList[i];
+                        var result = await _dataHelper.DeleteAsync(RowId);
+                        if (result == 1)
+                        {
+                            MassageCollection.ShowDeleteNotifications();
+                        }
+                        else
+                        {
+                            MassageCollection.ShowErrorServer();
+                        }
+                        LaodData();
+                    }
+                }
+                else
+                {
+                    MassageCollection.ShowRquiredDeleteRow();
+                }
+               
+                loadingForm.Hide();
+            }  
+        }
+        else
+        {
+            MassageCollection.ShowEmptyDataMassage();
+        }
     }
 
     private void buttonExport_Click(object sender, EventArgs e)
@@ -101,6 +138,17 @@ public partial class CategoryUserControl : UserControl
         else
         {
             MassageCollection.ShowEmptyDataMassage();
+        }
+    }
+
+    private void SetIdRowForDelete()
+    {
+        foreach (DataGridViewRow row in dataGridView1.Rows)
+        {
+            if (row.Selected)
+            {
+                IdList.Add(Convert.ToInt32(row.Cells[0].Value));
+            }
         }
     }
     #endregion

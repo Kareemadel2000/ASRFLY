@@ -141,6 +141,24 @@ namespace ASRFLY.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to أجراء حذف .
+        /// </summary>
+        internal static string DeleteDialogCaption {
+            get {
+                return ResourceManager.GetString("DeleteDialogCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هل انتا متاكد من هذا الاجراء . لا يمكن استرجاع البيانات مره اخرى.
+        /// </summary>
+        internal static string DeleteDialogText {
+            get {
+                return ResourceManager.GetString("DeleteDialogText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Edit {
@@ -321,6 +339,24 @@ namespace ASRFLY.Properties {
         internal static string ServerErrorText {
             get {
                 return ResourceManager.GetString("ServerErrorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to أجراء حذف.
+        /// </summary>
+        internal static string ShowReDeleteFieldCaption {
+            get {
+                return ResourceManager.GetString("ShowReDeleteFieldCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لأجراء الحذف لابدا من تحديد السطر كامل.
+        /// </summary>
+        internal static string ShowReDeleteFieldText {
+            get {
+                return ResourceManager.GetString("ShowReDeleteFieldText", resourceCulture);
             }
         }
         

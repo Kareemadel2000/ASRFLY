@@ -1,5 +1,4 @@
-﻿
-namespace ASRFLY.Gui.GuiCategories;
+﻿namespace ASRFLY.Gui.GuiCategories;
 
 public partial class CategoryUserControl : UserControl
 {
@@ -63,9 +62,9 @@ public partial class CategoryUserControl : UserControl
                 {
                     MassageCollection.ShowRquiredDeleteRow();
                 }
-               
+
                 loadingForm.Hide();
-            }  
+            }
         }
         else
         {
@@ -73,10 +72,22 @@ public partial class CategoryUserControl : UserControl
         }
     }
 
-    private void buttonExport_Click(object sender, EventArgs e)
+    private async void buttonExport_Click(object sender, EventArgs e)
     {
+        // Conver List of Data to DataTable
+        loadingForm.Show();
+        var data = await _dataHelper.GetAllDataAsync();
+        DataTable table = new DataTable();
+        using var reader = ObjectReader.Create(data);
+        table.Load(reader);
+        loadingForm.Hide();
 
+        //Re-Set Colunm
+        DataTable dataTableArranged = SetDataTableColumns(table);
+        //Export Data to as Sheet Excel
     }
+
+
 
     private void buttonSearch_Click(object sender, EventArgs e)
     {
@@ -168,6 +179,28 @@ public partial class CategoryUserControl : UserControl
             SetColumnsTitle();
         }
         loadingForm.Hide();
+    }
+
+    private DataTable SetDataTableColumns(DataTable table)
+    {
+        table.Columns["Id"].SetOrdinal(0);
+        table.Columns["Id"].ColumnName = "المعرف"; 
+
+        table.Columns["Name"].SetOrdinal(1);
+        table.Columns["Name"].ColumnName = "الاسم";
+
+        table.Columns["Type"].SetOrdinal(2);
+        table.Columns["Type"].ColumnName = "النوع";
+
+        table.Columns["Details"].SetOrdinal(3);
+        table.Columns["Details"].ColumnName = "التفاصيل"; 
+
+        table.Columns["Balance"].SetOrdinal(4);
+        table.Columns["Balance"].ColumnName = "الرصيد";
+
+        table.Columns["AddedDate"].SetOrdinal(5);
+        table.Columns["AddedDate"].ColumnName = "تاريخ الاضافة";
+        return table;
     }
     #endregion
 

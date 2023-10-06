@@ -9,6 +9,7 @@ public partial class CategoryUserControl : UserControl
     private int RowId;
     private readonly LoadingForm loadingForm;
     private List<int> IdList = new List<int>();
+    private string searchItem;
 
     //ctor
     public CategoryUserControl()
@@ -38,6 +39,7 @@ public partial class CategoryUserControl : UserControl
             var DeleteResult = MassageCollection.ShowDeleteDialog();
             if (DeleteResult)
             {
+                IdList.Clear();
                 SetIdRowForDelete();
                 loadingForm.Show();
                 if (IdList.Count > 0)
@@ -54,8 +56,8 @@ public partial class CategoryUserControl : UserControl
                         {
                             MassageCollection.ShowErrorServer();
                         }
-                        LaodData();
                     }
+                    LaodData();
                 }
                 else
                 {
@@ -78,7 +80,7 @@ public partial class CategoryUserControl : UserControl
 
     private void buttonSearch_Click(object sender, EventArgs e)
     {
-
+        Search();
     }
 
     private void buttonUpdate_Click(object sender, EventArgs e)
@@ -88,7 +90,7 @@ public partial class CategoryUserControl : UserControl
 
     private void textBoxSearch_TextChanged(object sender, EventArgs e)
     {
-
+        Search();
     }
 
     private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -150,6 +152,22 @@ public partial class CategoryUserControl : UserControl
                 IdList.Add(Convert.ToInt32(row.Cells[0].Value));
             }
         }
+    }
+
+    public async void Search()
+    {
+        loadingForm.Show();
+        searchItem = textBoxSearch.Text;
+        dataGridView1.DataSource = await _dataHelper.SearchAsync(searchItem);
+        if (dataGridView1.DataSource == null)
+        {
+            MassageCollection.ShowErrorServer();
+        }
+        else
+        {
+            SetColumnsTitle();
+        }
+        loadingForm.Hide();
     }
     #endregion
 

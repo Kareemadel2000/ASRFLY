@@ -1,4 +1,7 @@
-﻿namespace ASRFLY.Gui.GuiCategories;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
+
+namespace ASRFLY.Gui.GuiCategories;
 
 public partial class CategoryUserControl : UserControl
 {
@@ -84,10 +87,10 @@ public partial class CategoryUserControl : UserControl
 
         //Re-Set Colunm
         DataTable dataTableArranged = SetDataTableColumns(table);
+
         //Export Data to as Sheet Excel
+        ExportAsXlsxFile(dataTableArranged);
     }
-
-
 
     private void buttonSearch_Click(object sender, EventArgs e)
     {
@@ -184,7 +187,7 @@ public partial class CategoryUserControl : UserControl
     private DataTable SetDataTableColumns(DataTable table)
     {
         table.Columns["Id"].SetOrdinal(0);
-        table.Columns["Id"].ColumnName = "المعرف"; 
+        table.Columns["Id"].ColumnName = "المعرف";
 
         table.Columns["Name"].SetOrdinal(1);
         table.Columns["Name"].ColumnName = "الاسم";
@@ -193,7 +196,7 @@ public partial class CategoryUserControl : UserControl
         table.Columns["Type"].ColumnName = "النوع";
 
         table.Columns["Details"].SetOrdinal(3);
-        table.Columns["Details"].ColumnName = "التفاصيل"; 
+        table.Columns["Details"].ColumnName = "التفاصيل";
 
         table.Columns["Balance"].SetOrdinal(4);
         table.Columns["Balance"].ColumnName = "الرصيد";
@@ -202,7 +205,37 @@ public partial class CategoryUserControl : UserControl
         table.Columns["AddedDate"].ColumnName = "تاريخ الاضافة";
         return table;
     }
+
+    private void ExportAsXlsxFile(DataTable dataTableArranged)
+    {
+        SaveFileDialog saveFileDialog = new SaveFileDialog();
+        saveFileDialog.Title = "تصدير البيانات علي شكل أكسل";
+        saveFileDialog.DefaultExt = "xlsx";
+        saveFileDialog.AddExtension = true;
+        saveFileDialog.Filter = "Excel File (.xlsx)|*.xlsx";
+        saveFileDialog.RestoreDirectory = true;
+        var result = saveFileDialog.ShowDialog();
+        if (result == DialogResult.OK)
+        {
+            try
+            {
+                using (XLWorkbook xlWorkbook = new XLWorkbook())//Create Excel File 
+                {
+                    xlWorkbook.AddWorksheet(dataTableArranged, "Data");//Add Sheet
+                    using (MemoryStream stream = new MemoryStream())
+                    {
+                        xlWorkbook.SaveAs(stream);
+                        File.WriteAllBytes(saveFileDialog.FileName, stream.ToArray());
+                    }
+                }
+                //System.Diagnostics.Process.Start(saveFileDialog.FileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    }
+
     #endregion
-
-
 }

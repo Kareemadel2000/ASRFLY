@@ -28,11 +28,11 @@ partial class CategoryUserControl
     /// </summary>
     private void InitializeComponent()
     {
-        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
         flowLayoutPanel1 = new FlowLayoutPanel();
         buttonAdd = new Button();
         buttonEdit = new Button();
@@ -43,6 +43,7 @@ partial class CategoryUserControl
         textBoxSearch = new TextBox();
         buttonSearch = new Button();
         dataGridView1 = new DataGridView();
+        comboBoxPageNo = new ComboBox();
         flowLayoutPanel1.SuspendLayout();
         panel1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -200,52 +201,64 @@ partial class CategoryUserControl
         // 
         dataGridView1.AllowUserToAddRows = false;
         dataGridView1.AllowUserToDeleteRows = false;
-        dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+        dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         dataGridView1.BackgroundColor = Color.White;
-        dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle2.BackColor = SystemColors.Control;
-        dataGridViewCellStyle2.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-        dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-        dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+        dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle12.BackColor = SystemColors.Control;
+        dataGridViewCellStyle12.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+        dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle3.BackColor = SystemColors.Window;
-        dataGridViewCellStyle3.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-        dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-        dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+        dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle13.BackColor = SystemColors.Window;
+        dataGridViewCellStyle13.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle13.ForeColor = SystemColors.ControlText;
+        dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
+        dataGridView1.DefaultCellStyle = dataGridViewCellStyle13;
         dataGridView1.Dock = DockStyle.Fill;
         dataGridView1.Location = new Point(0, 76);
         dataGridView1.Name = "dataGridView1";
-        dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle4.BackColor = SystemColors.Control;
-        dataGridViewCellStyle4.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-        dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-        dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+        dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle14.BackColor = SystemColors.Control;
+        dataGridViewCellStyle14.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+        dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
         dataGridView1.RowHeadersWidth = 51;
-        dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+        dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle15;
         dataGridView1.RowTemplate.Height = 25;
         dataGridView1.Size = new Size(1262, 524);
         dataGridView1.TabIndex = 3;
         dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+        // 
+        // comboBoxPageNo
+        // 
+        comboBoxPageNo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+        comboBoxPageNo.DropDownStyle = ComboBoxStyle.DropDownList;
+        comboBoxPageNo.FormattingEnabled = true;
+        comboBoxPageNo.Location = new Point(51, 560);
+        comboBoxPageNo.Name = "comboBoxPageNo";
+        comboBoxPageNo.Size = new Size(106, 37);
+        comboBoxPageNo.TabIndex = 5;
+        comboBoxPageNo.SelectedIndexChanged += comboBoxPageNo_SelectedIndexChanged;
         // 
         // CategoryUserControl
         // 
         AutoScaleDimensions = new SizeF(12F, 29F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.White;
+        Controls.Add(comboBoxPageNo);
         Controls.Add(dataGridView1);
         Controls.Add(flowLayoutPanel1);
         Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -272,4 +285,5 @@ partial class CategoryUserControl
     private TextBox textBoxSearch;
     private DataGridView dataGridView1;
     private Button buttonUpdate;
+    private ComboBox comboBoxPageNo;
 }

@@ -132,7 +132,8 @@ public partial class CategoryUserControl : UserControl
     public async void LaodData()
     {
         loadingForm.Show();
-        dataGridView1.DataSource = await _dataHelper.GetAllDataAsync();
+        var data = await _dataHelper.GetAllDataAsync();
+        dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
         if (dataGridView1.DataSource == null)
         {
             MassageCollection.ShowErrorServer();
@@ -249,4 +250,9 @@ public partial class CategoryUserControl : UserControl
     }
 
     #endregion
+
+    private void comboBoxPageNo_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

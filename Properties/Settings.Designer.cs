@@ -58,5 +58,17 @@ namespace ASRFLY.Properties {
                 this["UserName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int DataGridViewRowNo {
+            get {
+                return ((int)(this["DataGridViewRowNo"]));
+            }
+            set {
+                this["DataGridViewRowNo"] = value;
+            }
+        }
     }
 }

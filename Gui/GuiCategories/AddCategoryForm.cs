@@ -143,7 +143,7 @@ public partial class AddCategoryForm : Form
             {
                 Title = "أضافة صنف",
                 UserName = Settings.Default.UserName,
-                Details = "تمت أضافه صنف  " +categories.Name, 
+                Details = "تمت أضافه صنف  " + categories.Name,
                 AddedDate = DateTime.Now,
             };
             await _dataHelperSystemRecord.AddAsync(systemRecord);
@@ -179,7 +179,7 @@ public partial class AddCategoryForm : Form
             {
                 Title = "تعديل صنف ",
                 UserName = Settings.Default.UserName,
-                Details = "تم تعديل صنف " + categories.Name,
+                Details = "تم تعديل صنف  " + categories.Name,
                 AddedDate = DateTime.Now,
             };
             await _dataHelperSystemRecord.AddAsync(systemRecord);

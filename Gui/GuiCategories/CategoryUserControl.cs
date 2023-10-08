@@ -7,6 +7,7 @@ public partial class CategoryUserControl : UserControl
 {
     //variables
     private readonly IDataHelper<Categories> _dataHelper;
+    private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
     private static CategoryUserControl _CategoryUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
@@ -18,6 +19,7 @@ public partial class CategoryUserControl : UserControl
     {
         InitializeComponent();
         _dataHelper = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
+        _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         LaodData();
     }
@@ -52,6 +54,15 @@ public partial class CategoryUserControl : UserControl
                         var result = await _dataHelper.DeleteAsync(RowId);
                         if (result == 1)
                         {
+                            // Save SystemRecord
+                            SystemRecord systemRecord = new SystemRecord
+                            {
+                                Title = "عملية حذف",
+                                UserName = Settings.Default.UserName,
+                                Details = "تم حذف صنف ذى الرقم التعريفي" + RowId.ToString(),
+                                AddedDate = DateTime.Now,
+                            };
+                            await _dataHelperSystemRecord.AddAsync(systemRecord);
                             MassageCollection.ShowDeleteNotifications();
                         }
                         else

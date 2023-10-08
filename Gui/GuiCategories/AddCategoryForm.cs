@@ -1,4 +1,6 @@
-﻿namespace ASRFLY.Gui.GuiCategories;
+﻿using DocumentFormat.OpenXml.Drawing.Spreadsheet;
+
+namespace ASRFLY.Gui.GuiCategories;
 
 public partial class AddCategoryForm : Form
 {
@@ -8,12 +10,15 @@ public partial class AddCategoryForm : Form
     private Categories categories;
     private readonly IDataHelper<Categories> _dataHelper;
     private readonly LoadingForm loadingForm;
+    private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
+
 
     //ctor
     public AddCategoryForm(int Id, CategoryUserControl categoryuserControl)
     {
         InitializeComponent();
         _dataHelper = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
+        _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         _categoryuserControl = categoryuserControl;
         ID = Id;
@@ -133,6 +138,15 @@ public partial class AddCategoryForm : Form
         var result = await _dataHelper.AddAsync(categories);
         if (result == 1)
         {
+            // Save SystemRecord
+            SystemRecord systemRecord = new SystemRecord
+            {
+                Title = "أضافة صنف",
+                UserName = Settings.Default.UserName,
+                Details = "تمت أضافه صنف  " +categories.Name, 
+                AddedDate = DateTime.Now,
+            };
+            await _dataHelperSystemRecord.AddAsync(systemRecord);
             _categoryuserControl.LaodData();
             return true;
         }
@@ -160,7 +174,15 @@ public partial class AddCategoryForm : Form
 
         var result = await _dataHelper.EditAsync(categories);
         if (result == 1)
-        {
+        { // Save SystemRecord
+            SystemRecord systemRecord = new SystemRecord
+            {
+                Title = "تعديل صنف ",
+                UserName = Settings.Default.UserName,
+                Details = "تم تعديل صنف " + categories.Name,
+                AddedDate = DateTime.Now,
+            };
+            await _dataHelperSystemRecord.AddAsync(systemRecord);
             _categoryuserControl.LaodData();
             return true;
         }

@@ -1,10 +1,10 @@
-﻿namespace ASRFLY.Gui.GuiCategories;
+﻿namespace ASRFLY.Gui.GuiCustomers;
 
-public partial class AddCategoryForm : Form
+public partial class AddCustomersForm : Form
 {
     //variables
     private readonly int ID;
-    private readonly CategoryUserControl _categoryuserControl;
+    private readonly CustomersUserControl _categoryuserControl;
     private Categories categories;
     private readonly IDataHelper<Categories> _dataHelper;
     private readonly LoadingForm loadingForm;
@@ -12,7 +12,7 @@ public partial class AddCategoryForm : Form
 
 
     //ctor
-    public AddCategoryForm(int Id, CategoryUserControl categoryuserControl)
+    public AddCustomersForm(int Id, CustomersUserControl categoryuserControl)
     {
         InitializeComponent();
         _dataHelper = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");

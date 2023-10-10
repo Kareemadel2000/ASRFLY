@@ -1,21 +1,21 @@
 ﻿using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Spreadsheet;
 
-namespace ASRFLY.Gui.GuiCategories;
+namespace ASRFLY.Gui.GuiCustomers;
 
-public partial class CategoryUserControl : UserControl
+public partial class CustomersUserControl : UserControl
 {
     //variables
     private readonly IDataHelper<Categories> _dataHelper;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
-    private static CategoryUserControl _CategoryUserControl;
+    private static CustomersUserControl _CategoryUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
     private List<int> IdList = new List<int>();
     private string searchItem;
 
     //ctor
-    public CategoryUserControl()
+    public CustomersUserControl()
     {
         InitializeComponent();
         _dataHelper = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
@@ -27,7 +27,7 @@ public partial class CategoryUserControl : UserControl
     #region Events
     private void buttonAdd_Click(object sender, EventArgs e)
     {
-        AddCategoryForm addCategoryForm = new AddCategoryForm(0, this);
+        AddCustomersForm addCategoryForm = new AddCustomersForm(0, this);
         addCategoryForm.Show();
     }
 
@@ -147,9 +147,9 @@ public partial class CategoryUserControl : UserControl
     #endregion
 
     #region Methods
-    public static CategoryUserControl Instance()
+    public static CustomersUserControl Instance()
     {
-        return _CategoryUserControl ?? (new CategoryUserControl());
+        return _CategoryUserControl ?? (new CustomersUserControl());
     }
     public async void LaodData()
     {
@@ -195,7 +195,7 @@ public partial class CategoryUserControl : UserControl
         {
             // Get Id 
             RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            AddCategoryForm addCategoryForm = new AddCategoryForm(RowId, this);
+            AddCustomersForm addCategoryForm = new AddCustomersForm(RowId, this);
             addCategoryForm.Show();
         }
         else

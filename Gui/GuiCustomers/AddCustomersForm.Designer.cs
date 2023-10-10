@@ -1,6 +1,6 @@
-﻿namespace ASRFLY.Gui.GuiCategories;
+﻿namespace ASRFLY.Gui.GuiCustomers;
 
-partial class AddCategoryForm 
+partial class AddCustomersForm
 {
     /// <summary>
     /// Required designer variable.

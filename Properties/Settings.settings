@@ -12,7 +12,7 @@
       <Value Profile="(Default)">كريم بلابل</Value>
     </Setting>
     <Setting Name="DataGridViewRowNo" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">10</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
   </Settings>
 </SettingsFile>

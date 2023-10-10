@@ -61,7 +61,7 @@ namespace ASRFLY.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public int DataGridViewRowNo {
             get {
                 return ((int)(this["DataGridViewRowNo"]));

@@ -134,6 +134,17 @@ public partial class CategoryUserControl : UserControl
         loadingForm.Show();
         var data = await _dataHelper.GetAllDataAsync();
         dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
+
+        // Add Number of page into ComboBox
+
+        comboBoxPageNo.Items.Clear();
+        var NoOfPage = Convert.ToInt32((data.Count / Properties.Settings.Default.DataGridViewRowNo));
+
+        for (int i = 0; i < NoOfPage; i++)
+        {
+            comboBoxPageNo.Items.Add(i);
+        }
+
         if (dataGridView1.DataSource == null)
         {
             MassageCollection.ShowErrorServer();
@@ -143,6 +154,7 @@ public partial class CategoryUserControl : UserControl
             SetColumnsTitle();
         }
         loadingForm.Hide();
+        data.Clear();
     }
     private void SetColumnsTitle()
     {
@@ -251,8 +263,24 @@ public partial class CategoryUserControl : UserControl
 
     #endregion
 
-    private void comboBoxPageNo_SelectedIndexChanged(object sender, EventArgs e)
+    private async void comboBoxPageNo_SelectedIndexChanged(object sender, EventArgs e)
     {
+        loadingForm.Show();
+        var data = await _dataHelper.GetAllDataAsync();
+        var dataId = data.Select(x => x.Id).ToArray();
+        int index =  comboBoxPageNo.SelectedIndex;
+        int IndexNoOfRow = index * Properties.Settings.Default.DataGridViewRowNo;
 
+        dataGridView1.DataSource = data.Where(x=> x.Id >= dataId[IndexNoOfRow]).Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
+        if (dataGridView1.DataSource == null)
+        {
+            MassageCollection.ShowErrorServer();
+        }
+        else
+        {
+            SetColumnsTitle();
+        }
+        loadingForm.Hide();
+        data.Clear();
     }
 }

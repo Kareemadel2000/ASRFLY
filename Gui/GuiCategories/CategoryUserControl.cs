@@ -138,7 +138,8 @@ public partial class CategoryUserControl : UserControl
         // Add Number of page into ComboBox
 
         comboBoxPageNo.Items.Clear();
-        var NoOfPage = Convert.ToInt32((data.Count / Properties.Settings.Default.DataGridViewRowNo));
+        double value = (Convert.ToDouble(data.Count) / Convert.ToDouble(Properties.Settings.Default.DataGridViewRowNo));
+        var NoOfPage = (int)Math.Round(value, MidpointRounding.AwayFromZero);
 
         for (int i = 0; i < NoOfPage; i++)
         {
@@ -268,10 +269,10 @@ public partial class CategoryUserControl : UserControl
         loadingForm.Show();
         var data = await _dataHelper.GetAllDataAsync();
         var dataId = data.Select(x => x.Id).ToArray();
-        int index =  comboBoxPageNo.SelectedIndex;
+        int index = comboBoxPageNo.SelectedIndex;
         int IndexNoOfRow = index * Properties.Settings.Default.DataGridViewRowNo;
 
-        dataGridView1.DataSource = data.Where(x=> x.Id >= dataId[IndexNoOfRow]).Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
+        dataGridView1.DataSource = data.Where(x => x.Id >= dataId[IndexNoOfRow]).Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
         if (dataGridView1.DataSource == null)
         {
             MassageCollection.ShowErrorServer();

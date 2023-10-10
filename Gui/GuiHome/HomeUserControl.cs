@@ -11,4 +11,9 @@ public partial class HomeUserControl : UserControl
     {
         return _homeUserControl ?? (new HomeUserControl());
     }
+
+    private void buttonAddCategory_Click(object sender, EventArgs e)
+    {
+        //LoadingForm();
+    }
 }

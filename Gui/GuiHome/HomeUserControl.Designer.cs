@@ -81,7 +81,7 @@
             buttonAddInput.BackColor = Color.White;
             buttonAddInput.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddInput.ForeColor = Color.Black;
-            buttonAddInput.Image = Properties.Resources.Input_1;
+            buttonAddInput.Image = Resources.Input_1;
             buttonAddInput.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAddInput.Location = new Point(56, 28);
             buttonAddInput.Margin = new Padding(5);
@@ -96,7 +96,7 @@
             buttonAddUsers.BackColor = Color.White;
             buttonAddUsers.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddUsers.ForeColor = Color.Black;
-            buttonAddUsers.Image = Properties.Resources.Conference_Skin_Type_7;
+            buttonAddUsers.Image = Resources.Conference_Skin_Type_7;
             buttonAddUsers.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAddUsers.Location = new Point(304, 27);
             buttonAddUsers.Margin = new Padding(5);
@@ -111,7 +111,7 @@
             buttonAddProjects.BackColor = Color.White;
             buttonAddProjects.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddProjects.ForeColor = Color.Black;
-            buttonAddProjects.Image = Properties.Resources.Group_of_Projects_1;
+            buttonAddProjects.Image = Resources.Group_of_Projects_1;
             buttonAddProjects.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAddProjects.Location = new Point(416, 27);
             buttonAddProjects.Margin = new Padding(5);
@@ -126,7 +126,7 @@
             buttonAddSuppliers.BackColor = Color.White;
             buttonAddSuppliers.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddSuppliers.ForeColor = Color.Black;
-            buttonAddSuppliers.Image = Properties.Resources.Crowd;
+            buttonAddSuppliers.Image = Resources.Crowd;
             buttonAddSuppliers.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAddSuppliers.Location = new Point(534, 28);
             buttonAddSuppliers.Margin = new Padding(5);
@@ -141,7 +141,7 @@
             buttonAddCustomers.BackColor = Color.White;
             buttonAddCustomers.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddCustomers.ForeColor = Color.Black;
-            buttonAddCustomers.Image = Properties.Resources.Users;
+            buttonAddCustomers.Image = Resources.Users;
             buttonAddCustomers.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAddCustomers.Location = new Point(652, 28);
             buttonAddCustomers.Margin = new Padding(5);
@@ -156,7 +156,7 @@
             buttonAddCategory.BackColor = Color.White;
             buttonAddCategory.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddCategory.ForeColor = Color.Black;
-            buttonAddCategory.Image = Properties.Resources.Categorize;
+            buttonAddCategory.Image = Resources.Categorize;
             buttonAddCategory.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAddCategory.Location = new Point(770, 27);
             buttonAddCategory.Margin = new Padding(5);
@@ -165,13 +165,14 @@
             buttonAddCategory.TabIndex = 5;
             buttonAddCategory.Text = "       صنف\r\n";
             buttonAddCategory.UseVisualStyleBackColor = true;
+            buttonAddCategory.Click += buttonAddCategory_Click;
             // 
             // buttonAddOutput
             // 
             buttonAddOutput.BackColor = Color.White;
             buttonAddOutput.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddOutput.ForeColor = Color.Black;
-            buttonAddOutput.Image = Properties.Resources.Output_1;
+            buttonAddOutput.Image = Resources.Output_1;
             buttonAddOutput.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAddOutput.Location = new Point(180, 28);
             buttonAddOutput.Margin = new Padding(5);
@@ -187,11 +188,10 @@
             label1.Font = new Font("Calibri", 18F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(886, 0);
             label1.Name = "label1";
-            label1.Size = new Size(137, 29);
+            label1.Size = new Size(174, 37);
             label1.TabIndex = 3;
             label1.Text = "الوصول السريع ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            
             // 
             // panel2
             // 
@@ -216,7 +216,7 @@
             // pictureBoxLogo
             // 
             pictureBoxLogo.Dock = DockStyle.Right;
-            pictureBoxLogo.Image = Properties.Resources.Smart_1;
+            pictureBoxLogo.Image = Resources.Smart_1;
             pictureBoxLogo.Location = new Point(354, 0);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(85, 97);
@@ -233,11 +233,10 @@
             labelWellcome.TabIndex = 11;
             labelWellcome.Text = "مرحبا بك مجددا في ASRFLY\r\n";
             labelWellcome.TextAlign = ContentAlignment.BottomCenter;
-            
             // 
             // HomeUserControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(labelWellcome);

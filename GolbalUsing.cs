@@ -4,6 +4,8 @@ global using FastMember;
 global using System.Data;
 global using ASRFLY.Code;
 global using ASRFLY.Gui.GuiHome;
+global using ASRFLY.Gui.GuiCategories;
+global using ASRFLY.Gui.GuiCustomers;
 global using ASRFLY.Properties;
 global using ASRFLY.Core.Entityes;
 global using ASRFLY.Data;

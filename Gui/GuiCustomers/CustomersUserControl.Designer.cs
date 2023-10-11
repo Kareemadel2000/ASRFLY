@@ -168,11 +168,12 @@ partial class CustomersUserControl
         // 
         // textBoxSearch
         // 
-        textBoxSearch.Font = new Font("Calibri", 30F, FontStyle.Bold, GraphicsUnit.Point);
-        textBoxSearch.Location = new Point(91, -4);
+        textBoxSearch.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        textBoxSearch.Location = new Point(91, 0);
         textBoxSearch.Margin = new Padding(5);
+        textBoxSearch.Multiline = true;
         textBoxSearch.Name = "textBoxSearch";
-        textBoxSearch.Size = new Size(333, 69);
+        textBoxSearch.Size = new Size(333, 55);
         textBoxSearch.TabIndex = 7;
         textBoxSearch.TextAlign = HorizontalAlignment.Center;
         textBoxSearch.TextChanged += textBoxSearch_TextChanged;
@@ -249,13 +250,13 @@ partial class CustomersUserControl
         comboBoxPageNo.FormattingEnabled = true;
         comboBoxPageNo.Location = new Point(33, 560);
         comboBoxPageNo.Name = "comboBoxPageNo";
-        comboBoxPageNo.Size = new Size(124, 37);
+        comboBoxPageNo.Size = new Size(124, 31);
         comboBoxPageNo.TabIndex = 5;
         comboBoxPageNo.SelectedIndexChanged += comboBoxPageNo_SelectedIndexChanged;
         // 
-        // CategoryUserControl
+        // CustomersUserControl
         // 
-        AutoScaleDimensions = new SizeF(12F, 29F);
+        AutoScaleDimensions = new SizeF(10F, 23F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.White;
         Controls.Add(comboBoxPageNo);
@@ -263,7 +264,7 @@ partial class CustomersUserControl
         Controls.Add(flowLayoutPanel1);
         Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         Margin = new Padding(4, 5, 4, 5);
-        Name = "CategoryUserControl";
+        Name = "CustomersUserControl";
         RightToLeft = RightToLeft.Yes;
         Size = new Size(1262, 600);
         flowLayoutPanel1.ResumeLayout(false);

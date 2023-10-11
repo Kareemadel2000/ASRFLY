@@ -26,7 +26,13 @@ public partial class Main : Form
         // load Categories page 
         pageManager.LoadPage(CategoryUserControl.Instance());
     }
+    private void buttonCustomers_Click(object sender, EventArgs e)
+    {
+        // load Customers page 
+        pageManager.LoadPage(CustomersUserControl.Instance());
+    }
     #endregion
+
 
 
 }

@@ -1,14 +1,13 @@
 ﻿using ClosedXML.Excel;
-using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace ASRFLY.Gui.GuiCustomers;
 
 public partial class CustomersUserControl : UserControl
 {
     //variables
-    private readonly IDataHelper<Categories> _dataHelper;
+    private readonly IDataHelper<Customers> _dataHelper;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
-    private static CustomersUserControl _CategoryUserControl;
+    private static CustomersUserControl _CustomersUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
     private List<int> IdList = new List<int>();
@@ -18,7 +17,7 @@ public partial class CustomersUserControl : UserControl
     public CustomersUserControl()
     {
         InitializeComponent();
-        _dataHelper = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
+        _dataHelper = (IDataHelper<Customers>)ConfigrationObjectManager.GetObject("Customers");
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         LaodData();
@@ -27,8 +26,8 @@ public partial class CustomersUserControl : UserControl
     #region Events
     private void buttonAdd_Click(object sender, EventArgs e)
     {
-        AddCustomersForm addCategoryForm = new AddCustomersForm(0, this);
-        addCategoryForm.Show();
+        AddCustomersForm addCustomersForm = new AddCustomersForm(0, this);
+        addCustomersForm.Show();
     }
 
     private void buttonEdit_Click(object sender, EventArgs e)
@@ -59,7 +58,7 @@ public partial class CustomersUserControl : UserControl
                             {
                                 Title = "عملية حذف",
                                 UserName = Settings.Default.UserName,
-                                Details = "تم حذف صنف ذى الرقم التعريفي" + RowId.ToString(),
+                                Details = "تم حذف عميل ذى الرقم التعريفي" + RowId.ToString(),
                                 AddedDate = DateTime.Now,
                             };
                             await _dataHelperSystemRecord.AddAsync(systemRecord);
@@ -89,11 +88,13 @@ public partial class CustomersUserControl : UserControl
     private async void buttonExport_Click(object sender, EventArgs e)
     {
         // Conver List of Data to DataTable
+        DataTable table = new DataTable();
         loadingForm.Show();
         var data = await _dataHelper.GetAllDataAsync();
-        DataTable table = new DataTable();
-        using var reader = ObjectReader.Create(data);
-        table.Load(reader);
+        using (var reader = ObjectReader.Create(data))
+        {
+            table.Load(reader);
+        }
         loadingForm.Hide();
 
         //Re-Set Colunm
@@ -149,7 +150,7 @@ public partial class CustomersUserControl : UserControl
     #region Methods
     public static CustomersUserControl Instance()
     {
-        return _CategoryUserControl ?? (new CustomersUserControl());
+        return _CustomersUserControl ?? (new CustomersUserControl());
     }
     public async void LaodData()
     {
@@ -183,10 +184,12 @@ public partial class CustomersUserControl : UserControl
     {
         dataGridView1.Columns[0].HeaderText = "المعرف";
         dataGridView1.Columns[1].HeaderText = "الاسم";
-        dataGridView1.Columns[2].HeaderText = "النوع";
-        dataGridView1.Columns[3].HeaderText = "التفاصيل";
-        dataGridView1.Columns[4].HeaderText = "الرصيد";
-        dataGridView1.Columns[5].HeaderText = "تاريخ الاضافة";
+        dataGridView1.Columns[2].HeaderText = "رقم الهاتف";
+        dataGridView1.Columns[3].HeaderText = "العنوان";
+        dataGridView1.Columns[4].HeaderText = "البريد الالكترونى";
+        dataGridView1.Columns[5].HeaderText = "التفاصيل";
+        dataGridView1.Columns[6].HeaderText = "الرصيد";
+        dataGridView1.Columns[7].HeaderText = "تاريخ الاضافة";
     }
 
     private void Edit()
@@ -195,8 +198,8 @@ public partial class CustomersUserControl : UserControl
         {
             // Get Id 
             RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            AddCustomersForm addCategoryForm = new AddCustomersForm(RowId, this);
-            addCategoryForm.Show();
+            AddCustomersForm addCustomersForm = new AddCustomersForm(RowId, this);
+            addCustomersForm.Show();
         }
         else
         {
@@ -239,20 +242,26 @@ public partial class CustomersUserControl : UserControl
         table.Columns["Name"].SetOrdinal(1);
         table.Columns["Name"].ColumnName = "الاسم";
 
-        table.Columns["Type"].SetOrdinal(2);
-        table.Columns["Type"].ColumnName = "النوع";
+        table.Columns["PhoneNumber"].SetOrdinal(2);
+        table.Columns["PhoneNumber"].ColumnName = "رقم الهاتف";
 
-        table.Columns["Details"].SetOrdinal(3);
+        table.Columns["Address"].SetOrdinal(3);
+        table.Columns["Address"].ColumnName = "العنوان";
+
+        table.Columns["Email"].SetOrdinal(4);
+        table.Columns["Email"].ColumnName = "البريد الالكترونى";
+
+        table.Columns["Details"].SetOrdinal(5);
         table.Columns["Details"].ColumnName = "التفاصيل";
 
-        table.Columns["Balance"].SetOrdinal(4);
+        table.Columns["Balance"].SetOrdinal(6);
         table.Columns["Balance"].ColumnName = "الرصيد";
 
-        table.Columns["AddedDate"].SetOrdinal(5);
+        table.Columns["AddedDate"].SetOrdinal(7);
         table.Columns["AddedDate"].ColumnName = "تاريخ الاضافة";
+
         return table;
     }
-
     private void ExportAsXlsxFile(DataTable dataTableArranged)
     {
         SaveFileDialog saveFileDialog = new SaveFileDialog();

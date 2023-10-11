@@ -112,6 +112,7 @@
             buttonCustomers.TabIndex = 2;
             buttonCustomers.Text = "العملاء ";
             buttonCustomers.UseVisualStyleBackColor = true;
+            buttonCustomers.Click += buttonCustomers_Click;
             // 
             // buttonSuppliers
             // 

@@ -5,8 +5,8 @@ public partial class AddCustomersForm : Form
     //variables
     private readonly int ID;
     private readonly CustomersUserControl _categoryuserControl;
-    private Categories categories;
-    private readonly IDataHelper<Categories> _dataHelper;
+    private Customers customers;
+    private readonly IDataHelper<Customers> _dataHelper;
     private readonly LoadingForm loadingForm;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
 
@@ -15,12 +15,12 @@ public partial class AddCustomersForm : Form
     public AddCustomersForm(int Id, CustomersUserControl categoryuserControl)
     {
         InitializeComponent();
-        _dataHelper = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
+        _dataHelper = (IDataHelper<Customers>)ConfigrationObjectManager.GetObject("Customers");
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         _categoryuserControl = categoryuserControl;
         ID = Id;
-        //_categories = categories;
+        //_customers = customers;
     }
 
     #region Events
@@ -87,6 +87,16 @@ public partial class AddCustomersForm : Form
         SetFieldData();
         loadingForm.Hide();
     }
+
+    private void textBox1_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void label3_Click(object sender, EventArgs e)
+    {
+    }
+
     #endregion
 
     //Method 
@@ -109,7 +119,7 @@ public partial class AddCustomersForm : Form
     #region IsFiledsEmpty
     private bool IsFiledsEmpty()
     {
-        if (textBoxName.Text == string.Empty || comboBoxType.Text == string.Empty)
+        if (textBoxName.Text == string.Empty)
         {
             return true;
         }
@@ -124,24 +134,26 @@ public partial class AddCustomersForm : Form
     private async Task<bool> AddData()
     {
         // Set Data 
-        categories = new Categories
+        customers = new Customers
         {
             Name = textBoxName.Text,
-            Type = comboBoxType.SelectedItem.ToString()!,
+            Address = textBoxAddress.Text,
+            PhoneNumber = textBoxPhoneNumber.Text,
+            Email = textBoxEmail.Text,
             Details = richTextBoxDetails.Text,
             AddedDate = DateTime.Now
         };
         // Sumbit
 
-        var result = await _dataHelper.AddAsync(categories);
+        var result = await _dataHelper.AddAsync(customers);
         if (result == 1)
         {
             // Save SystemRecord
             SystemRecord systemRecord = new SystemRecord
             {
-                Title = "أضافة صنف",
+                Title = "أضافة عميل",
                 UserName = Settings.Default.UserName,
-                Details = "تمت أضافه صنف  " + categories.Name,
+                Details = "تمت أضافه عميل  " + customers.Name,
                 AddedDate = DateTime.Now,
             };
             await _dataHelperSystemRecord.AddAsync(systemRecord);
@@ -160,24 +172,26 @@ public partial class AddCustomersForm : Form
     private async Task<bool> EditData()
     {
         // Set Data 
-        categories = new Categories
+        customers = new Customers
         {
             Id = ID,
             Name = textBoxName.Text,
-            Type = comboBoxType.SelectedItem.ToString()!,
+            Address = textBoxAddress.Text,
+            PhoneNumber = textBoxPhoneNumber.Text,
+            Email = textBoxEmail.Text,
             Details = richTextBoxDetails.Text,
             AddedDate = DateTime.Now
         };
         // Sumbit
 
-        var result = await _dataHelper.EditAsync(categories);
+        var result = await _dataHelper.EditAsync(customers);
         if (result == 1)
         { // Save SystemRecord
             SystemRecord systemRecord = new SystemRecord
             {
-                Title = "تعديل صنف ",
+                Title = "تعديل عميل ",
                 UserName = Settings.Default.UserName,
-                Details = "تم تعديل صنف  " + categories.Name,
+                Details = "تم تعديل عميل  " + customers.Name,
                 AddedDate = DateTime.Now,
             };
             await _dataHelperSystemRecord.AddAsync(systemRecord);
@@ -198,13 +212,17 @@ public partial class AddCustomersForm : Form
         if (ID > 0)
         {
             // Set Fields
-            categories = await _dataHelper.FindAsync(ID);
-            if (categories != null)
+            customers = await _dataHelper.FindAsync(ID);
+            if (customers != null)
             {
-                textBoxName.Text = categories.Name;
-                textBoxBalance.Text = categories.Balance.ToString();
-                comboBoxType.SelectedItem = categories.Type;
-                richTextBoxDetails.Text = categories.Details;
+                textBoxName.Text = customers.Name;
+
+                textBoxAddress.Text = customers.Address;
+                textBoxPhoneNumber.Text = customers.PhoneNumber;
+                textBoxEmail.Text = customers.Email;
+                textBoxBalance.Text = customers.Balance.ToString();
+                
+                richTextBoxDetails.Text = customers.Details;
             }
             else
             {
@@ -214,12 +232,5 @@ public partial class AddCustomersForm : Form
     }
     #endregion
 
-    private void textBox1_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void label3_Click(object sender, EventArgs e)
-    {
-    }
+   
 }

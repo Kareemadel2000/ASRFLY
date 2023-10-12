@@ -31,7 +31,13 @@ public partial class Main : Form
         // load Customers page 
         pageManager.LoadPage(CustomersUserControl.Instance());
     }
+    private void buttonSuppliers_Click(object sender, EventArgs e)
+    {
+        // load Suppliers page 
+        pageManager.LoadPage(SuppliersUserControl.Instance());
+    }
     #endregion
+
 
 
 

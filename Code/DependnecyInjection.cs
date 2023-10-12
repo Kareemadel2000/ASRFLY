@@ -6,5 +6,7 @@ public static class DependnecyInjection
         ConfigrationObjectManager.Register("Categories", new CategoriesEntity());
         ConfigrationObjectManager.Register("SystemRecord", new SystemRecordEntity());
         ConfigrationObjectManager.Register("Customers", new CustomersEntity());
+        ConfigrationObjectManager.Register("Suppliers", new SuppliersEntity());
+
     }
 }

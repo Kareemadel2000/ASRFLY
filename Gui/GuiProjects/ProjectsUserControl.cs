@@ -5,9 +5,9 @@ namespace ASRFLY.Gui.GuiProjects;
 public partial class ProjectsUserControl : UserControl
 {
     //variables
-    private readonly IDataHelper<Suppliers> _dataHelper;
+    private readonly IDataHelper<Projects> _dataHelper;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
-    private static SuppliersUserControl _SuppliersUserControl;
+    private static ProjectsUserControl _ProjectsUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
     private List<int> IdList = new List<int>();
@@ -17,7 +17,7 @@ public partial class ProjectsUserControl : UserControl
     public ProjectsUserControl()
     {
         InitializeComponent();
-        _dataHelper = (IDataHelper<Suppliers>)ConfigrationObjectManager.GetObject("Suppliers");
+        _dataHelper = (IDataHelper<Projects>)ConfigrationObjectManager.GetObject("Projects");
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         LaodData();
@@ -26,8 +26,8 @@ public partial class ProjectsUserControl : UserControl
     #region Events
     private void buttonAdd_Click(object sender, EventArgs e)
     {
-        AddSuppliersForm addSuppliersForm = new AddSuppliersForm(0, this);
-        addSuppliersForm.Show();
+        AddProjectsForm addProjectsForm = new AddProjectsForm(0, this);
+        addProjectsForm.Show();
     }
 
     private void buttonEdit_Click(object sender, EventArgs e)
@@ -148,9 +148,9 @@ public partial class ProjectsUserControl : UserControl
     #endregion
 
     #region Methods
-    public static SuppliersUserControl Instance()
+    public static ProjectsUserControl Instance()
     {
-        return _SuppliersUserControl ?? (new SuppliersUserControl());
+        return _ProjectsUserControl ?? (new ProjectsUserControl());
     }
     public async void LaodData()
     {
@@ -198,8 +198,8 @@ public partial class ProjectsUserControl : UserControl
         {
             // Get Id 
             RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            AddSuppliersForm addSuppliersForm = new AddSuppliersForm(RowId, this);
-            addSuppliersForm.Show();
+            AddProjectsForm addProjectsForm = new AddProjectsForm(RowId, this);
+            addProjectsForm.Show();
         }
         else
         {

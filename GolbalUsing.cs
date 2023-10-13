@@ -2,6 +2,11 @@
 global using System.Linq;
 global using FastMember;
 global using System.Data;
+
+global using System.Collections.Generic;
+global using System.Text;
+global using System.Threading.Tasks;
+
 global using ASRFLY.Code;
 global using ASRFLY.Gui.GuiHome;
 global using ASRFLY.Gui.GuiCategories;

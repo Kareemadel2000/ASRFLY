@@ -32,6 +32,9 @@ partial class AddProjectsForm
         buttonSave = new Button();
         buttonSaveAndClose = new Button();
         groupBox1 = new GroupBox();
+        dateTimePickerEndDate = new DateTimePicker();
+        dateTimePickerStartDate = new DateTimePicker();
+        comboBoxCustomer = new ComboBox();
         label9 = new Label();
         label8 = new Label();
         label7 = new Label();
@@ -51,9 +54,6 @@ partial class AddProjectsForm
         label4 = new Label();
         textBoxOutcome = new TextBox();
         label16 = new Label();
-        comboBoxCustomer = new ComboBox();
-        dateTimePickerStartDate = new DateTimePicker();
-        dateTimePickerEndDate = new DateTimePicker();
         panel1.SuspendLayout();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
@@ -128,14 +128,37 @@ partial class AddProjectsForm
         groupBox1.TabIndex = 1;
         groupBox1.TabStop = false;
         groupBox1.Text = "معلومات المشروع ";
-        groupBox1.Enter += groupBox1_Enter;
+        // 
+        // dateTimePickerEndDate
+        // 
+        dateTimePickerEndDate.Location = new Point(6, 306);
+        dateTimePickerEndDate.Name = "dateTimePickerEndDate";
+        dateTimePickerEndDate.Size = new Size(297, 27);
+        dateTimePickerEndDate.TabIndex = 23;
+        // 
+        // dateTimePickerStartDate
+        // 
+        dateTimePickerStartDate.Location = new Point(6, 256);
+        dateTimePickerStartDate.Name = "dateTimePickerStartDate";
+        dateTimePickerStartDate.Size = new Size(297, 27);
+        dateTimePickerStartDate.TabIndex = 22;
+        // 
+        // comboBoxCustomer
+        // 
+        comboBoxCustomer.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+        comboBoxCustomer.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        comboBoxCustomer.FormattingEnabled = true;
+        comboBoxCustomer.Location = new Point(6, 89);
+        comboBoxCustomer.Name = "comboBoxCustomer";
+        comboBoxCustomer.Size = new Size(297, 27);
+        comboBoxCustomer.TabIndex = 21;
         // 
         // label9
         // 
         label9.AutoSize = true;
         label9.Location = new Point(342, 306);
         label9.Name = "label9";
-        label9.Size = new Size(101, 24);
+        label9.Size = new Size(81, 19);
         label9.TabIndex = 20;
         label9.Text = "نهاية المشروع";
         // 
@@ -144,7 +167,7 @@ partial class AddProjectsForm
         label8.AutoSize = true;
         label8.Location = new Point(341, 256);
         label8.Name = "label8";
-        label8.Size = new Size(102, 24);
+        label8.Size = new Size(82, 19);
         label8.TabIndex = 18;
         label8.Text = "بداية المشروع";
         // 
@@ -153,17 +176,16 @@ partial class AddProjectsForm
         label7.AutoSize = true;
         label7.Location = new Point(337, 203);
         label7.Name = "label7";
-        label7.Size = new Size(106, 24);
+        label7.Size = new Size(86, 19);
         label7.TabIndex = 16;
         label7.Text = "الشركة المنفذة";
-        label7.Click += label7_Click;
         // 
         // label5
         // 
         label5.AutoSize = true;
         label5.Location = new Point(386, 146);
         label5.Name = "label5";
-        label5.Size = new Size(57, 24);
+        label5.Size = new Size(47, 19);
         label5.TabIndex = 15;
         label5.Text = "العنوان";
         // 
@@ -172,7 +194,7 @@ partial class AddProjectsForm
         textBoxComapany.Cursor = Cursors.IBeam;
         textBoxComapany.Location = new Point(6, 202);
         textBoxComapany.Name = "textBoxComapany";
-        textBoxComapany.Size = new Size(297, 32);
+        textBoxComapany.Size = new Size(297, 27);
         textBoxComapany.TabIndex = 14;
         textBoxComapany.TextAlign = HorizontalAlignment.Center;
         // 
@@ -181,7 +203,7 @@ partial class AddProjectsForm
         textBoxAddress.Cursor = Cursors.IBeam;
         textBoxAddress.Location = new Point(6, 145);
         textBoxAddress.Name = "textBoxAddress";
-        textBoxAddress.Size = new Size(297, 32);
+        textBoxAddress.Size = new Size(297, 27);
         textBoxAddress.TabIndex = 13;
         textBoxAddress.TextAlign = HorizontalAlignment.Center;
         // 
@@ -191,7 +213,7 @@ partial class AddProjectsForm
         label6.ForeColor = Color.Red;
         label6.Location = new Point(321, 44);
         label6.Name = "label6";
-        label6.Size = new Size(20, 24);
+        label6.Size = new Size(17, 19);
         label6.TabIndex = 11;
         label6.Text = "*";
         // 
@@ -209,7 +231,7 @@ partial class AddProjectsForm
         label3.AutoSize = true;
         label3.Location = new Point(388, 89);
         label3.Name = "label3";
-        label3.Size = new Size(55, 24);
+        label3.Size = new Size(44, 19);
         label3.TabIndex = 4;
         label3.Text = "العميل";
         label3.Click += label3_Click;
@@ -219,7 +241,7 @@ partial class AddProjectsForm
         label2.AutoSize = true;
         label2.Location = new Point(372, 376);
         label2.Name = "label2";
-        label2.Size = new Size(71, 24);
+        label2.Size = new Size(58, 19);
         label2.TabIndex = 2;
         label2.Text = "التفاصيل";
         // 
@@ -238,7 +260,7 @@ partial class AddProjectsForm
         label1.AutoSize = true;
         label1.Location = new Point(347, 44);
         label1.Name = "label1";
-        label1.Size = new Size(96, 24);
+        label1.Size = new Size(77, 19);
         label1.TabIndex = 0;
         label1.Text = "اسم المشروع";
         // 
@@ -248,7 +270,7 @@ partial class AddProjectsForm
         textBoxIncome.Enabled = false;
         textBoxIncome.Location = new Point(19, 81);
         textBoxIncome.Name = "textBoxIncome";
-        textBoxIncome.Size = new Size(270, 32);
+        textBoxIncome.Size = new Size(270, 27);
         textBoxIncome.TabIndex = 7;
         textBoxIncome.Text = "0";
         textBoxIncome.TextAlign = HorizontalAlignment.Center;
@@ -273,7 +295,7 @@ partial class AddProjectsForm
         label10.AutoSize = true;
         label10.Location = new Point(140, 200);
         label10.Name = "label10";
-        label10.Size = new Size(51, 24);
+        label10.Size = new Size(42, 19);
         label10.TabIndex = 10;
         label10.Text = "الأرباح";
         // 
@@ -282,7 +304,7 @@ partial class AddProjectsForm
         textBoxRevenue.Cursor = Cursors.IBeam;
         textBoxRevenue.Location = new Point(19, 241);
         textBoxRevenue.Name = "textBoxRevenue";
-        textBoxRevenue.Size = new Size(270, 32);
+        textBoxRevenue.Size = new Size(270, 27);
         textBoxRevenue.TabIndex = 9;
         textBoxRevenue.Text = "0";
         textBoxRevenue.TextAlign = HorizontalAlignment.Center;
@@ -292,7 +314,7 @@ partial class AddProjectsForm
         label4.AutoSize = true;
         label4.Location = new Point(126, 122);
         label4.Name = "label4";
-        label4.Size = new Size(85, 24);
+        label4.Size = new Size(70, 19);
         label4.TabIndex = 8;
         label4.Text = "المصروفات";
         // 
@@ -301,7 +323,7 @@ partial class AddProjectsForm
         textBoxOutcome.Cursor = Cursors.IBeam;
         textBoxOutcome.Location = new Point(19, 161);
         textBoxOutcome.Name = "textBoxOutcome";
-        textBoxOutcome.Size = new Size(270, 32);
+        textBoxOutcome.Size = new Size(270, 27);
         textBoxOutcome.TabIndex = 1;
         textBoxOutcome.Text = "0";
         textBoxOutcome.TextAlign = HorizontalAlignment.Center;
@@ -311,35 +333,13 @@ partial class AddProjectsForm
         label16.AutoSize = true;
         label16.Location = new Point(126, 38);
         label16.Name = "label16";
-        label16.Size = new Size(86, 24);
+        label16.Size = new Size(71, 19);
         label16.TabIndex = 0;
         label16.Text = "المقبوضات";
         // 
-        // comboBoxCustomer
-        // 
-        comboBoxCustomer.FormattingEnabled = true;
-        comboBoxCustomer.Location = new Point(6, 89);
-        comboBoxCustomer.Name = "comboBoxCustomer";
-        comboBoxCustomer.Size = new Size(297, 32);
-        comboBoxCustomer.TabIndex = 21;
-        // 
-        // dateTimePickerStartDate
-        // 
-        dateTimePickerStartDate.Location = new Point(6, 256);
-        dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-        dateTimePickerStartDate.Size = new Size(297, 32);
-        dateTimePickerStartDate.TabIndex = 22;
-        // 
-        // dateTimePickerEndDate
-        // 
-        dateTimePickerEndDate.Location = new Point(6, 306);
-        dateTimePickerEndDate.Name = "dateTimePickerEndDate";
-        dateTimePickerEndDate.Size = new Size(297, 32);
-        dateTimePickerEndDate.TabIndex = 23;
-        // 
         // AddProjectsForm
         // 
-        AutoScaleDimensions = new SizeF(10F, 24F);
+        AutoScaleDimensions = new SizeF(8F, 19F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(806, 553);
         Controls.Add(groupBox2);

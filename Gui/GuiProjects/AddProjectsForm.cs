@@ -4,23 +4,24 @@ public partial class AddProjectsForm : Form
 {
     //variables
     private readonly int ID;
-    private readonly SuppliersUserControl _categoryuserControl;
-    private Suppliers suppliers;
-    private readonly IDataHelper<Suppliers> _dataHelper;
+    private readonly ProjectsUserControl _projectsUserControl;
+    private Projects projects;
+    private readonly IDataHelper<Projects> _dataHelper;
+    private readonly IDataHelper<Customers> _dataHelperCustomers;
     private readonly LoadingForm loadingForm;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
 
 
     //ctor
-    public AddProjectsForm(int Id, SuppliersUserControl categoryuserControl)
+    public AddProjectsForm(int Id, ProjectsUserControl projectsuserControl)
     {
         InitializeComponent();
-        _dataHelper = (IDataHelper<Suppliers>)ConfigrationObjectManager.GetObject("Suppliers");
+        _dataHelper = (IDataHelper<Projects>)ConfigrationObjectManager.GetObject("Projects");
+        _dataHelperCustomers = (IDataHelper<Customers>)ConfigrationObjectManager.GetObject("Customers");
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
-        _categoryuserControl = categoryuserControl;
+        _projectsUserControl = projectsuserControl;
         ID = Id;
-        //_suppliers = suppliers;
     }
 
     #region Events
@@ -134,30 +135,35 @@ public partial class AddProjectsForm : Form
     private async Task<bool> AddData()
     {
         // Set Data 
-        suppliers = new Suppliers
+        projects = new Projects
         {
             Name = textBoxName.Text,
+            Customer = comboBoxCustomer.Text,
             Address = textBoxAddress.Text,
-            PhoneNumber = textBoxPhoneNumber.Text,
-            Email = textBoxComapany.Text,
+            Company = textBoxComapany.Text,
+            StartDate = dateTimePickerStartDate.Value,
+            EndDate = dateTimePickerEndDate.Value,
             Details = richTextBoxDetails.Text,
+            Income = Convert.ToDouble(textBoxIncome.Text),
+            Outcome = Convert.ToDouble(textBoxOutcome.Text),
+            Revenue = Convert.ToDouble(textBoxRevenue.Text),
             AddedDate = DateTime.Now
         };
         // Sumbit
 
-        var result = await _dataHelper.AddAsync(suppliers);
+        var result = await _dataHelper.AddAsync(projects);
         if (result == 1)
         {
             // Save SystemRecord
             SystemRecord systemRecord = new SystemRecord
             {
-                Title = "أضافة مورد",
+                Title = "أضافة مشروع",
                 UserName = Settings.Default.UserName,
-                Details = "تمت أضافه مورد  " + suppliers.Name,
+                Details = "تمت أضافه مشروع  " + projects.Name,
                 AddedDate = DateTime.Now,
             };
             await _dataHelperSystemRecord.AddAsync(systemRecord);
-            _categoryuserControl.LaodData();
+            _projectsUserControl.LaodData();
             return true;
         }
         else
@@ -172,30 +178,35 @@ public partial class AddProjectsForm : Form
     private async Task<bool> EditData()
     {
         // Set Data 
-        suppliers = new Suppliers
+        projects = new Projects
         {
             Id = ID,
             Name = textBoxName.Text,
+            Customer = comboBoxCustomer.Text,
             Address = textBoxAddress.Text,
-            PhoneNumber = textBoxPhoneNumber.Text,
-            Email = textBoxComapany.Text,
+            Company = textBoxComapany.Text,
+            StartDate = dateTimePickerStartDate.Value,
+            EndDate = dateTimePickerEndDate.Value,
             Details = richTextBoxDetails.Text,
+            Income = Convert.ToDouble(textBoxIncome.Text),
+            Outcome = Convert.ToDouble(textBoxOutcome.Text),
+            Revenue = Convert.ToDouble(textBoxRevenue.Text),
             AddedDate = DateTime.Now
         };
         // Sumbit
 
-        var result = await _dataHelper.EditAsync(suppliers);
+        var result = await _dataHelper.EditAsync(projects);
         if (result == 1)
         { // Save SystemRecord
             SystemRecord systemRecord = new SystemRecord
             {
-                Title = "تعديل مورد ",
+                Title = "تعديل مشروع ",
                 UserName = Settings.Default.UserName,
-                Details = "تم تعديل مورد  " + suppliers.Name,
+                Details = "تم تعديل مشروع  " + projects.Name,
                 AddedDate = DateTime.Now,
             };
             await _dataHelperSystemRecord.AddAsync(systemRecord);
-            _categoryuserControl.LaodData();
+            _projectsUserControl.LaodData();
             return true;
         }
         else
@@ -211,16 +222,33 @@ public partial class AddProjectsForm : Form
     {
         if (ID > 0)
         {
+            // Get List Of Customers
+            var ListCustomers = await _dataHelperCustomers.GetAllDataAsync();
+            // Fill
+            comboBoxCustomer.DataSource = ListCustomers.Select(x => x.Name).ToList();
+
+            // Auto Complete
+            AutoCompleteStringCollection autoCompleteString = new AutoCompleteStringCollection();
+            autoCompleteString.AddRange(ListCustomers.Select(x => x.Name).ToArray());
+            comboBoxCustomer.AutoCompleteCustomSource = autoCompleteString;
+
+            ListCustomers.Clear();//Clear
+
             // Set Fields
-            suppliers = await _dataHelper.FindAsync(ID);
-            if (suppliers != null)
+            projects = await _dataHelper.FindAsync(ID);
+
+            if (projects != null)
             {
-                textBoxName.Text = suppliers.Name;
-                textBoxAddress.Text = suppliers.Address;
-                textBoxPhoneNumber.Text = suppliers.PhoneNumber;
-                textBoxComapany.Text = suppliers.Email;
-                textBoxIncome.Text = suppliers.Balance.ToString();
-                richTextBoxDetails.Text = suppliers.Details;
+                textBoxName.Text = projects.Name;
+                comboBoxCustomer.Text = projects.Customer;
+                textBoxAddress.Text = projects.Address;
+                textBoxComapany.Text = projects.Company;
+                dateTimePickerStartDate.Value = projects.StartDate;
+                dateTimePickerEndDate.Value = projects.EndDate;
+                richTextBoxDetails.Text = projects.Details;
+                textBoxIncome.Text = projects.Income.ToString();
+                textBoxOutcome.Text = projects.Outcome.ToString();
+                textBoxRevenue.Text = projects.Revenue.ToString();
             }
             else
             {
@@ -229,15 +257,4 @@ public partial class AddProjectsForm : Form
         }
     }
     #endregion
-
-
-    private void groupBox1_Enter(object sender, EventArgs e)
-    {
-
-    }
-
-    private void label7_Click(object sender, EventArgs e)
-    {
-
-    }
 }

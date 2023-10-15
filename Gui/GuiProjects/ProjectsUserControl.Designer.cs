@@ -39,6 +39,7 @@ partial class ProjectsUserControl
         buttonDelete = new Button();
         buttonUpdate = new Button();
         buttonExport = new Button();
+        buttonOpen = new Button();
         panel1 = new Panel();
         textBoxSearch = new TextBox();
         buttonSearch = new Button();
@@ -58,6 +59,7 @@ partial class ProjectsUserControl
         flowLayoutPanel1.Controls.Add(buttonDelete);
         flowLayoutPanel1.Controls.Add(buttonUpdate);
         flowLayoutPanel1.Controls.Add(buttonExport);
+        flowLayoutPanel1.Controls.Add(buttonOpen);
         flowLayoutPanel1.Controls.Add(panel1);
         flowLayoutPanel1.Dock = DockStyle.Top;
         flowLayoutPanel1.Location = new Point(0, 0);
@@ -74,7 +76,7 @@ partial class ProjectsUserControl
         buttonAdd.ForeColor = Color.Black;
         buttonAdd.Image = Resources.Add;
         buttonAdd.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonAdd.Location = new Point(1105, 10);
+        buttonAdd.Location = new Point(1088, 10);
         buttonAdd.Margin = new Padding(5);
         buttonAdd.Name = "buttonAdd";
         buttonAdd.Padding = new Padding(5);
@@ -92,7 +94,7 @@ partial class ProjectsUserControl
         buttonEdit.ForeColor = Color.Black;
         buttonEdit.Image = Resources.Edit;
         buttonEdit.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonEdit.Location = new Point(953, 10);
+        buttonEdit.Location = new Point(936, 10);
         buttonEdit.Margin = new Padding(5);
         buttonEdit.Name = "buttonEdit";
         buttonEdit.Padding = new Padding(5);
@@ -110,7 +112,7 @@ partial class ProjectsUserControl
         buttonDelete.ForeColor = Color.Black;
         buttonDelete.Image = Resources.Delete;
         buttonDelete.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonDelete.Location = new Point(801, 10);
+        buttonDelete.Location = new Point(784, 10);
         buttonDelete.Margin = new Padding(5);
         buttonDelete.Name = "buttonDelete";
         buttonDelete.Padding = new Padding(5);
@@ -128,7 +130,7 @@ partial class ProjectsUserControl
         buttonUpdate.ForeColor = Color.Black;
         buttonUpdate.Image = Resources.Refresh;
         buttonUpdate.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonUpdate.Location = new Point(649, 10);
+        buttonUpdate.Location = new Point(632, 10);
         buttonUpdate.Margin = new Padding(5);
         buttonUpdate.Name = "buttonUpdate";
         buttonUpdate.Padding = new Padding(5);
@@ -146,7 +148,7 @@ partial class ProjectsUserControl
         buttonExport.ForeColor = Color.Black;
         buttonExport.Image = Resources.Export;
         buttonExport.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonExport.Location = new Point(497, 10);
+        buttonExport.Location = new Point(480, 10);
         buttonExport.Margin = new Padding(5);
         buttonExport.Name = "buttonExport";
         buttonExport.Padding = new Padding(5);
@@ -156,12 +158,30 @@ partial class ProjectsUserControl
         buttonExport.UseVisualStyleBackColor = true;
         buttonExport.Click += buttonExport_Click;
         // 
+        // buttonOpen
+        // 
+        buttonOpen.BackColor = Color.White;
+        buttonOpen.FlatAppearance.BorderSize = 0;
+        buttonOpen.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        buttonOpen.ForeColor = Color.Black;
+        buttonOpen.Image = Resources.Opened_Folder;
+        buttonOpen.ImageAlign = ContentAlignment.MiddleLeft;
+        buttonOpen.Location = new Point(328, 10);
+        buttonOpen.Margin = new Padding(5);
+        buttonOpen.Name = "buttonOpen";
+        buttonOpen.Padding = new Padding(5);
+        buttonOpen.Size = new Size(142, 55);
+        buttonOpen.TabIndex = 8;
+        buttonOpen.Text = "تصفح\r\n";
+        buttonOpen.UseVisualStyleBackColor = true;
+        buttonOpen.Click += buttonOpen_Click;
+        // 
         // panel1
         // 
         panel1.BorderStyle = BorderStyle.FixedSingle;
         panel1.Controls.Add(textBoxSearch);
         panel1.Controls.Add(buttonSearch);
-        panel1.Location = new Point(64, 8);
+        panel1.Location = new Point(807, 73);
         panel1.Name = "panel1";
         panel1.Size = new Size(425, 57);
         panel1.TabIndex = 6;
@@ -222,7 +242,7 @@ partial class ProjectsUserControl
         dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
         dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
         dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
         dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
         dataGridView1.Dock = DockStyle.Fill;
         dataGridView1.Location = new Point(0, 76);
@@ -254,7 +274,7 @@ partial class ProjectsUserControl
         comboBoxPageNo.TabIndex = 5;
         comboBoxPageNo.SelectedIndexChanged += comboBoxPageNo_SelectedIndexChanged;
         // 
-        // CustomersUserControl
+        // ProjectsUserControl
         // 
         AutoScaleDimensions = new SizeF(10F, 23F);
         AutoScaleMode = AutoScaleMode.Font;
@@ -264,7 +284,7 @@ partial class ProjectsUserControl
         Controls.Add(flowLayoutPanel1);
         Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         Margin = new Padding(4, 5, 4, 5);
-        Name = "CustomersUserControl";
+        Name = "ProjectsUserControl";
         RightToLeft = RightToLeft.Yes;
         Size = new Size(1262, 600);
         flowLayoutPanel1.ResumeLayout(false);
@@ -287,4 +307,5 @@ partial class ProjectsUserControl
     private DataGridView dataGridView1;
     private Button buttonUpdate;
     private ComboBox comboBoxPageNo;
+    private Button buttonOpen;
 }

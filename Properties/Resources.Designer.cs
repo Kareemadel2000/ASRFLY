@@ -277,6 +277,16 @@ namespace ASRFLY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Opened_Folder {
+            get {
+                object obj = ResourceManager.GetObject("Opened_Folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Output_1 {
             get {
                 object obj = ResourceManager.GetObject("Output_1", resourceCulture);

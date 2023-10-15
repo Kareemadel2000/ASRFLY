@@ -220,20 +220,20 @@ public partial class AddProjectsForm : Form
     #region SetFieldData
     private async void SetFieldData()
     {
+        // Get List Of Customers
+        var ListCustomers = await _dataHelperCustomers.GetAllDataAsync();
+        // Fill
+        comboBoxCustomer.DataSource = ListCustomers.Select(x => x.Name).ToList();
+
+        // Auto Complete
+        AutoCompleteStringCollection autoCompleteString = new AutoCompleteStringCollection();
+        autoCompleteString.AddRange(ListCustomers.Select(x => x.Name).ToArray());
+        comboBoxCustomer.AutoCompleteCustomSource = autoCompleteString;
+
+        ListCustomers.Clear();//Clear
+
         if (ID > 0)
         {
-            // Get List Of Customers
-            var ListCustomers = await _dataHelperCustomers.GetAllDataAsync();
-            // Fill
-            comboBoxCustomer.DataSource = ListCustomers.Select(x => x.Name).ToList();
-
-            // Auto Complete
-            AutoCompleteStringCollection autoCompleteString = new AutoCompleteStringCollection();
-            autoCompleteString.AddRange(ListCustomers.Select(x => x.Name).ToArray());
-            comboBoxCustomer.AutoCompleteCustomSource = autoCompleteString;
-
-            ListCustomers.Clear();//Clear
-
             // Set Fields
             projects = await _dataHelper.FindAsync(ID);
 

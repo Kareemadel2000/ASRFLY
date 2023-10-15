@@ -36,6 +36,12 @@ public partial class Main : Form
         // load Suppliers page 
         pageManager.LoadPage(SuppliersUserControl.Instance());
     }
+    private void buttonProjects_Click(object sender, EventArgs e)
+    {
+        // load Prpjects page 
+        pageManager.LoadPage(ProjectsUserControl.Instance());
+    }
+
     #endregion
 
 

@@ -13,6 +13,7 @@ global using ASRFLY.Gui.GuiCategories;
 global using ASRFLY.Gui.GuiCustomers;
 global using ASRFLY.Gui.GuiSuppliers;
 global using ASRFLY.Gui.GuiProjects;
+global using ASRFLY.Gui.GuiOutCome;
 global using ASRFLY.Properties;
 global using ASRFLY.Core.Entityes;
 global using ASRFLY.Data;

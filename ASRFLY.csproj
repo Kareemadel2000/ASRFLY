@@ -23,6 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Gui\GuiOutCome\AddOutComeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Gui\GuiOutCome\OutComeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Gui\GuiProjects\AddProjectsForm.cs">
       <SubType>Form</SubType>
     </Compile>

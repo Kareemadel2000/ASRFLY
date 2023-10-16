@@ -32,6 +32,14 @@ partial class AddOutComeForm
         buttonSave = new Button();
         buttonSaveAndClose = new Button();
         groupBox1 = new GroupBox();
+        label10 = new Label();
+        label9 = new Label();
+        label7 = new Label();
+        label4 = new Label();
+        textBoxAmount = new TextBox();
+        label5 = new Label();
+        textBoxRecNo = new TextBox();
+        comboBoxCategory = new ComboBox();
         dateTimePickerDate = new DateTimePicker();
         comboBoxSupplier = new ComboBox();
         label8 = new Label();
@@ -40,14 +48,6 @@ partial class AddOutComeForm
         label3 = new Label();
         label2 = new Label();
         label1 = new Label();
-        comboBoxCategory = new ComboBox();
-        textBoxRecNo = new TextBox();
-        label5 = new Label();
-        label4 = new Label();
-        textBoxAmount = new TextBox();
-        label7 = new Label();
-        label9 = new Label();
-        label10 = new Label();
         panel1.SuspendLayout();
         groupBox1.SuspendLayout();
         SuspendLayout();
@@ -75,7 +75,7 @@ partial class AddOutComeForm
         buttonSave.Name = "buttonSave";
         buttonSave.Padding = new Padding(5);
         buttonSave.Size = new Size(119, 55);
-        buttonSave.TabIndex = 6;
+        buttonSave.TabIndex = 7;
         buttonSave.Text = "   حفظ";
         buttonSave.UseVisualStyleBackColor = true;
         buttonSave.Click += buttonSave_Click;
@@ -93,7 +93,7 @@ partial class AddOutComeForm
         buttonSaveAndClose.Name = "buttonSaveAndClose";
         buttonSaveAndClose.Padding = new Padding(5);
         buttonSaveAndClose.Size = new Size(190, 55);
-        buttonSaveAndClose.TabIndex = 5;
+        buttonSaveAndClose.TabIndex = 8;
         buttonSaveAndClose.Text = "حفظ وغلق";
         buttonSaveAndClose.UseVisualStyleBackColor = true;
         buttonSaveAndClose.Click += buttonSaveAndClose_Click;
@@ -123,12 +123,90 @@ partial class AddOutComeForm
         groupBox1.TabStop = false;
         groupBox1.Text = "معلومات الصرف ";
         // 
+        // label10
+        // 
+        label10.AutoSize = true;
+        label10.ForeColor = Color.Red;
+        label10.Location = new Point(372, 262);
+        label10.Name = "label10";
+        label10.Size = new Size(20, 24);
+        label10.TabIndex = 30;
+        label10.Text = "*";
+        // 
+        // label9
+        // 
+        label9.AutoSize = true;
+        label9.ForeColor = Color.Red;
+        label9.Location = new Point(310, 88);
+        label9.Name = "label9";
+        label9.Size = new Size(20, 24);
+        label9.TabIndex = 29;
+        label9.Text = "*";
+        // 
+        // label7
+        // 
+        label7.AutoSize = true;
+        label7.ForeColor = Color.Red;
+        label7.Location = new Point(329, 146);
+        label7.Name = "label7";
+        label7.Size = new Size(20, 24);
+        label7.TabIndex = 28;
+        label7.Text = "*";
+        // 
+        // label4
+        // 
+        label4.AutoSize = true;
+        label4.Location = new Point(394, 265);
+        label4.Name = "label4";
+        label4.Size = new Size(49, 24);
+        label4.TabIndex = 27;
+        label4.Text = "المبلغ";
+        // 
+        // textBoxAmount
+        // 
+        textBoxAmount.Cursor = Cursors.IBeam;
+        textBoxAmount.Location = new Point(7, 262);
+        textBoxAmount.Name = "textBoxAmount";
+        textBoxAmount.Size = new Size(297, 32);
+        textBoxAmount.TabIndex = 5;
+        textBoxAmount.Text = "0";
+        textBoxAmount.TextAlign = HorizontalAlignment.Center;
+        // 
+        // label5
+        // 
+        label5.AutoSize = true;
+        label5.Location = new Point(362, 208);
+        label5.Name = "label5";
+        label5.Size = new Size(81, 24);
+        label5.TabIndex = 25;
+        label5.Text = "رقم الوصل";
+        // 
+        // textBoxRecNo
+        // 
+        textBoxRecNo.Cursor = Cursors.IBeam;
+        textBoxRecNo.Location = new Point(7, 204);
+        textBoxRecNo.Name = "textBoxRecNo";
+        textBoxRecNo.Size = new Size(297, 32);
+        textBoxRecNo.TabIndex = 4;
+        textBoxRecNo.Text = "0";
+        textBoxRecNo.TextAlign = HorizontalAlignment.Center;
+        // 
+        // comboBoxCategory
+        // 
+        comboBoxCategory.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+        comboBoxCategory.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        comboBoxCategory.FormattingEnabled = true;
+        comboBoxCategory.Location = new Point(7, 30);
+        comboBoxCategory.Name = "comboBoxCategory";
+        comboBoxCategory.Size = new Size(297, 32);
+        comboBoxCategory.TabIndex = 1;
+        // 
         // dateTimePickerDate
         // 
         dateTimePickerDate.Location = new Point(7, 146);
         dateTimePickerDate.Name = "dateTimePickerDate";
         dateTimePickerDate.Size = new Size(297, 32);
-        dateTimePickerDate.TabIndex = 22;
+        dateTimePickerDate.TabIndex = 3;
         // 
         // comboBoxSupplier
         // 
@@ -138,7 +216,7 @@ partial class AddOutComeForm
         comboBoxSupplier.Location = new Point(7, 88);
         comboBoxSupplier.Name = "comboBoxSupplier";
         comboBoxSupplier.Size = new Size(297, 32);
-        comboBoxSupplier.TabIndex = 21;
+        comboBoxSupplier.TabIndex = 2;
         // 
         // label8
         // 
@@ -165,7 +243,7 @@ partial class AddOutComeForm
         richTextBoxDetails.Location = new Point(7, 320);
         richTextBoxDetails.Name = "richTextBoxDetails";
         richTextBoxDetails.Size = new Size(297, 63);
-        richTextBoxDetails.TabIndex = 9;
+        richTextBoxDetails.TabIndex = 6;
         richTextBoxDetails.Text = "";
         // 
         // label3
@@ -195,86 +273,6 @@ partial class AddOutComeForm
         label1.Size = new Size(49, 24);
         label1.TabIndex = 0;
         label1.Text = "صنف";
-        // 
-        // comboBoxCategory
-        // 
-        comboBoxCategory.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        comboBoxCategory.AutoCompleteSource = AutoCompleteSource.CustomSource;
-        comboBoxCategory.FormattingEnabled = true;
-        comboBoxCategory.Location = new Point(7, 30);
-        comboBoxCategory.Name = "comboBoxCategory";
-        comboBoxCategory.Size = new Size(297, 32);
-        comboBoxCategory.TabIndex = 23;
-        // 
-        // textBoxRecNo
-        // 
-        textBoxRecNo.Cursor = Cursors.IBeam;
-        textBoxRecNo.Enabled = false;
-        textBoxRecNo.Location = new Point(7, 204);
-        textBoxRecNo.Name = "textBoxRecNo";
-        textBoxRecNo.Size = new Size(297, 32);
-        textBoxRecNo.TabIndex = 24;
-        textBoxRecNo.Text = "0";
-        textBoxRecNo.TextAlign = HorizontalAlignment.Center;
-        // 
-        // label5
-        // 
-        label5.AutoSize = true;
-        label5.Location = new Point(362, 208);
-        label5.Name = "label5";
-        label5.Size = new Size(81, 24);
-        label5.TabIndex = 25;
-        label5.Text = "رقم الوصل";
-        // 
-        // label4
-        // 
-        label4.AutoSize = true;
-        label4.Location = new Point(394, 265);
-        label4.Name = "label4";
-        label4.Size = new Size(49, 24);
-        label4.TabIndex = 27;
-        label4.Text = "المبلغ";
-        // 
-        // textBoxAmount
-        // 
-        textBoxAmount.Cursor = Cursors.IBeam;
-        textBoxAmount.Enabled = false;
-        textBoxAmount.Location = new Point(7, 262);
-        textBoxAmount.Name = "textBoxAmount";
-        textBoxAmount.Size = new Size(297, 32);
-        textBoxAmount.TabIndex = 26;
-        textBoxAmount.Text = "0";
-        textBoxAmount.TextAlign = HorizontalAlignment.Center;
-        // 
-        // label7
-        // 
-        label7.AutoSize = true;
-        label7.ForeColor = Color.Red;
-        label7.Location = new Point(329, 146);
-        label7.Name = "label7";
-        label7.Size = new Size(20, 24);
-        label7.TabIndex = 28;
-        label7.Text = "*";
-        // 
-        // label9
-        // 
-        label9.AutoSize = true;
-        label9.ForeColor = Color.Red;
-        label9.Location = new Point(310, 88);
-        label9.Name = "label9";
-        label9.Size = new Size(20, 24);
-        label9.TabIndex = 29;
-        label9.Text = "*";
-        // 
-        // label10
-        // 
-        label10.AutoSize = true;
-        label10.ForeColor = Color.Red;
-        label10.Location = new Point(372, 262);
-        label10.Name = "label10";
-        label10.Size = new Size(20, 24);
-        label10.TabIndex = 30;
-        label10.Text = "*";
         // 
         // AddOutComeForm
         // 

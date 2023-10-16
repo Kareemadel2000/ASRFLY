@@ -28,11 +28,11 @@ partial class OutComeUserControl
     /// </summary>
     private void InitializeComponent()
     {
-        DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
         flowLayoutPanel1 = new FlowLayoutPanel();
         buttonAdd = new Button();
         buttonEdit = new Button();
@@ -162,19 +162,19 @@ partial class OutComeUserControl
         panel1.BorderStyle = BorderStyle.FixedSingle;
         panel1.Controls.Add(textBoxSearch);
         panel1.Controls.Add(buttonSearch);
-        panel1.Location = new Point(159, 8);
+        panel1.Location = new Point(56, 8);
         panel1.Name = "panel1";
-        panel1.Size = new Size(211, 62);
+        panel1.Size = new Size(314, 62);
         panel1.TabIndex = 6;
         // 
         // textBoxSearch
         // 
         textBoxSearch.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        textBoxSearch.Location = new Point(49, 0);
+        textBoxSearch.Location = new Point(48, -1);
         textBoxSearch.Margin = new Padding(5);
         textBoxSearch.Multiline = true;
         textBoxSearch.Name = "textBoxSearch";
-        textBoxSearch.Size = new Size(161, 63);
+        textBoxSearch.Size = new Size(264, 62);
         textBoxSearch.TabIndex = 7;
         textBoxSearch.TextAlign = HorizontalAlignment.Center;
         textBoxSearch.TextChanged += textBoxSearch_TextChanged;
@@ -193,7 +193,7 @@ partial class OutComeUserControl
         buttonSearch.Margin = new Padding(5);
         buttonSearch.Name = "buttonSearch";
         buttonSearch.Padding = new Padding(5);
-        buttonSearch.Size = new Size(49, 60);
+        buttonSearch.Size = new Size(50, 60);
         buttonSearch.TabIndex = 5;
         buttonSearch.TextAlign = ContentAlignment.MiddleRight;
         buttonSearch.UseVisualStyleBackColor = false;
@@ -203,42 +203,42 @@ partial class OutComeUserControl
         // 
         dataGridView1.AllowUserToAddRows = false;
         dataGridView1.AllowUserToDeleteRows = false;
-        dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+        dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         dataGridView1.BackgroundColor = Color.White;
-        dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle22.BackColor = SystemColors.Control;
-        dataGridViewCellStyle22.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle22.ForeColor = SystemColors.WindowText;
-        dataGridViewCellStyle22.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle22.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle22.WrapMode = DataGridViewTriState.True;
-        dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+        dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle2.BackColor = SystemColors.Control;
+        dataGridViewCellStyle2.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+        dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
         dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle23.BackColor = SystemColors.Window;
-        dataGridViewCellStyle23.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle23.ForeColor = SystemColors.ControlText;
-        dataGridViewCellStyle23.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle23.WrapMode = DataGridViewTriState.True;
-        dataGridView1.DefaultCellStyle = dataGridViewCellStyle23;
+        dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle3.BackColor = SystemColors.Window;
+        dataGridViewCellStyle3.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+        dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+        dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
         dataGridView1.Dock = DockStyle.Fill;
         dataGridView1.Location = new Point(0, 81);
         dataGridView1.Name = "dataGridView1";
-        dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle24.BackColor = SystemColors.Control;
-        dataGridViewCellStyle24.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle24.ForeColor = SystemColors.WindowText;
-        dataGridViewCellStyle24.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle24.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle24.WrapMode = DataGridViewTriState.True;
-        dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+        dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle4.BackColor = SystemColors.Control;
+        dataGridViewCellStyle4.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+        dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
         dataGridView1.RowHeadersWidth = 51;
-        dataGridViewCellStyle25.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle25;
+        dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
         dataGridView1.RowTemplate.Height = 25;
         dataGridView1.Size = new Size(903, 519);
         dataGridView1.TabIndex = 3;
@@ -257,11 +257,12 @@ partial class OutComeUserControl
         // 
         // label1
         // 
+        label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
         label1.BackColor = Color.FromArgb(255, 192, 128);
         label1.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-        label1.Location = new Point(764, 560);
+        label1.Location = new Point(744, 556);
         label1.Name = "label1";
-        label1.Size = new Size(139, 40);
+        label1.Size = new Size(159, 44);
         label1.TabIndex = 6;
         label1.Text = "المصروفات";
         // 

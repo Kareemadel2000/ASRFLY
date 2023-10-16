@@ -4,24 +4,30 @@ public partial class AddOutComeForm : Form
 {
     //variables
     private readonly int ID;
-    private readonly ProjectsUserControl _projectsUserControl;
-    private Projects projects;
-    private readonly IDataHelper<Projects> _dataHelper;
-    private readonly IDataHelper<Customers> _dataHelperCustomers;
+    private readonly OutComeUserControl _outComeUserControl;
+    private OutCome outCome;
+    private int CategoryId;
+    private int SupplierId;
+    private int ProjectId;
+    private readonly IDataHelper<OutCome> _dataHelper;
+    private readonly IDataHelper<Suppliers> _dataHelperSuppliers;
+    private readonly IDataHelper<Categories> _dataHelperCategories;
     private readonly LoadingForm loadingForm;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
 
 
     //ctor
-    public AddOutComeForm(int Id, ProjectsUserControl projectsuserControl)
+    public AddOutComeForm(int Id, int ProjectId, OutComeUserControl outComeuserControl)
     {
         InitializeComponent();
-        _dataHelper = (IDataHelper<Projects>)ConfigrationObjectManager.GetObject("Projects");
-        _dataHelperCustomers = (IDataHelper<Customers>)ConfigrationObjectManager.GetObject("Customers");
+        _dataHelper = (IDataHelper<OutCome>)ConfigrationObjectManager.GetObject("OutCome");
+        _dataHelperSuppliers = (IDataHelper<Suppliers>)ConfigrationObjectManager.GetObject("Suppliers");
+        _dataHelperCategories = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
-        _projectsUserControl = projectsuserControl;
+        _outComeUserControl = outComeuserControl;
         ID = Id;
+        this.ProjectId = ProjectId;
     }
 
     #region Events
@@ -107,10 +113,20 @@ public partial class AddOutComeForm : Form
 
         if (ID == 0)    //Add 
         {
+            var CategoryName = comboBoxCategory.SelectedItem.ToString();
+            var supplierName = comboBoxSupplier.SelectedItem.ToString();
+
+            await Task.Run(() => SetCategoryID(CategoryName));
+            await Task.Run(() => SetSupplierID(supplierName));
             return await AddData();
         }
         else        //Edit
         {
+            var CategoryName = comboBoxCategory.SelectedItem.ToString();
+            var supplierName = comboBoxSupplier.SelectedItem.ToString();
+
+            await Task.Run(() => SetCategoryID(CategoryName));
+            await Task.Run(() => SetSupplierID(supplierName));
             return await EditData();
         }
 
@@ -120,7 +136,9 @@ public partial class AddOutComeForm : Form
     #region IsFiledsEmpty
     private bool IsFiledsEmpty()
     {
-        if (textBoxName.Text == string.Empty)
+        if (textBoxAmount.Text == string.Empty ||
+            comboBoxCategory.SelectedItem == null ||
+            comboBoxSupplier.SelectedItem == null)
         {
             return true;
         }
@@ -135,35 +153,33 @@ public partial class AddOutComeForm : Form
     private async Task<bool> AddData()
     {
         // Set Data 
-        projects = new Projects
+        outCome = new OutCome
         {
-            Name = textBoxName.Text,
-            Customer = comboBoxSupplier.Text,
-            Address = textBoxAddress.Text,
-            Company = textBoxComapany.Text,
-            StartDate = dateTimePickerDate.Value,
-            EndDate = dateTimePickerEndDate.Value,
-            Details = richTextBoxDetails.Text,
-            Income = Convert.ToDouble(textBoxIncome.Text),
-            Outcome = Convert.ToDouble(textBoxOutcome.Text),
-            Revenue = Convert.ToDouble(textBoxRevenue.Text),
-            AddedDate = DateTime.Now
+            CategoryName = comboBoxCategory.SelectedItem.ToString(),
+            SupplierName = comboBoxSupplier.SelectedItem.ToString(),
+            RecNo = textBoxRecNo.Text,
+            Detalis = richTextBoxDetails.Text,
+            Amount = Convert.ToDouble(textBoxAmount.Text),
+            OutComeDate = dateTimePickerDate.Value,
+            CategoryId = CategoryId,
+            SupplierId = SupplierId,
+            ProjectId = ProjectId,
         };
         // Sumbit
 
-        var result = await _dataHelper.AddAsync(projects);
+        var result = await _dataHelper.AddAsync(outCome);
         if (result == 1)
         {
             // Save SystemRecord
             SystemRecord systemRecord = new SystemRecord
             {
-                Title = "أضافة مشروع",
+                Title = "أضافة عملية صرف",
                 UserName = Settings.Default.UserName,
-                Details = "تمت أضافه مشروع  " + projects.Name,
+                Details = "تمت أضافه عملية صرف  " + outCome.CategoryName,
                 AddedDate = DateTime.Now,
             };
             await _dataHelperSystemRecord.AddAsync(systemRecord);
-            _projectsUserControl.LaodData();
+            _outComeUserControl.LaodData();
             return true;
         }
         else
@@ -178,35 +194,33 @@ public partial class AddOutComeForm : Form
     private async Task<bool> EditData()
     {
         // Set Data 
-        projects = new Projects
+        outCome = new OutCome
         {
             Id = ID,
-            Name = textBoxName.Text,
-            Customer = comboBoxSupplier.Text,
-            Address = textBoxAddress.Text,
-            Company = textBoxComapany.Text,
-            StartDate = dateTimePickerDate.Value,
-            EndDate = dateTimePickerEndDate.Value,
-            Details = richTextBoxDetails.Text,
-            Income = Convert.ToDouble(textBoxIncome.Text),
-            Outcome = Convert.ToDouble(textBoxOutcome.Text),
-            Revenue = Convert.ToDouble(textBoxRevenue.Text),
-            AddedDate = DateTime.Now
+            CategoryName = comboBoxCategory.SelectedItem.ToString(),
+            SupplierName = comboBoxSupplier.SelectedItem.ToString(),
+            RecNo = textBoxRecNo.Text,
+            Detalis = richTextBoxDetails.Text,
+            Amount = Convert.ToDouble(textBoxAmount.Text),
+            OutComeDate = dateTimePickerDate.Value,
+            CategoryId = CategoryId,
+            SupplierId = SupplierId,
+            ProjectId = ProjectId,
         };
         // Sumbit
 
-        var result = await _dataHelper.EditAsync(projects);
+        var result = await _dataHelper.EditAsync(outCome);
         if (result == 1)
         { // Save SystemRecord
             SystemRecord systemRecord = new SystemRecord
             {
-                Title = "تعديل مشروع ",
+                Title = "تعديل عملية صرف ",
                 UserName = Settings.Default.UserName,
-                Details = "تم تعديل مشروع  " + projects.Name,
+                Details = "تم تعديل عملية صرف  " + outCome.CategoryName,
                 AddedDate = DateTime.Now,
             };
             await _dataHelperSystemRecord.AddAsync(systemRecord);
-            _projectsUserControl.LaodData();
+            _outComeUserControl.LaodData();
             return true;
         }
         else
@@ -220,35 +234,47 @@ public partial class AddOutComeForm : Form
     #region SetFieldData
     private async void SetFieldData()
     {
-        // Get List Of Customers
-        var ListCustomers = await _dataHelperCustomers.GetAllDataAsync();
+        // Get List Of Suppliers
+        var ListSuppliers = await _dataHelperSuppliers.GetAllDataAsync();
         // Fill
-        comboBoxSupplier.DataSource = ListCustomers.Select(x => x.Name).ToList();
+        comboBoxSupplier.DataSource = ListSuppliers.Select(x => x.Name).ToList();
 
         // Auto Complete
         AutoCompleteStringCollection autoCompleteString = new AutoCompleteStringCollection();
-        autoCompleteString.AddRange(ListCustomers.Select(x => x.Name).ToArray());
+        autoCompleteString.AddRange(ListSuppliers.Select(x => x.Name).ToArray());
         comboBoxSupplier.AutoCompleteCustomSource = autoCompleteString;
 
-        ListCustomers.Clear();//Clear
+        ListSuppliers.Clear();//Clear
+
+        /////////////////////////////////////
+        // Get List Of Categories
+        var ListCategories = await _dataHelperCategories.GetAllDataAsync();
+        // Fill
+        comboBoxCategory.DataSource = ListCategories.Select(x => x.Name).ToList();
+
+        // Auto Complete
+        AutoCompleteStringCollection autoCompleteStringCategory = new AutoCompleteStringCollection();
+        autoCompleteStringCategory.AddRange(ListCategories.Select(x => x.Name).ToArray());
+        comboBoxSupplier.AutoCompleteCustomSource = autoCompleteStringCategory;
+
+        ListCategories.Clear();//Clear
 
         if (ID > 0)
         {
             // Set Fields
-            projects = await _dataHelper.FindAsync(ID);
+            outCome = await _dataHelper.FindAsync(ID);
 
-            if (projects != null)
+            if (outCome != null)
             {
-                textBoxName.Text = projects.Name;
-                comboBoxSupplier.Text = projects.Customer;
-                textBoxAddress.Text = projects.Address;
-                textBoxComapany.Text = projects.Company;
-                dateTimePickerDate.Value = projects.StartDate;
-                dateTimePickerEndDate.Value = projects.EndDate;
-                richTextBoxDetails.Text = projects.Details;
-                textBoxIncome.Text = projects.Income.ToString();
-                textBoxOutcome.Text = projects.Outcome.ToString();
-                textBoxRevenue.Text = projects.Revenue.ToString();
+                comboBoxCategory.SelectedItem = outCome.CategoryName;
+                comboBoxSupplier.SelectedItem = outCome.SupplierName;
+                textBoxRecNo.Text = outCome.RecNo;
+                richTextBoxDetails.Text = outCome.Detalis;
+                textBoxAmount.Text = outCome.Amount.ToString();
+                dateTimePickerDate.Value = outCome.OutComeDate;
+                CategoryId = outCome.CategoryId;
+                SupplierId = outCome.SupplierId;
+                ProjectId = outCome.ProjectId;
             }
             else
             {
@@ -257,4 +283,22 @@ public partial class AddOutComeForm : Form
         }
     }
     #endregion
+
+    #region SetCategoryID
+    private void SetCategoryID(string CategoryName)
+    {
+        CategoryId = _dataHelperCategories.GetAllData().Where(x => x.Name == CategoryName)
+            .Select(x => x.Id).First();
+    }
+    #endregion
+
+    #region SetSupplierID
+    private void SetSupplierID(string supplierName)
+    {
+        SupplierId = _dataHelperSuppliers.GetAllData().Where(x => x.Name == supplierName)
+            .Select(x => x.Id).First();
+
+    }
+    #endregion
+
 }

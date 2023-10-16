@@ -1,23 +1,23 @@
-﻿using ClosedXML.Excel;
-
-namespace ASRFLY.Gui.GuiOutCome;
+﻿namespace ASRFLY.Gui.GuiOutCome;
 
 public partial class OutComeUserControl : UserControl
 {
     //variables
-    private readonly IDataHelper<Projects> _dataHelper;
+    private readonly IDataHelper<OutCome> _dataHelper;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
-    private static ProjectsUserControl _ProjectsUserControl;
+    private static OutComeUserControl _OutComeUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
     private List<int> IdList = new List<int>();
     private string searchItem;
+    private int ProjectId;
 
     //ctor
-    public OutComeUserControl()
+    public OutComeUserControl(int projectId)
     {
         InitializeComponent();
-        _dataHelper = (IDataHelper<Projects>)ConfigrationObjectManager.GetObject("Projects");
+        ProjectId = projectId;
+        _dataHelper = (IDataHelper<OutCome>)ConfigrationObjectManager.GetObject("OutCome");
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         LaodData();
@@ -26,8 +26,8 @@ public partial class OutComeUserControl : UserControl
     #region Events
     private void buttonAdd_Click(object sender, EventArgs e)
     {
-        AddProjectsForm addProjectsForm = new AddProjectsForm(0, this);
-        addProjectsForm.Show();
+        AddOutComeForm addOutComeForm = new AddOutComeForm(0, ProjectId, this);
+        addOutComeForm.Show();
     }
 
     private void buttonEdit_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ public partial class OutComeUserControl : UserControl
                             {
                                 Title = "عملية حذف",
                                 UserName = Settings.Default.UserName,
-                                Details = "تم حذف المشروع ذى الرقم التعريفي" + RowId.ToString(),
+                                Details = "تم حذف عملية الصرف ذى الرقم التعريفي" + RowId.ToString(),
                                 AddedDate = DateTime.Now,
                             };
                             await _dataHelperSystemRecord.AddAsync(systemRecord);
@@ -154,10 +154,7 @@ public partial class OutComeUserControl : UserControl
     #endregion
 
     #region Methods
-    public static ProjectsUserControl Instance()
-    {
-        return _ProjectsUserControl ?? (new ProjectsUserControl());
-    }
+
     public async void LaodData()
     {
         loadingForm.Show();
@@ -189,24 +186,22 @@ public partial class OutComeUserControl : UserControl
     private void SetColumnsTitle()
     {
         dataGridView1.Columns[0].HeaderText = "المعرف";
-        dataGridView1.Columns[1].HeaderText = "الاسم";
-        dataGridView1.Columns[2].HeaderText = "العميل";
-        dataGridView1.Columns[3].HeaderText = "العنوان";
-        dataGridView1.Columns[4].HeaderText = "الشركةالمنفذة";
-        dataGridView1.Columns[5].HeaderText = "بداية المشروع";
-        dataGridView1.Columns[6].HeaderText = "نهاية المشروع";
-        dataGridView1.Columns[7].HeaderText = "التفاصيل";
-        dataGridView1.Columns[8].HeaderText = "المقبوضات";
-        dataGridView1.Columns[9].HeaderText = "المصروفات";
-        dataGridView1.Columns[10].HeaderText = "الارباح";
-        dataGridView1.Columns[11].HeaderText = "تاريخ الاضافة";
+        dataGridView1.Columns[1].HeaderText = "الصنف";
+        dataGridView1.Columns[2].HeaderText = "المورد";
+        dataGridView1.Columns[3].HeaderText = "تاريخ الصرف";
+        dataGridView1.Columns[4].HeaderText = "رقم الوصل";
+        dataGridView1.Columns[5].HeaderText = "المبلغ";
+        dataGridView1.Columns[6].HeaderText = "التفاصيل";
 
-        // Hide cloumn
-        dataGridView1.Columns[3].Visible = false;
-        dataGridView1.Columns[4].Visible = false;
-        dataGridView1.Columns[5].Visible = false;
-        dataGridView1.Columns[6].Visible = false;
+        // Hide 
         dataGridView1.Columns[7].Visible = false;
+        dataGridView1.Columns[8].Visible = false;
+        dataGridView1.Columns[9].Visible = false;
+        dataGridView1.Columns[10].Visible = false;
+        dataGridView1.Columns[11].Visible = false;
+        dataGridView1.Columns[12].Visible = false;
+
+
     }
 
     private void Edit()
@@ -215,8 +210,8 @@ public partial class OutComeUserControl : UserControl
         {
             // Get Id 
             RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            AddProjectsForm addProjectsForm = new AddProjectsForm(RowId, this);
-            addProjectsForm.Show();
+            AddOutComeForm addOutComeForm = new AddOutComeForm(RowId, ProjectId, this);
+            addOutComeForm.Show();
         }
         else
         {
@@ -256,38 +251,38 @@ public partial class OutComeUserControl : UserControl
         table.Columns["Id"].SetOrdinal(0);
         table.Columns["Id"].ColumnName = "المعرف";
 
-        table.Columns["Name"].SetOrdinal(1);
-        table.Columns["Name"].ColumnName = "الاسم";
+        table.Columns["CategoryName"].SetOrdinal(1);
+        table.Columns["CategoryName"].ColumnName = "اسم الصنف";
 
-        table.Columns["Customer"].SetOrdinal(2);
-        table.Columns["Customer"].ColumnName = "العميل";
+        table.Columns["SupplierName"].SetOrdinal(2);
+        table.Columns["SupplierName"].ColumnName = "المورد";
 
-        table.Columns["Address"].SetOrdinal(3);
-        table.Columns["Address"].ColumnName = "العنوان";
+        table.Columns["OutComeDate"].SetOrdinal(3);
+        table.Columns["OutComeDate"].ColumnName = "تاريخ الصرف";
 
-        table.Columns["Company"].SetOrdinal(4);
-        table.Columns["Company"].ColumnName = "الشركةالمنفذة";
+        table.Columns["RecNo"].SetOrdinal(4);
+        table.Columns["RecNo"].ColumnName = "رقم الوصل";
 
-        table.Columns["StartDate"].SetOrdinal(5);
-        table.Columns["StartDate"].ColumnName = "بداية المشروع";
+        table.Columns["Amount"].SetOrdinal(5);
+        table.Columns["Amount"].ColumnName = "المبلغ";
 
-        table.Columns["EndDate"].SetOrdinal(6);
-        table.Columns["EndDate"].ColumnName = "نهاية المشروع";
+        table.Columns["Detalis"].SetOrdinal(6);
+        table.Columns["Detalis"].ColumnName = "التفاصيل";
 
-        table.Columns["Details"].SetOrdinal(7);
-        table.Columns["Details"].ColumnName = "التفاصيل";
+        table.Columns["CategoryId"].SetOrdinal(7);
+        table.Columns["CategoryId"].ColumnName = "CategoryId";
 
-        table.Columns["Income"].SetOrdinal(8);
-        table.Columns["Income"].ColumnName = "المقبوضات";
+        table.Columns["SupplierId"].SetOrdinal(8);
+        table.Columns["SupplierId"].ColumnName = "SupplierId";
 
-        table.Columns["Outcome"].SetOrdinal(9);
-        table.Columns["Outcome"].ColumnName = "المصروفات";
+        table.Columns["ProjectId"].SetOrdinal(9);
+        table.Columns["ProjectId"].ColumnName = "ProjectId";
 
-        table.Columns["Revenue"].SetOrdinal(10);
-        table.Columns["Revenue"].ColumnName = "الارباح";
 
-        table.Columns["AddedDate"].SetOrdinal(11);
-        table.Columns["AddedDate"].ColumnName = "تاريخ الاضافة";
+        table.Columns.Remove("CategoryId");
+        table.Columns.Remove("SupplierId");
+        table.Columns.Remove("ProjectId");
+        table.AcceptChanges();
 
         return table;
     }

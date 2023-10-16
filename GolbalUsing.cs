@@ -16,6 +16,7 @@ global using ASRFLY.Gui.GuiProjects;
 global using ASRFLY.Gui.GuiOutCome;
 global using ASRFLY.Properties;
 global using ASRFLY.Core.Entityes;
+global using ClosedXML.Excel;
 global using ASRFLY.Data;
 global using ASRFLY.Gui.GuiLoading;
 global using ASRFLY.Gui.GuiNotification;

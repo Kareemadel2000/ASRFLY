@@ -1,25 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ASRFLY.Core.Entityes;
 
-namespace ASRFLY.Gui.GuiProjects
+namespace ASRFLY.Gui.GuiProjects;
+
+public partial class ProjectManagmentForm : Form
 {
-    public partial class ProjectManagmentForm : Form
+    private readonly int projectId;
+
+    public ProjectManagmentForm(int ProjectId)
     {
-        public ProjectManagmentForm()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+        projectId = ProjectId;
+        LoadOutComeUI();
+    }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
+    private void LoadOutComeUI()
+    {
+        // Laod OutCome UI
+        OutComeUserControl outComeUserControl = new OutComeUserControl(projectId);
+        outComeUserControl.Dock = DockStyle.Fill;
+        panelOutCome.Controls.Add(outComeUserControl);
     }
 }

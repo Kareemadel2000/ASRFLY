@@ -8,6 +8,7 @@ public static class DependnecyInjection
         ConfigrationObjectManager.Register("Customers", new CustomersEntity());
         ConfigrationObjectManager.Register("Suppliers", new SuppliersEntity());
         ConfigrationObjectManager.Register("Projects", new ProjectsEntity());
+        ConfigrationObjectManager.Register("OutCome", new OutComeEntity());
 
     }
 }

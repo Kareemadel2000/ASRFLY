@@ -147,7 +147,17 @@ public partial class ProjectsUserControl : UserControl
 
     private void buttonOpen_Click(object sender, EventArgs e)
     {
-
+        if (dataGridView1.RowCount > 0)
+        {
+            // Get Id 
+            RowId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            ProjectManagmentForm projectManagmentForm = new ProjectManagmentForm(RowId);
+            projectManagmentForm.Show();
+        }
+        else
+        {
+            MassageCollection.ShowEmptyDataMassage();
+        }
     }
 
 

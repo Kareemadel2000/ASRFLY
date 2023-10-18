@@ -132,7 +132,7 @@ public partial class OutComeUserControl : UserControl
         int index = comboBoxPageNo.SelectedIndex;
         int IndexNoOfRow = index * Properties.Settings.Default.DataGridViewRowNo;
 
-        dataGridView1.DataSource = data.Where(x => x.Id >= dataId[IndexNoOfRow]).Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
+        dataGridView1.DataSource = data.Where(x => x.Id >= dataId[IndexNoOfRow] && x.ProjectId == ProjectId).Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
         if (dataGridView1.DataSource == null)
         {
             MassageCollection.ShowErrorServer();
@@ -159,7 +159,7 @@ public partial class OutComeUserControl : UserControl
     {
         loadingForm.Show();
         var data = await _dataHelper.GetAllDataAsync();
-        dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
+        dataGridView1.DataSource = data.Where(x => x.ProjectId == ProjectId).Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
 
         // Add Number of page into ComboBox
 
@@ -234,7 +234,8 @@ public partial class OutComeUserControl : UserControl
     {
         loadingForm.Show();
         searchItem = textBoxSearch.Text;
-        dataGridView1.DataSource = await _dataHelper.SearchAsync(searchItem);
+        var data = await _dataHelper.SearchAsync(searchItem);
+        dataGridView1.DataSource = data.Where(x=>x.ProjectId == ProjectId).ToList();
         if (dataGridView1.DataSource == null)
         {
             MassageCollection.ShowErrorServer();
@@ -243,6 +244,7 @@ public partial class OutComeUserControl : UserControl
         {
             SetColumnsTitle();
         }
+        data.Clear();
         loadingForm.Hide();
     }
 
@@ -269,18 +271,12 @@ public partial class OutComeUserControl : UserControl
         table.Columns["Detalis"].SetOrdinal(6);
         table.Columns["Detalis"].ColumnName = "التفاصيل";
 
-        table.Columns["CategoryId"].SetOrdinal(7);
-        table.Columns["CategoryId"].ColumnName = "CategoryId";
-
-        table.Columns["SupplierId"].SetOrdinal(8);
-        table.Columns["SupplierId"].ColumnName = "SupplierId";
-
-        table.Columns["ProjectId"].SetOrdinal(9);
-        table.Columns["ProjectId"].ColumnName = "ProjectId";
-
-
+       
+        table.Columns.Remove("Categories");
         table.Columns.Remove("CategoryId");
+        table.Columns.Remove("Suppliers");
         table.Columns.Remove("SupplierId");
+        table.Columns.Remove("Projects");
         table.Columns.Remove("ProjectId");
         table.AcceptChanges();
 

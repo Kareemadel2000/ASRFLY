@@ -23,6 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Gui\GuiInCome\AddInComeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Gui\GuiInCome\InComeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Gui\GuiOutCome\AddOutComeForm.cs">
       <SubType>Form</SubType>
     </Compile>

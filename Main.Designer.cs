@@ -70,7 +70,7 @@
             buttonHome.ForeColor = Color.Black;
             buttonHome.Image = Resources.Home;
             buttonHome.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonHome.Location = new Point(935, 10);
+            buttonHome.Location = new Point(931, 10);
             buttonHome.Margin = new Padding(5);
             buttonHome.Name = "buttonHome";
             buttonHome.Padding = new Padding(5);
@@ -87,7 +87,7 @@
             buttonCategory.ForeColor = Color.Black;
             buttonCategory.Image = Resources.Categorize;
             buttonCategory.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonCategory.Location = new Point(760, 10);
+            buttonCategory.Location = new Point(756, 10);
             buttonCategory.Margin = new Padding(5);
             buttonCategory.Name = "buttonCategory";
             buttonCategory.Padding = new Padding(5);
@@ -104,7 +104,7 @@
             buttonCustomers.ForeColor = Color.Black;
             buttonCustomers.Image = Resources.Users;
             buttonCustomers.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonCustomers.Location = new Point(585, 10);
+            buttonCustomers.Location = new Point(581, 10);
             buttonCustomers.Margin = new Padding(5);
             buttonCustomers.Name = "buttonCustomers";
             buttonCustomers.Padding = new Padding(5);
@@ -121,7 +121,7 @@
             buttonSuppliers.ForeColor = Color.Black;
             buttonSuppliers.Image = Resources.Crowd;
             buttonSuppliers.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonSuppliers.Location = new Point(410, 10);
+            buttonSuppliers.Location = new Point(406, 10);
             buttonSuppliers.Margin = new Padding(5);
             buttonSuppliers.Name = "buttonSuppliers";
             buttonSuppliers.Padding = new Padding(5);
@@ -138,7 +138,7 @@
             buttonProjects.ForeColor = Color.Black;
             buttonProjects.Image = Resources.Group_of_Projects_1;
             buttonProjects.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonProjects.Location = new Point(235, 10);
+            buttonProjects.Location = new Point(231, 10);
             buttonProjects.Margin = new Padding(5);
             buttonProjects.Name = "buttonProjects";
             buttonProjects.Padding = new Padding(5);
@@ -155,13 +155,13 @@
             buttonUsers.ForeColor = Color.Black;
             buttonUsers.Image = Resources.Conference_Skin_Type_7;
             buttonUsers.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonUsers.Location = new Point(60, 10);
+            buttonUsers.Location = new Point(56, 10);
             buttonUsers.Margin = new Padding(5);
             buttonUsers.Name = "buttonUsers";
             buttonUsers.Padding = new Padding(5);
             buttonUsers.Size = new Size(165, 55);
             buttonUsers.TabIndex = 5;
-            buttonUsers.Text = "المستخدمين";
+            buttonUsers.Text = "      المستخدمين";
             buttonUsers.UseVisualStyleBackColor = true;
             // 
             // buttonAbouts
@@ -171,7 +171,7 @@
             buttonAbouts.ForeColor = Color.Black;
             buttonAbouts.Image = Resources.About;
             buttonAbouts.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAbouts.Location = new Point(935, 75);
+            buttonAbouts.Location = new Point(931, 75);
             buttonAbouts.Margin = new Padding(5);
             buttonAbouts.Name = "buttonAbouts";
             buttonAbouts.Padding = new Padding(5);
@@ -187,7 +187,7 @@
             buttonSettings.ForeColor = Color.Black;
             buttonSettings.Image = Resources.Automatic;
             buttonSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonSettings.Location = new Point(760, 75);
+            buttonSettings.Location = new Point(756, 75);
             buttonSettings.Margin = new Padding(5);
             buttonSettings.Name = "buttonSettings";
             buttonSettings.Padding = new Padding(5);
@@ -203,7 +203,7 @@
             buttonLogOut.ForeColor = Color.Black;
             buttonLogOut.Image = Resources.Logout_1;
             buttonLogOut.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonLogOut.Location = new Point(585, 75);
+            buttonLogOut.Location = new Point(581, 75);
             buttonLogOut.Margin = new Padding(5);
             buttonLogOut.Name = "buttonLogOut";
             buttonLogOut.Padding = new Padding(5);
@@ -219,7 +219,7 @@
             buttonHelp.ForeColor = Color.Black;
             buttonHelp.Image = Resources.Help;
             buttonHelp.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonHelp.Location = new Point(410, 75);
+            buttonHelp.Location = new Point(406, 75);
             buttonHelp.Margin = new Padding(5);
             buttonHelp.Name = "buttonHelp";
             buttonHelp.Padding = new Padding(5);
@@ -240,7 +240,7 @@
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1132, 540);
             Controls.Add(panelContainer);

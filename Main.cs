@@ -43,8 +43,4 @@ public partial class Main : Form
     }
 
     #endregion
-
-
-
-
 }

@@ -37,6 +37,7 @@ public partial class AddCategoryForm : Form
             {
                 if (ID == 0)
                 {
+                    this.DialogResult = DialogResult.OK;
                     MassageCollection.ShowAddNotifications();
                 }
                 else
@@ -67,6 +68,7 @@ public partial class AddCategoryForm : Form
                 if (ID == 0)
                 {
                     MassageCollection.ShowAddNotifications();
+                    this.DialogResult = DialogResult.OK;
                 }
                 else
                 {

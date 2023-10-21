@@ -121,7 +121,7 @@ public partial class ProjectsUserControl : UserControl
 
     private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-        Edit();
+        ProjectExplor();
     }
 
     private async void comboBoxPageNo_SelectedIndexChanged(object sender, EventArgs e)
@@ -147,6 +147,20 @@ public partial class ProjectsUserControl : UserControl
 
     private void buttonOpen_Click(object sender, EventArgs e)
     {
+        ProjectExplor();
+    }
+
+
+    #endregion
+
+    #region Methods
+    public static ProjectsUserControl Instance()
+    {
+        return _ProjectsUserControl ?? (new ProjectsUserControl());
+    }
+
+    private void ProjectExplor()
+    {
         if (dataGridView1.RowCount > 0)
         {
             // Get Id 
@@ -160,14 +174,6 @@ public partial class ProjectsUserControl : UserControl
         }
     }
 
-
-    #endregion
-
-    #region Methods
-    public static ProjectsUserControl Instance()
-    {
-        return _ProjectsUserControl ?? (new ProjectsUserControl());
-    }
     public async void LaodData()
     {
         loadingForm.Show();

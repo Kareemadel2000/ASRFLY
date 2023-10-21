@@ -95,15 +95,52 @@ public partial class AddInComeForm : Form
         loadingForm.Hide();
     }
 
-    private void textBox1_TextChanged(object sender, EventArgs e)
+    private async void linkLabelnewCateory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
+        AddCategoryForm addCategoryForm = new AddCategoryForm(0, new CategoryUserControl());
+        var result = addCategoryForm.ShowDialog();
+        if (result == DialogResult.OK)
+        {
+            // Get List Of Categories
+            var ListCategories = await _dataHelperCategories.GetAllDataAsync();
+            // Fill
+            comboBoxCategory.DataSource = ListCategories.Select(x => x.Name).ToList();
 
+            // Auto Complete
+            AutoCompleteStringCollection autoCompleteStringCategory = new AutoCompleteStringCollection();
+            autoCompleteStringCategory.AddRange(ListCategories.Select(x => x.Name).ToArray());
+            comboBoxSupplier.AutoCompleteCustomSource = autoCompleteStringCategory;
+
+            ListCategories.Clear();//Clear
+
+        }
     }
 
-    private void label3_Click(object sender, EventArgs e)
+    private async void linkLabelnewCustomer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
+        AddCustomersForm addCustomersForm = new AddCustomersForm(0, new CustomersUserControl());
+        var result = addCustomersForm.ShowDialog();
+        if (result == DialogResult.OK)
+        {
+            // Get List Of Customers
+            var ListCustomers = await _dataHelperCustomers.GetAllDataAsync();
+            // Fill
+            comboBoxSupplier.DataSource = ListCustomers.Select(x => x.Name).ToList();
+
+            // Auto Complete
+            AutoCompleteStringCollection autoCompleteString = new AutoCompleteStringCollection();
+            autoCompleteString.AddRange(ListCustomers.Select(x => x.Name).ToArray());
+            comboBoxSupplier.AutoCompleteCustomSource = autoCompleteString;
+
+            ListCustomers.Clear();//Clear
+
+        }
     }
 
+    private void AddInComeForm_Activated(object sender, EventArgs e)
+    {
+        //SetFieldData();
+    }
     #endregion
 
     //Method 

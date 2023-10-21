@@ -37,6 +37,7 @@ public partial class AddCustomersForm : Form
             {
                 if (ID == 0)
                 {
+                    this.DialogResult = DialogResult.OK;
                     MassageCollection.ShowAddNotifications();
                 }
                 else
@@ -66,6 +67,7 @@ public partial class AddCustomersForm : Form
             {
                 if (ID == 0)
                 {
+                    this.DialogResult = DialogResult.OK;
                     MassageCollection.ShowAddNotifications();
                 }
                 else

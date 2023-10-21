@@ -32,6 +32,8 @@ partial class AddInComeForm
         buttonSave = new Button();
         buttonSaveAndClose = new Button();
         groupBox1 = new GroupBox();
+        linkLabelnewCustomer = new LinkLabel();
+        linkLabelnewCateory = new LinkLabel();
         label10 = new Label();
         label9 = new Label();
         label7 = new Label();
@@ -100,6 +102,8 @@ partial class AddInComeForm
         // 
         // groupBox1
         // 
+        groupBox1.Controls.Add(linkLabelnewCustomer);
+        groupBox1.Controls.Add(linkLabelnewCateory);
         groupBox1.Controls.Add(label10);
         groupBox1.Controls.Add(label9);
         groupBox1.Controls.Add(label7);
@@ -122,6 +126,30 @@ partial class AddInComeForm
         groupBox1.TabIndex = 1;
         groupBox1.TabStop = false;
         groupBox1.Text = "معلومات القبض ";
+        // 
+        // linkLabelnewCustomer
+        // 
+        linkLabelnewCustomer.AutoSize = true;
+        linkLabelnewCustomer.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        linkLabelnewCustomer.Location = new Point(319, 91);
+        linkLabelnewCustomer.Name = "linkLabelnewCustomer";
+        linkLabelnewCustomer.Size = new Size(47, 24);
+        linkLabelnewCustomer.TabIndex = 32;
+        linkLabelnewCustomer.TabStop = true;
+        linkLabelnewCustomer.Text = "جديد";
+        linkLabelnewCustomer.LinkClicked += linkLabelnewCustomer_LinkClicked;
+        // 
+        // linkLabelnewCateory
+        // 
+        linkLabelnewCateory.AutoSize = true;
+        linkLabelnewCateory.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        linkLabelnewCateory.Location = new Point(319, 41);
+        linkLabelnewCateory.Name = "linkLabelnewCateory";
+        linkLabelnewCateory.Size = new Size(47, 24);
+        linkLabelnewCateory.TabIndex = 31;
+        linkLabelnewCateory.TabStop = true;
+        linkLabelnewCateory.Text = "جديد";
+        linkLabelnewCateory.LinkClicked += linkLabelnewCateory_LinkClicked;
         // 
         // label10
         // 
@@ -196,7 +224,7 @@ partial class AddInComeForm
         comboBoxCategory.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
         comboBoxCategory.AutoCompleteSource = AutoCompleteSource.CustomSource;
         comboBoxCategory.FormattingEnabled = true;
-        comboBoxCategory.Location = new Point(7, 30);
+        comboBoxCategory.Location = new Point(7, 38);
         comboBoxCategory.Name = "comboBoxCategory";
         comboBoxCategory.Size = new Size(297, 32);
         comboBoxCategory.TabIndex = 1;
@@ -231,7 +259,7 @@ partial class AddInComeForm
         // 
         label6.AutoSize = true;
         label6.ForeColor = Color.Red;
-        label6.Location = new Point(372, 38);
+        label6.Location = new Point(382, 38);
         label6.Name = "label6";
         label6.Size = new Size(20, 24);
         label6.TabIndex = 11;
@@ -254,7 +282,6 @@ partial class AddInComeForm
         label3.Size = new Size(55, 24);
         label3.TabIndex = 4;
         label3.Text = "العميل";
-        label3.Click += label3_Click;
         // 
         // label2
         // 
@@ -268,7 +295,7 @@ partial class AddInComeForm
         // label1
         // 
         label1.AutoSize = true;
-        label1.Location = new Point(394, 38);
+        label1.Location = new Point(403, 38);
         label1.Name = "label1";
         label1.Size = new Size(49, 24);
         label1.TabIndex = 0;
@@ -294,6 +321,7 @@ partial class AddInComeForm
         StartPosition = FormStartPosition.CenterScreen;
         Text = "أضافة / تعديل قبض";
         TopMost = true;
+        Activated += AddInComeForm_Activated;
         Load += AddCategoryForm_Load;
         panel1.ResumeLayout(false);
         groupBox1.ResumeLayout(false);
@@ -323,4 +351,6 @@ partial class AddInComeForm
     private Label label7;
     private Label label10;
     private Label label9;
+    private LinkLabel linkLabelnewCateory;
+    private LinkLabel linkLabelnewCustomer;
 }

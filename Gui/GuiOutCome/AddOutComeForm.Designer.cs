@@ -32,6 +32,8 @@ partial class AddOutComeForm
         buttonSave = new Button();
         buttonSaveAndClose = new Button();
         groupBox1 = new GroupBox();
+        linkLabelnewSuppliers = new LinkLabel();
+        linkLabelnewCateory = new LinkLabel();
         label10 = new Label();
         label9 = new Label();
         label7 = new Label();
@@ -100,6 +102,8 @@ partial class AddOutComeForm
         // 
         // groupBox1
         // 
+        groupBox1.Controls.Add(linkLabelnewSuppliers);
+        groupBox1.Controls.Add(linkLabelnewCateory);
         groupBox1.Controls.Add(label10);
         groupBox1.Controls.Add(label9);
         groupBox1.Controls.Add(label7);
@@ -123,11 +127,35 @@ partial class AddOutComeForm
         groupBox1.TabStop = false;
         groupBox1.Text = "معلومات الصرف ";
         // 
+        // linkLabelnewSuppliers
+        // 
+        linkLabelnewSuppliers.AutoSize = true;
+        linkLabelnewSuppliers.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        linkLabelnewSuppliers.Location = new Point(319, 96);
+        linkLabelnewSuppliers.Name = "linkLabelnewSuppliers";
+        linkLabelnewSuppliers.Size = new Size(47, 24);
+        linkLabelnewSuppliers.TabIndex = 33;
+        linkLabelnewSuppliers.TabStop = true;
+        linkLabelnewSuppliers.Text = "جديد";
+        linkLabelnewSuppliers.LinkClicked += linkLabelnewSuppliers_LinkClicked;
+        // 
+        // linkLabelnewCateory
+        // 
+        linkLabelnewCateory.AutoSize = true;
+        linkLabelnewCateory.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        linkLabelnewCateory.Location = new Point(319, 38);
+        linkLabelnewCateory.Name = "linkLabelnewCateory";
+        linkLabelnewCateory.Size = new Size(47, 24);
+        linkLabelnewCateory.TabIndex = 32;
+        linkLabelnewCateory.TabStop = true;
+        linkLabelnewCateory.Text = "جديد";
+        linkLabelnewCateory.LinkClicked += linkLabelnewCateory_LinkClicked;
+        // 
         // label10
         // 
         label10.AutoSize = true;
         label10.ForeColor = Color.Red;
-        label10.Location = new Point(372, 262);
+        label10.Location = new Point(377, 265);
         label10.Name = "label10";
         label10.Size = new Size(20, 24);
         label10.TabIndex = 30;
@@ -137,7 +165,7 @@ partial class AddOutComeForm
         // 
         label9.AutoSize = true;
         label9.ForeColor = Color.Red;
-        label9.Location = new Point(310, 88);
+        label9.Location = new Point(381, 91);
         label9.Name = "label9";
         label9.Size = new Size(20, 24);
         label9.TabIndex = 29;
@@ -147,7 +175,7 @@ partial class AddOutComeForm
         // 
         label7.AutoSize = true;
         label7.ForeColor = Color.Red;
-        label7.Location = new Point(329, 146);
+        label7.Location = new Point(329, 152);
         label7.Name = "label7";
         label7.Size = new Size(20, 24);
         label7.TabIndex = 28;
@@ -156,7 +184,7 @@ partial class AddOutComeForm
         // label4
         // 
         label4.AutoSize = true;
-        label4.Location = new Point(394, 265);
+        label4.Location = new Point(403, 265);
         label4.Name = "label4";
         label4.Size = new Size(49, 24);
         label4.TabIndex = 27;
@@ -175,7 +203,7 @@ partial class AddOutComeForm
         // label5
         // 
         label5.AutoSize = true;
-        label5.Location = new Point(362, 208);
+        label5.Location = new Point(371, 208);
         label5.Name = "label5";
         label5.Size = new Size(81, 24);
         label5.TabIndex = 25;
@@ -221,7 +249,7 @@ partial class AddOutComeForm
         // label8
         // 
         label8.AutoSize = true;
-        label8.Location = new Point(346, 152);
+        label8.Location = new Point(355, 152);
         label8.Name = "label8";
         label8.Size = new Size(97, 24);
         label8.TabIndex = 18;
@@ -231,7 +259,7 @@ partial class AddOutComeForm
         // 
         label6.AutoSize = true;
         label6.ForeColor = Color.Red;
-        label6.Location = new Point(372, 38);
+        label6.Location = new Point(381, 38);
         label6.Name = "label6";
         label6.Size = new Size(20, 24);
         label6.TabIndex = 11;
@@ -249,17 +277,17 @@ partial class AddOutComeForm
         // label3
         // 
         label3.AutoSize = true;
-        label3.Location = new Point(329, 92);
+        label3.Location = new Point(403, 96);
         label3.Name = "label3";
-        label3.Size = new Size(114, 24);
+        label3.Size = new Size(49, 24);
         label3.TabIndex = 4;
-        label3.Text = "المورد(المستلم)";
+        label3.Text = "المورد\r\n";
         label3.Click += label3_Click;
         // 
         // label2
         // 
         label2.AutoSize = true;
-        label2.Location = new Point(372, 346);
+        label2.Location = new Point(381, 346);
         label2.Name = "label2";
         label2.Size = new Size(71, 24);
         label2.TabIndex = 2;
@@ -268,7 +296,7 @@ partial class AddOutComeForm
         // label1
         // 
         label1.AutoSize = true;
-        label1.Location = new Point(394, 38);
+        label1.Location = new Point(403, 38);
         label1.Name = "label1";
         label1.Size = new Size(49, 24);
         label1.TabIndex = 0;
@@ -323,4 +351,6 @@ partial class AddOutComeForm
     private Label label7;
     private Label label10;
     private Label label9;
+    private LinkLabel linkLabelnewCateory;
+    private LinkLabel linkLabelnewSuppliers;
 }

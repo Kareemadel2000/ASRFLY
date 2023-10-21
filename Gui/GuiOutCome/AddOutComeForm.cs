@@ -1,4 +1,6 @@
-﻿namespace ASRFLY.Gui.GuiOutCome;
+﻿using ASRFLY.Core.Entityes;
+
+namespace ASRFLY.Gui.GuiOutCome;
 
 public partial class AddOutComeForm : Form
 {
@@ -301,4 +303,45 @@ public partial class AddOutComeForm : Form
     }
     #endregion
 
+    private async void linkLabelnewCateory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        AddCategoryForm addCategoryForm = new AddCategoryForm(0, new CategoryUserControl());
+        var result = addCategoryForm.ShowDialog();
+        if (result == DialogResult.OK)
+        {
+            // Get List Of Categories
+            var ListCategories = await _dataHelperCategories.GetAllDataAsync();
+            // Fill
+            comboBoxCategory.DataSource = ListCategories.Select(x => x.Name).ToList();
+
+            // Auto Complete
+            AutoCompleteStringCollection autoCompleteStringCategory = new AutoCompleteStringCollection();
+            autoCompleteStringCategory.AddRange(ListCategories.Select(x => x.Name).ToArray());
+            comboBoxSupplier.AutoCompleteCustomSource = autoCompleteStringCategory;
+
+            ListCategories.Clear();//Clear
+        }
+    }
+
+    private async void linkLabelnewSuppliers_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        AddSuppliersForm addSuppliersForm = new AddSuppliersForm(0, new SuppliersUserControl());
+        var result = addSuppliersForm.ShowDialog();
+        if (result == DialogResult.OK)
+        {
+            // Get List Of Suppliers
+            var ListSuppliers = await _dataHelperSuppliers.GetAllDataAsync();
+            // Fill
+            comboBoxSupplier.DataSource = ListSuppliers.Select(x => x.Name).ToList();
+
+            // Auto Complete
+            AutoCompleteStringCollection autoCompleteString = new AutoCompleteStringCollection();
+            autoCompleteString.AddRange(ListSuppliers.Select(x => x.Name).ToArray());
+            comboBoxSupplier.AutoCompleteCustomSource = autoCompleteString;
+
+            ListSuppliers.Clear();//Clear
+
+        }
+
+    }
 }

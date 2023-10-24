@@ -1,23 +1,26 @@
-﻿using ClosedXML.Excel;
-
-namespace ASRFLY.Gui.GuiCategories;
+﻿namespace ASRFLY.Gui.GuiCategories;
 
 public partial class CategoryUserControl : UserControl
 {
     //variables
     private readonly IDataHelper<Categories> _dataHelper;
+    private readonly IDataHelper<InCome> _dataHelperInCome;
+    private readonly IDataHelper<OutCome> _dataHelperOutCome;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
     private static CategoryUserControl _CategoryUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
     private List<int> IdList = new List<int>();
     private string searchItem;
+    private double Amount;
 
     //ctor
     public CategoryUserControl()
     {
         InitializeComponent();
         _dataHelper = (IDataHelper<Categories>)ConfigrationObjectManager.GetObject("Categories");
+        _dataHelperInCome = (IDataHelper<InCome>)ConfigrationObjectManager.GetObject("InCome");
+        _dataHelperOutCome = (IDataHelper<OutCome>)ConfigrationObjectManager.GetObject("OutCome");
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         LaodData();
@@ -283,6 +286,57 @@ public partial class CategoryUserControl : UserControl
         }
     }
 
+    private void UpdateData()
+    {
+        //Get Data
+        var CategoriesId = _dataHelper.GetAllData().Select(x => x.Id).ToList();
+        // for Loops into categoriesId
+        for (int i = 0; i < CategoriesId.Count; i++)
+        {
+            var CategoryId = CategoriesId[i];
+            try
+            {
+                Amount = _dataHelperInCome.GetAllData()
+               .Where(x => x.CategoryId == CategoryId)
+               .Select(x => x.Amount)
+               .ToArray()
+               .Sum();
+            }
+            catch { }
+
+            //Set Data
+            Categories categories = _dataHelper.GetAllData()
+                .Where(x => x.Id == CategoryId).First();
+            categories.Balance = Amount;
+            _dataHelper.Edit(categories);
+        }
+
+        for (int j = 0; j < CategoriesId.Count; j++)
+        {
+            var CategoryId = CategoriesId[j];
+            try
+            {
+                Amount = _dataHelperOutCome.GetAllData()
+               .Where(x => x.CategoryId == CategoryId)
+               .Select(x => x.Amount)
+               .ToArray()
+               .Sum();
+            }
+            catch { }
+
+            //Set Data
+            Categories categories = _dataHelper.GetAllData()
+                .Where(x => x.Id == CategoryId).First();
+            categories.Balance = Amount;
+            _dataHelper.Edit(categories);
+        }
+    }
+
     #endregion
 
+
+    private async void CategoryUserControl_Leave(object sender, EventArgs e)
+    {
+        await Task.Run(() => UpdateData());
+    }
 }

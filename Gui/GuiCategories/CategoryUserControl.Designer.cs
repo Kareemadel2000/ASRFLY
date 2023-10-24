@@ -266,6 +266,7 @@ partial class CategoryUserControl
         Name = "CategoryUserControl";
         RightToLeft = RightToLeft.Yes;
         Size = new Size(1262, 600);
+        Leave += CategoryUserControl_Leave;
         flowLayoutPanel1.ResumeLayout(false);
         panel1.ResumeLayout(false);
         panel1.PerformLayout();

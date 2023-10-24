@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
+            labelRev = new Label();
+            labelIncome = new Label();
+            labelOutcome = new Label();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             panelInCome = new Panel();
@@ -42,9 +42,9 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(labelRev);
+            panel1.Controls.Add(labelIncome);
+            panel1.Controls.Add(labelOutcome);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 557);
@@ -52,38 +52,41 @@
             panel1.Size = new Size(1062, 116);
             panel1.TabIndex = 0;
             // 
-            // label4
+            // labelRev
             // 
-            label4.BorderStyle = BorderStyle.FixedSingle;
-            label4.Dock = DockStyle.Left;
-            label4.Location = new Point(380, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(180, 116);
-            label4.TabIndex = 3;
-            label4.Text = "الارباح:0000000";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            labelRev.BackColor = Color.DarkGray;
+            labelRev.BorderStyle = BorderStyle.Fixed3D;
+            labelRev.Dock = DockStyle.Left;
+            labelRev.Location = new Point(380, 0);
+            labelRev.Name = "labelRev";
+            labelRev.Size = new Size(180, 116);
+            labelRev.TabIndex = 3;
+            labelRev.Text = "الارباح:0000000";
+            labelRev.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // labelIncome
             // 
-            label3.BorderStyle = BorderStyle.FixedSingle;
-            label3.Dock = DockStyle.Left;
-            label3.Location = new Point(190, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(190, 116);
-            label3.TabIndex = 2;
-            label3.Text = "المقبوضات:000000";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            labelIncome.BackColor = Color.Gold;
+            labelIncome.BorderStyle = BorderStyle.Fixed3D;
+            labelIncome.Dock = DockStyle.Left;
+            labelIncome.Location = new Point(190, 0);
+            labelIncome.Name = "labelIncome";
+            labelIncome.Size = new Size(190, 116);
+            labelIncome.TabIndex = 2;
+            labelIncome.Text = "المقبوضات:000000";
+            labelIncome.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // labelOutcome
             // 
-            label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Dock = DockStyle.Left;
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(190, 116);
-            label2.TabIndex = 1;
-            label2.Text = "المصروفات:000000";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            labelOutcome.BackColor = Color.DarkOrange;
+            labelOutcome.BorderStyle = BorderStyle.Fixed3D;
+            labelOutcome.Dock = DockStyle.Left;
+            labelOutcome.Location = new Point(0, 0);
+            labelOutcome.Name = "labelOutcome";
+            labelOutcome.Size = new Size(190, 116);
+            labelOutcome.TabIndex = 1;
+            labelOutcome.Text = "المصروفات:000000";
+            labelOutcome.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -123,6 +126,7 @@
             // 
             // panelOutCome
             // 
+            panelOutCome.BackColor = Color.White;
             panelOutCome.Dock = DockStyle.Fill;
             panelOutCome.Location = new Point(534, 3);
             panelOutCome.Name = "panelOutCome";
@@ -145,6 +149,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "أدارة المشروع ";
             WindowState = FormWindowState.Maximized;
+            Activated += ProjectManagmentForm_Activated;
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -157,8 +162,8 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panelInCome;
         private Panel panelOutCome;
-        private Label label4;
-        private Label label3;
-        private Label label2;
+        private Label labelRev;
+        private Label labelIncome;
+        private Label labelOutcome;
     }
 }

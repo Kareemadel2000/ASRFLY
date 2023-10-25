@@ -1,23 +1,25 @@
-﻿using ClosedXML.Excel;
-
-namespace ASRFLY.Gui.GuiCustomers;
+﻿namespace ASRFLY.Gui.GuiCustomers;
 
 public partial class CustomersUserControl : UserControl
 {
     //variables
     private readonly IDataHelper<Customers> _dataHelper;
+    private readonly IDataHelper<InCome> _dataHelperInCome;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
     private static CustomersUserControl _CustomersUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
     private List<int> IdList = new List<int>();
     private string searchItem;
+    private List<int> ListOfCustomersId = new List<int>();
+    private double InComeAmount;
 
     //ctor
     public CustomersUserControl()
     {
         InitializeComponent();
         _dataHelper = (IDataHelper<Customers>)ConfigrationObjectManager.GetObject("Customers");
+        _dataHelperInCome = (IDataHelper<InCome>)ConfigrationObjectManager.GetObject("InCome");
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         LaodData();
@@ -152,10 +154,13 @@ public partial class CustomersUserControl : UserControl
     {
         return _CustomersUserControl ?? (new CustomersUserControl());
     }
+
     public async void LaodData()
     {
         loadingForm.Show();
         var data = await _dataHelper.GetAllDataAsync();
+        ListOfCustomersId = data.Select(x => x.Id).ToList();
+        await Task.Run( () => UpdateData(ListOfCustomersId));
         dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
 
         // Add Number of page into ComboBox
@@ -180,6 +185,7 @@ public partial class CustomersUserControl : UserControl
         loadingForm.Hide();
         data.Clear();
     }
+
     private void SetColumnsTitle()
     {
         dataGridView1.Columns[0].HeaderText = "المعرف";
@@ -262,6 +268,7 @@ public partial class CustomersUserControl : UserControl
 
         return table;
     }
+
     private void ExportAsXlsxFile(DataTable dataTableArranged)
     {
         SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -290,6 +297,32 @@ public partial class CustomersUserControl : UserControl
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+    }
+
+    private void UpdateData(List<int> ListOfCustomersId)
+    {
+        //Get Data
+        // for Loops into projectsId 
+        for (int i = 0; i < ListOfCustomersId.Count; i++)
+        {
+            var CustomerstId = ListOfCustomersId[i];
+            try
+            {
+                //  InComeAmount
+                InComeAmount = _dataHelperInCome.GetAllData()
+               .Where(x => x.SupplierId == CustomerstId)
+               .Select(x => x.Amount)
+               .ToArray().Sum();
+
+            }
+            catch { }
+
+            //Set Data
+            Customers customers = _dataHelper.GetAllData()
+                .Where(x => x.Id == CustomerstId).First();
+            customers.Balance = InComeAmount;
+            _dataHelper.Edit(customers);
         }
     }
 

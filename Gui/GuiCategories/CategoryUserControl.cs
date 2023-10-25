@@ -7,7 +7,7 @@ public partial class CategoryUserControl : UserControl
     private readonly IDataHelper<InCome> _dataHelperInCome;
     private readonly IDataHelper<OutCome> _dataHelperOutCome;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
-    private static CategoryUserControl _CategoryUserControl;
+    private static CategoryUserControl? _CategoryUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
     private List<int> IdList = new List<int>();

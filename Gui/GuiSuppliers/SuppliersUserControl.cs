@@ -1,23 +1,26 @@
-﻿using ClosedXML.Excel;
-
-namespace ASRFLY.Gui.GuiSuppliers;
+﻿namespace ASRFLY.Gui.GuiSuppliers;
 
 public partial class SuppliersUserControl : UserControl
 {
     //variables
     private readonly IDataHelper<Suppliers> _dataHelper;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
-    private static SuppliersUserControl _SuppliersUserControl;
+    private readonly IDataHelper<OutCome> _dataHelperOutCome;
+    private static SuppliersUserControl? _SuppliersUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
     private List<int> IdList = new List<int>();
     private string searchItem;
+    private double InComeAmount;
+    private List<int> ListOfSuppliersId = new List<int>();
+
 
     //ctor
     public SuppliersUserControl()
     {
         InitializeComponent();
         _dataHelper = (IDataHelper<Suppliers>)ConfigrationObjectManager.GetObject("Suppliers");
+        _dataHelperOutCome = (IDataHelper<OutCome>)ConfigrationObjectManager.GetObject("OutCome");
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         LaodData();
@@ -152,10 +155,13 @@ public partial class SuppliersUserControl : UserControl
     {
         return _SuppliersUserControl ?? (new SuppliersUserControl());
     }
+
     public async void LaodData()
     {
         loadingForm.Show();
         var data = await _dataHelper.GetAllDataAsync();
+        ListOfSuppliersId = data.Select(x => x.Id).ToList();
+        await Task.Run(() => UpdateData(ListOfSuppliersId));
         dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
 
         // Add Number of page into ComboBox
@@ -180,6 +186,7 @@ public partial class SuppliersUserControl : UserControl
         loadingForm.Hide();
         data.Clear();
     }
+
     private void SetColumnsTitle()
     {
         dataGridView1.Columns[0].HeaderText = "المعرف";
@@ -262,6 +269,7 @@ public partial class SuppliersUserControl : UserControl
 
         return table;
     }
+
     private void ExportAsXlsxFile(DataTable dataTableArranged)
     {
         SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -290,6 +298,32 @@ public partial class SuppliersUserControl : UserControl
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+    }
+
+    private void UpdateData(List<int> ListOfSuppliersId)
+    {
+        //Get Data
+        // for Loops into projectsId 
+        for (int i = 0; i < ListOfSuppliersId.Count; i++)
+        {
+            var SupplierstId = ListOfSuppliersId[i];
+            try
+            {
+                //  InComeAmount
+                InComeAmount = _dataHelperOutCome.GetAllData()
+               .Where(x => x.SupplierId == SupplierstId)
+               .Select(x => x.Amount)
+               .ToArray().Sum();
+
+            }
+            catch { }
+
+            //Set Data
+            Suppliers suppliers = _dataHelper.GetAllData()
+                .Where(x => x.Id == SupplierstId).First();
+            suppliers.Balance = InComeAmount;
+            _dataHelper.Edit(suppliers);
         }
     }
 

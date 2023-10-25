@@ -76,7 +76,7 @@ partial class ProjectsUserControl
         buttonAdd.ForeColor = Color.Black;
         buttonAdd.Image = Resources.Add;
         buttonAdd.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonAdd.Location = new Point(1088, 10);
+        buttonAdd.Location = new Point(1084, 10);
         buttonAdd.Margin = new Padding(5);
         buttonAdd.Name = "buttonAdd";
         buttonAdd.Padding = new Padding(5);
@@ -94,7 +94,7 @@ partial class ProjectsUserControl
         buttonEdit.ForeColor = Color.Black;
         buttonEdit.Image = Resources.Edit;
         buttonEdit.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonEdit.Location = new Point(936, 10);
+        buttonEdit.Location = new Point(932, 10);
         buttonEdit.Margin = new Padding(5);
         buttonEdit.Name = "buttonEdit";
         buttonEdit.Padding = new Padding(5);
@@ -112,7 +112,7 @@ partial class ProjectsUserControl
         buttonDelete.ForeColor = Color.Black;
         buttonDelete.Image = Resources.Delete;
         buttonDelete.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonDelete.Location = new Point(784, 10);
+        buttonDelete.Location = new Point(780, 10);
         buttonDelete.Margin = new Padding(5);
         buttonDelete.Name = "buttonDelete";
         buttonDelete.Padding = new Padding(5);
@@ -130,7 +130,7 @@ partial class ProjectsUserControl
         buttonUpdate.ForeColor = Color.Black;
         buttonUpdate.Image = Resources.Refresh;
         buttonUpdate.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonUpdate.Location = new Point(632, 10);
+        buttonUpdate.Location = new Point(628, 10);
         buttonUpdate.Margin = new Padding(5);
         buttonUpdate.Name = "buttonUpdate";
         buttonUpdate.Padding = new Padding(5);
@@ -148,7 +148,7 @@ partial class ProjectsUserControl
         buttonExport.ForeColor = Color.Black;
         buttonExport.Image = Resources.Export;
         buttonExport.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonExport.Location = new Point(480, 10);
+        buttonExport.Location = new Point(476, 10);
         buttonExport.Margin = new Padding(5);
         buttonExport.Name = "buttonExport";
         buttonExport.Padding = new Padding(5);
@@ -166,7 +166,7 @@ partial class ProjectsUserControl
         buttonOpen.ForeColor = Color.Black;
         buttonOpen.Image = Resources.Opened_Folder;
         buttonOpen.ImageAlign = ContentAlignment.MiddleLeft;
-        buttonOpen.Location = new Point(328, 10);
+        buttonOpen.Location = new Point(324, 10);
         buttonOpen.Margin = new Padding(5);
         buttonOpen.Name = "buttonOpen";
         buttonOpen.Padding = new Padding(5);
@@ -181,7 +181,7 @@ partial class ProjectsUserControl
         panel1.BorderStyle = BorderStyle.FixedSingle;
         panel1.Controls.Add(textBoxSearch);
         panel1.Controls.Add(buttonSearch);
-        panel1.Location = new Point(807, 73);
+        panel1.Location = new Point(803, 73);
         panel1.Name = "panel1";
         panel1.Size = new Size(425, 57);
         panel1.TabIndex = 6;
@@ -270,13 +270,13 @@ partial class ProjectsUserControl
         comboBoxPageNo.FormattingEnabled = true;
         comboBoxPageNo.Location = new Point(33, 560);
         comboBoxPageNo.Name = "comboBoxPageNo";
-        comboBoxPageNo.Size = new Size(124, 31);
+        comboBoxPageNo.Size = new Size(124, 37);
         comboBoxPageNo.TabIndex = 5;
         comboBoxPageNo.SelectedIndexChanged += comboBoxPageNo_SelectedIndexChanged;
         // 
         // ProjectsUserControl
         // 
-        AutoScaleDimensions = new SizeF(10F, 23F);
+        AutoScaleDimensions = new SizeF(12F, 29F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.White;
         Controls.Add(comboBoxPageNo);
@@ -287,6 +287,7 @@ partial class ProjectsUserControl
         Name = "ProjectsUserControl";
         RightToLeft = RightToLeft.Yes;
         Size = new Size(1262, 600);
+        
         flowLayoutPanel1.ResumeLayout(false);
         panel1.ResumeLayout(false);
         panel1.PerformLayout();

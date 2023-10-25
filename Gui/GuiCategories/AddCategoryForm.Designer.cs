@@ -157,7 +157,7 @@ partial class AddCategoryForm
         textBoxBalance.Name = "textBoxBalance";
         textBoxBalance.Size = new Size(570, 32);
         textBoxBalance.TabIndex = 7;
-        textBoxBalance.TextAlign = HorizontalAlignment.Right;
+        textBoxBalance.TextAlign = HorizontalAlignment.Center;
         // 
         // label4
         // 

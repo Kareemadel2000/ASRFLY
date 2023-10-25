@@ -1,23 +1,28 @@
-﻿using ClosedXML.Excel;
-
-namespace ASRFLY.Gui.GuiProjects;
+﻿namespace ASRFLY.Gui.GuiProjects;
 
 public partial class ProjectsUserControl : UserControl
 {
     //variables
     private readonly IDataHelper<Projects> _dataHelper;
+    private readonly IDataHelper<InCome> _dataHelperInCome;
+    private readonly IDataHelper<OutCome> _dataHelperOutCome;
     private readonly IDataHelper<SystemRecord> _dataHelperSystemRecord;
-    private static ProjectsUserControl _ProjectsUserControl;
+    private static ProjectsUserControl? _ProjectsUserControl;
     private int RowId;
     private readonly LoadingForm loadingForm;
     private List<int> IdList = new List<int>();
     private string searchItem;
+    private double InComeAmount;
+    private double OutComeAmount;
+    private List<int> ListOfProjectsId = new List<int>();
 
     //ctor
     public ProjectsUserControl()
     {
         InitializeComponent();
         _dataHelper = (IDataHelper<Projects>)ConfigrationObjectManager.GetObject("Projects");
+        _dataHelperInCome = (IDataHelper<InCome>)ConfigrationObjectManager.GetObject("InCome");
+        _dataHelperOutCome = (IDataHelper<OutCome>)ConfigrationObjectManager.GetObject("OutCome");
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         LaodData();
@@ -178,6 +183,9 @@ public partial class ProjectsUserControl : UserControl
     {
         loadingForm.Show();
         var data = await _dataHelper.GetAllDataAsync();
+        ListOfProjectsId = data.Select(x => x.Id).ToList();
+        await Task.Run(() => UpdateData(ListOfProjectsId));
+
         dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
 
         // Add Number of page into ComboBox
@@ -202,6 +210,7 @@ public partial class ProjectsUserControl : UserControl
         loadingForm.Hide();
         data.Clear();
     }
+
     private void SetColumnsTitle()
     {
         dataGridView1.Columns[0].HeaderText = "المعرف";
@@ -307,6 +316,7 @@ public partial class ProjectsUserControl : UserControl
 
         return table;
     }
+
     private void ExportAsXlsxFile(DataTable dataTableArranged)
     {
         SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -338,6 +348,38 @@ public partial class ProjectsUserControl : UserControl
         }
     }
 
-    #endregion
+    private void UpdateData(List<int> ListOfProjectsId)
+    {
+        //Get Data
+        // for Loops into projectsId 
+        for (int i = 0; i < ListOfProjectsId.Count; i++)
+        {
+            var ProjectId = ListOfProjectsId[i];
+            try
+            {
+                //  InComeAmount
+                InComeAmount = _dataHelperInCome.GetAllData()
+               .Where(x => x.ProjectId == ProjectId)
+               .Select(x => x.Amount)
+               .ToArray().Sum();
 
+                // OutComeAmount
+                OutComeAmount = _dataHelperOutCome.GetAllData()
+               .Where(x => x.ProjectId == ProjectId)
+               .Select(x => x.Amount)
+               .ToArray().Sum();
+            }
+            catch { }
+
+            //Set Data
+            Projects projects = _dataHelper.GetAllData()
+                .Where(x => x.Id == ProjectId).First();
+            projects.Income = InComeAmount;
+            projects.Outcome = OutComeAmount;
+            projects.Revenue = InComeAmount - OutComeAmount;
+            _dataHelper.Edit(projects);
+        }
+    }
+
+    #endregion
 }

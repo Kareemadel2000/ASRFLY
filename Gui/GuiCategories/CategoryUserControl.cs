@@ -146,6 +146,7 @@ public partial class CategoryUserControl : UserControl
         data.Clear();
     }
 
+
     #endregion
 
     #region Methods
@@ -157,6 +158,7 @@ public partial class CategoryUserControl : UserControl
     {
         loadingForm.Show();
         var data = await _dataHelper.GetAllDataAsync();
+        //await Task.Run(() => UpdateData());
         dataGridView1.DataSource = data.Take(Properties.Settings.Default.DataGridViewRowNo).ToList();
 
         // Add Number of page into ComboBox
@@ -333,7 +335,6 @@ public partial class CategoryUserControl : UserControl
     }
 
     #endregion
-
 
     private async void CategoryUserControl_Leave(object sender, EventArgs e)
     {

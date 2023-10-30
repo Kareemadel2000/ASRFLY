@@ -163,6 +163,7 @@
             buttonUsers.TabIndex = 5;
             buttonUsers.Text = "      المستخدمين";
             buttonUsers.UseVisualStyleBackColor = true;
+            buttonUsers.Click += buttonUsers_Click;
             // 
             // buttonAbouts
             // 

@@ -1,4 +1,5 @@
 using ASRFLY.Gui.GuiCategories;
+using ASRFLY.Gui.GuiUsers;
 
 namespace ASRFLY;
 
@@ -43,4 +44,10 @@ public partial class Main : Form
     }
 
     #endregion
+
+    private void buttonUsers_Click(object sender, EventArgs e)
+    {
+        // load Users page 
+        pageManager.LoadPage(UsersControl.Instance());
+    }
 }

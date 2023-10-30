@@ -6,14 +6,22 @@ public partial class HomeUserControl : UserControl
     public HomeUserControl()
     {
         InitializeComponent();
+        //SetRoles();
     }
     public static HomeUserControl Instance()
     {
         return _homeUserControl ?? (new HomeUserControl());
     }
 
-    private void buttonAddCategory_Click(object sender, EventArgs e)
+    private void SetRoles()
     {
-        
+        if (!UserRolesManager.GetRole("checkBoxAccessCategory"))
+        {
+            buttonAddCategory.Visible = false;
+        }
+        //if (!UserRolesManager.GetRole("checkBoxCategories"))
+        //{
+        //    buttonCategory.Visible = false;
+        //}
     }
 }

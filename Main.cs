@@ -1,6 +1,3 @@
-using ASRFLY.Gui.GuiCategories;
-using ASRFLY.Gui.GuiUsers;
-
 namespace ASRFLY;
 
 public partial class Main : Form
@@ -10,10 +7,11 @@ public partial class Main : Form
     {
         InitializeComponent();
         pageManager = new PageManager(this);
-
+        UserRolesManager.Register("checkBoxHome", false);
+        // UserRolesManager.Register("checkBoxCategories", false);
         // load Home page 
         pageManager.LoadPage(HomeUserControl.Instance());
-
+        SetRoles();
     }
 
     #region Events
@@ -42,12 +40,24 @@ public partial class Main : Form
         // load Prpjects page 
         pageManager.LoadPage(ProjectsUserControl.Instance());
     }
-
-    #endregion
-
     private void buttonUsers_Click(object sender, EventArgs e)
     {
         // load Users page 
         pageManager.LoadPage(UsersControl.Instance());
     }
+
+    private void SetRoles()
+    {
+        if (!UserRolesManager.GetRole("checkBoxHome"))
+        {
+            buttonHome.Visible = false;
+        }
+        //if (!UserRolesManager.GetRole("checkBoxCategories"))
+        //{
+        //    buttonCategory.Visible = false;
+        //}
+    }
+    #endregion
+
+
 }

@@ -165,7 +165,7 @@
             buttonAddCategory.TabIndex = 5;
             buttonAddCategory.Text = "       صنف\r\n";
             buttonAddCategory.UseVisualStyleBackColor = true;
-            buttonAddCategory.Click += buttonAddCategory_Click;
+            
             // 
             // buttonAddOutput
             // 

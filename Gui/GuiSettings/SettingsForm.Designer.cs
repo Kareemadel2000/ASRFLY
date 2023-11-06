@@ -29,55 +29,55 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            buttonSave = new Button();
-            linkLabel1 = new LinkLabel();
-            pictureBox1 = new PictureBox();
-            numericUpDown2 = new NumericUpDown();
-            numericUpDown1 = new NumericUpDown();
+            buttonSaveSettings = new Button();
+            linkLabelImportImage = new LinkLabel();
+            pictureBoxLogo = new PictureBox();
+            numericUpDownDataRow = new NumericUpDown();
+            numericUpDownnotifications = new NumericUpDown();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox5 = new TextBox();
+            textBoxCompany = new TextBox();
             label9 = new Label();
-            textBox1 = new TextBox();
+            textBoxServer = new TextBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
             groupBox4 = new GroupBox();
-            button3 = new Button();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            textBox2 = new TextBox();
+            buttonSaveConnections = new Button();
+            radioButtonNetworkConnections = new RadioButton();
+            radioButtonLocalConnections = new RadioButton();
+            textBoxDataBase = new TextBox();
             label5 = new Label();
-            numericUpDown3 = new NumericUpDown();
-            textBox4 = new TextBox();
+            numericUpDownTimeOut = new NumericUpDown();
+            textBoxPassword = new TextBox();
             label8 = new Label();
-            textBox3 = new TextBox();
+            textBoxUserName = new TextBox();
             label7 = new Label();
             label6 = new Label();
             groupBox3 = new GroupBox();
             button2 = new Button();
             button1 = new Button();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownDataRow).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownnotifications).BeginInit();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTimeOut).BeginInit();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(buttonSave);
-            groupBox1.Controls.Add(linkLabel1);
-            groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Controls.Add(numericUpDown2);
-            groupBox1.Controls.Add(numericUpDown1);
+            groupBox1.Controls.Add(buttonSaveSettings);
+            groupBox1.Controls.Add(linkLabelImportImage);
+            groupBox1.Controls.Add(pictureBoxLogo);
+            groupBox1.Controls.Add(numericUpDownDataRow);
+            groupBox1.Controls.Add(numericUpDownnotifications);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(textBoxCompany);
             groupBox1.Controls.Add(label9);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
@@ -86,58 +86,59 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "الاعدادات العامة";
             // 
-            // buttonSave
+            // buttonSaveSettings
             // 
-            buttonSave.BackColor = SystemColors.ActiveCaption;
-            buttonSave.FlatAppearance.BorderSize = 0;
-            buttonSave.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSave.ForeColor = Color.Black;
-            buttonSave.Image = Resources.Save_1;
-            buttonSave.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonSave.Location = new Point(15, 482);
-            buttonSave.Margin = new Padding(5);
-            buttonSave.Name = "buttonSave";
-            buttonSave.Padding = new Padding(5);
-            buttonSave.Size = new Size(422, 55);
-            buttonSave.TabIndex = 7;
-            buttonSave.Text = "حفظ";
-            buttonSave.UseVisualStyleBackColor = false;
+            buttonSaveSettings.BackColor = SystemColors.ActiveCaption;
+            buttonSaveSettings.FlatAppearance.BorderSize = 0;
+            buttonSaveSettings.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSaveSettings.ForeColor = Color.Black;
+            buttonSaveSettings.Image = Resources.Save_1;
+            buttonSaveSettings.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonSaveSettings.Location = new Point(15, 482);
+            buttonSaveSettings.Margin = new Padding(5);
+            buttonSaveSettings.Name = "buttonSaveSettings";
+            buttonSaveSettings.Padding = new Padding(5);
+            buttonSaveSettings.Size = new Size(422, 55);
+            buttonSaveSettings.TabIndex = 7;
+            buttonSaveSettings.Text = "حفظ";
+            buttonSaveSettings.UseVisualStyleBackColor = false;
+            buttonSaveSettings.Click += buttonSaveSettings_Click;
             // 
-            // linkLabel1
+            // linkLabelImportImage
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(148, 411);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(95, 24);
-            linkLabel1.TabIndex = 4;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "تحميل صورة";
+            linkLabelImportImage.AutoSize = true;
+            linkLabelImportImage.Location = new Point(148, 411);
+            linkLabelImportImage.Name = "linkLabelImportImage";
+            linkLabelImportImage.Size = new Size(95, 24);
+            linkLabelImportImage.TabIndex = 4;
+            linkLabelImportImage.TabStop = true;
+            linkLabelImportImage.Text = "تحميل صورة";
             // 
-            // pictureBox1
+            // pictureBoxLogo
             // 
-            pictureBox1.Image = Resources.Technology_1;
-            pictureBox1.Location = new Point(80, 288);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(247, 112);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
+            pictureBoxLogo.Image = Resources.Technology_1;
+            pictureBoxLogo.Location = new Point(80, 288);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new Size(247, 112);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxLogo.TabIndex = 3;
+            pictureBoxLogo.TabStop = false;
             // 
-            // numericUpDown2
+            // numericUpDownDataRow
             // 
-            numericUpDown2.Location = new Point(15, 161);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(163, 32);
-            numericUpDown2.TabIndex = 2;
-            numericUpDown2.Value = new decimal(new int[] { 25, 0, 0, 0 });
+            numericUpDownDataRow.Location = new Point(15, 161);
+            numericUpDownDataRow.Name = "numericUpDownDataRow";
+            numericUpDownDataRow.Size = new Size(163, 32);
+            numericUpDownDataRow.TabIndex = 2;
+            numericUpDownDataRow.Value = new decimal(new int[] { 25, 0, 0, 0 });
             // 
-            // numericUpDown1
+            // numericUpDownnotifications
             // 
-            numericUpDown1.Location = new Point(15, 100);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(163, 32);
-            numericUpDown1.TabIndex = 2;
-            numericUpDown1.Value = new decimal(new int[] { 2, 0, 0, 0 });
+            numericUpDownnotifications.Location = new Point(15, 100);
+            numericUpDownnotifications.Name = "numericUpDownnotifications";
+            numericUpDownnotifications.Size = new Size(163, 32);
+            numericUpDownnotifications.TabIndex = 2;
+            numericUpDownnotifications.Value = new decimal(new int[] { 2, 0, 0, 0 });
             // 
             // label4
             // 
@@ -169,14 +170,14 @@
             label2.TabIndex = 0;
             label2.Text = "فترة عرض الاشعارات(ثوانى) ";
             // 
-            // textBox5
+            // textBoxCompany
             // 
-            textBox5.Cursor = Cursors.IBeam;
-            textBox5.Location = new Point(15, 47);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(285, 32);
-            textBox5.TabIndex = 1;
-            textBox5.TextAlign = HorizontalAlignment.Center;
+            textBoxCompany.Cursor = Cursors.IBeam;
+            textBoxCompany.Location = new Point(15, 47);
+            textBoxCompany.Name = "textBoxCompany";
+            textBoxCompany.Size = new Size(285, 32);
+            textBoxCompany.TabIndex = 1;
+            textBoxCompany.TextAlign = HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -188,14 +189,14 @@
             label9.TabIndex = 0;
             label9.Text = "اسم المؤسسة";
             // 
-            // textBox1
+            // textBoxServer
             // 
-            textBox1.Cursor = Cursors.IBeam;
-            textBox1.Location = new Point(17, 72);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(319, 32);
-            textBox1.TabIndex = 1;
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            textBoxServer.Cursor = Cursors.IBeam;
+            textBoxServer.Location = new Point(17, 72);
+            textBoxServer.Name = "textBoxServer";
+            textBoxServer.Size = new Size(319, 32);
+            textBoxServer.TabIndex = 1;
+            textBoxServer.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -221,17 +222,17 @@
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(button3);
-            groupBox4.Controls.Add(radioButton2);
-            groupBox4.Controls.Add(radioButton1);
-            groupBox4.Controls.Add(textBox2);
+            groupBox4.Controls.Add(buttonSaveConnections);
+            groupBox4.Controls.Add(radioButtonNetworkConnections);
+            groupBox4.Controls.Add(radioButtonLocalConnections);
+            groupBox4.Controls.Add(textBoxDataBase);
             groupBox4.Controls.Add(label5);
-            groupBox4.Controls.Add(numericUpDown3);
-            groupBox4.Controls.Add(textBox4);
+            groupBox4.Controls.Add(numericUpDownTimeOut);
+            groupBox4.Controls.Add(textBoxPassword);
             groupBox4.Controls.Add(label8);
-            groupBox4.Controls.Add(textBox3);
+            groupBox4.Controls.Add(textBoxUserName);
             groupBox4.Controls.Add(label7);
-            groupBox4.Controls.Add(textBox1);
+            groupBox4.Controls.Add(textBoxServer);
             groupBox4.Controls.Add(label1);
             groupBox4.Controls.Add(label6);
             groupBox4.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -242,53 +243,54 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "نص الأتصال";
             // 
-            // button3
+            // buttonSaveConnections
             // 
-            button3.BackColor = SystemColors.ActiveCaption;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.ForeColor = Color.Black;
-            button3.Image = Resources.Save_1;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(17, 337);
-            button3.Margin = new Padding(5);
-            button3.Name = "button3";
-            button3.Padding = new Padding(5);
-            button3.Size = new Size(432, 59);
-            button3.TabIndex = 7;
-            button3.Text = "حفظ";
-            button3.UseVisualStyleBackColor = false;
+            buttonSaveConnections.BackColor = SystemColors.ActiveCaption;
+            buttonSaveConnections.FlatAppearance.BorderSize = 0;
+            buttonSaveConnections.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSaveConnections.ForeColor = Color.Black;
+            buttonSaveConnections.Image = Resources.Save_1;
+            buttonSaveConnections.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonSaveConnections.Location = new Point(17, 337);
+            buttonSaveConnections.Margin = new Padding(5);
+            buttonSaveConnections.Name = "buttonSaveConnections";
+            buttonSaveConnections.Padding = new Padding(5);
+            buttonSaveConnections.Size = new Size(432, 59);
+            buttonSaveConnections.TabIndex = 7;
+            buttonSaveConnections.Text = "حفظ";
+            buttonSaveConnections.UseVisualStyleBackColor = false;
+            buttonSaveConnections.Click += buttonSaveConnections_Click;
             // 
-            // radioButton2
+            // radioButtonNetworkConnections
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(17, 31);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(66, 28);
-            radioButton2.TabIndex = 0;
-            radioButton2.Text = "شبكى";
-            radioButton2.UseVisualStyleBackColor = true;
+            radioButtonNetworkConnections.AutoSize = true;
+            radioButtonNetworkConnections.Location = new Point(17, 31);
+            radioButtonNetworkConnections.Name = "radioButtonNetworkConnections";
+            radioButtonNetworkConnections.Size = new Size(66, 28);
+            radioButtonNetworkConnections.TabIndex = 0;
+            radioButtonNetworkConnections.Text = "شبكى";
+            radioButtonNetworkConnections.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonLocalConnections
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Checked = true;
-            radioButton1.Location = new Point(145, 31);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(67, 28);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "محلى";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioButtonLocalConnections.AutoSize = true;
+            radioButtonLocalConnections.Checked = true;
+            radioButtonLocalConnections.Location = new Point(145, 31);
+            radioButtonLocalConnections.Name = "radioButtonLocalConnections";
+            radioButtonLocalConnections.Size = new Size(67, 28);
+            radioButtonLocalConnections.TabIndex = 0;
+            radioButtonLocalConnections.TabStop = true;
+            radioButtonLocalConnections.Text = "محلى";
+            radioButtonLocalConnections.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // textBoxDataBase
             // 
-            textBox2.Cursor = Cursors.IBeam;
-            textBox2.Location = new Point(17, 125);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(319, 32);
-            textBox2.TabIndex = 1;
-            textBox2.TextAlign = HorizontalAlignment.Center;
+            textBoxDataBase.Cursor = Cursors.IBeam;
+            textBoxDataBase.Location = new Point(17, 125);
+            textBoxDataBase.Name = "textBoxDataBase";
+            textBoxDataBase.Size = new Size(319, 32);
+            textBoxDataBase.TabIndex = 1;
+            textBoxDataBase.TextAlign = HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -300,22 +302,23 @@
             label5.TabIndex = 0;
             label5.Text = "قاعدة البيانات";
             // 
-            // numericUpDown3
+            // numericUpDownTimeOut
             // 
-            numericUpDown3.Location = new Point(17, 178);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(319, 32);
-            numericUpDown3.TabIndex = 2;
-            numericUpDown3.Value = new decimal(new int[] { 2, 0, 0, 0 });
+            numericUpDownTimeOut.Location = new Point(17, 178);
+            numericUpDownTimeOut.Name = "numericUpDownTimeOut";
+            numericUpDownTimeOut.Size = new Size(319, 32);
+            numericUpDownTimeOut.TabIndex = 2;
+            numericUpDownTimeOut.Value = new decimal(new int[] { 2, 0, 0, 0 });
             // 
-            // textBox4
+            // textBoxPassword
             // 
-            textBox4.Cursor = Cursors.IBeam;
-            textBox4.Location = new Point(17, 284);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(319, 32);
-            textBox4.TabIndex = 1;
-            textBox4.TextAlign = HorizontalAlignment.Center;
+            textBoxPassword.Cursor = Cursors.IBeam;
+            textBoxPassword.Location = new Point(17, 284);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.PasswordChar = '*';
+            textBoxPassword.Size = new Size(319, 32);
+            textBoxPassword.TabIndex = 1;
+            textBoxPassword.TextAlign = HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -327,14 +330,14 @@
             label8.TabIndex = 0;
             label8.Text = "كلمة السر";
             // 
-            // textBox3
+            // textBoxUserName
             // 
-            textBox3.Cursor = Cursors.IBeam;
-            textBox3.Location = new Point(17, 231);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(319, 32);
-            textBox3.TabIndex = 1;
-            textBox3.TextAlign = HorizontalAlignment.Center;
+            textBoxUserName.Cursor = Cursors.IBeam;
+            textBoxUserName.Location = new Point(17, 231);
+            textBoxUserName.Name = "textBoxUserName";
+            textBoxUserName.Size = new Size(319, 32);
+            textBoxUserName.TabIndex = 1;
+            textBoxUserName.TextAlign = HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -421,13 +424,13 @@
             Text = " أعدادات النظام";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownDataRow).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownnotifications).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTimeOut).EndInit();
             groupBox3.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -435,33 +438,33 @@
         #endregion
 
         private GroupBox groupBox1;
-        private TextBox textBox1;
+        private TextBox textBoxServer;
         private Label label1;
         private Label label2;
         private Label label3;
-        private NumericUpDown numericUpDown2;
-        private NumericUpDown numericUpDown1;
-        private LinkLabel linkLabel1;
-        private PictureBox pictureBox1;
+        private NumericUpDown numericUpDownDataRow;
+        private NumericUpDown numericUpDownnotifications;
+        private LinkLabel linkLabelImportImage;
+        private PictureBox pictureBoxLogo;
         private Label label4;
-        private Button buttonSave;
+        private Button buttonSaveSettings;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private Button button1;
         private Button button2;
         private GroupBox groupBox4;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private TextBox textBox2;
+        private RadioButton radioButtonNetworkConnections;
+        private RadioButton radioButtonLocalConnections;
+        private TextBox textBoxDataBase;
         private Label label5;
-        private NumericUpDown numericUpDown3;
+        private NumericUpDown numericUpDownTimeOut;
         private Label label6;
-        private Button button3;
-        private TextBox textBox4;
+        private Button buttonSaveConnections;
+        private TextBox textBoxPassword;
         private Label label8;
-        private TextBox textBox3;
+        private TextBox textBoxUserName;
         private Label label7;
-        private TextBox textBox5;
+        private TextBox textBoxCompany;
         private Label label9;
     }
 }

@@ -86,7 +86,7 @@ public partial class SettingsForm : Form
 
     private void SettingsForm_Activated(object sender, EventArgs e)
     {
-     
+
     }
 
     private void radioButtonLocalConnections_CheckedChanged(object sender, EventArgs e)
@@ -101,5 +101,17 @@ public partial class SettingsForm : Form
         textBoxUserName.Enabled = true;
         textBoxPassword.Enabled = true;
         numericUpDownTimeOut.Enabled = true;
+    }
+
+    private void linkLabelImportImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+       OpenFileDialog openFileDialog = new OpenFileDialog();
+        openFileDialog.Title = "أختار شعار المؤسسة";
+        openFileDialog.RestoreDirectory = true;
+        var result = openFileDialog.ShowDialog();
+        if (result == DialogResult.OK)
+        {
+            pictureBoxLogo.Image = Image.FromFile(openFileDialog.FileName);
+        }
     }
 }

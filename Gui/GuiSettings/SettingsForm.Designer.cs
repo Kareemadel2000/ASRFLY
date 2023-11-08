@@ -113,6 +113,7 @@
             linkLabelImportImage.TabIndex = 4;
             linkLabelImportImage.TabStop = true;
             linkLabelImportImage.Text = "تحميل صورة";
+            linkLabelImportImage.LinkClicked += linkLabelImportImage_LinkClicked;
             // 
             // pictureBoxLogo
             // 
@@ -194,8 +195,10 @@
             textBoxServer.Cursor = Cursors.IBeam;
             textBoxServer.Location = new Point(17, 72);
             textBoxServer.Name = "textBoxServer";
+            textBoxServer.RightToLeft = RightToLeft.No;
             textBoxServer.Size = new Size(319, 32);
             textBoxServer.TabIndex = 1;
+            textBoxServer.Text = ".";
             textBoxServer.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
@@ -290,8 +293,10 @@
             textBoxDataBase.Cursor = Cursors.IBeam;
             textBoxDataBase.Location = new Point(17, 125);
             textBoxDataBase.Name = "textBoxDataBase";
+            textBoxDataBase.RightToLeft = RightToLeft.No;
             textBoxDataBase.Size = new Size(319, 32);
             textBoxDataBase.TabIndex = 1;
+            textBoxDataBase.Text = "AsrflyDB";
             textBoxDataBase.TextAlign = HorizontalAlignment.Center;
             // 
             // label5

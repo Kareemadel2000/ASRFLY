@@ -11,7 +11,7 @@ public partial class Main : Form
         // UserRolesManager.Register("checkBoxCategories", false);
         // load Home page 
         pageManager.LoadPage(HomeUserControl.Instance());
-        SetRoles();
+        //SetRoles();
     }
 
     #region Events
@@ -60,4 +60,9 @@ public partial class Main : Form
     #endregion
 
 
+    private void buttonSettings_Click(object sender, EventArgs e)
+    {
+        Gui.GuiSettings.SettingsForm settingsForm = new Gui.GuiSettings.SettingsForm();
+        settingsForm.Show();
+    }
 }

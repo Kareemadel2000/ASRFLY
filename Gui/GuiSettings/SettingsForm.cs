@@ -28,16 +28,17 @@ public partial class SettingsForm : Form
 
         // Save string Data 
         Properties.Settings.Default.Save();
+        MessageBox.Show("تم حفظ الأعدادات بنجاح");
     }
     private void SetGenralSettings()
     {
         textBoxCompany.Text = Properties.Settings.Default.CompanyName;
-        numericUpDownnotifications.Value = Properties.Settings.Default.HideNotificationInterval;
+        numericUpDownnotifications.Value = Convert.ToInt32(Properties.Settings.Default.HideNotificationInterval / 1000);
         numericUpDownDataRow.Value = Properties.Settings.Default.DataGridViewRowNo;
 
         // Save Picture 
 
-        if (Properties.Settings.Default.CompanyLogo != null)
+        if (Properties.Settings.Default.CompanyLogo != string.Empty)
         {
             var ImageAsByte = Convert.FromBase64String(Properties.Settings.Default.CompanyLogo);
             using MemoryStream stream = new MemoryStream(ImageAsByte);
@@ -63,6 +64,9 @@ public partial class SettingsForm : Form
             // NetWork con
             SetNetWorkConnection(Server, DataBase, TimOut, UserName, Password);
         }
+        MessageBox.Show("تم حفظ نص الاتصال بنجاح سيتم  أعادة تشغيل البرنامج ");
+        Application.Restart();
+
     }
 
     // Local con And NetWork con
@@ -78,5 +82,24 @@ public partial class SettingsForm : Form
         var ConString = @"Server=" + server + ";Database=" + dataBase + ";Trusted_Connection=True;TrustServerCertificate=True;";
         Properties.Settings.Default.SqlServerConString = ConString;
         Properties.Settings.Default.Save();
+    }
+
+    private void SettingsForm_Activated(object sender, EventArgs e)
+    {
+     
+    }
+
+    private void radioButtonLocalConnections_CheckedChanged(object sender, EventArgs e)
+    {
+        textBoxUserName.Enabled = false;
+        textBoxPassword.Enabled = false;
+        numericUpDownTimeOut.Enabled = false;
+    }
+
+    private void radioButtonNetworkConnections_CheckedChanged(object sender, EventArgs e)
+    {
+        textBoxUserName.Enabled = true;
+        textBoxPassword.Enabled = true;
+        numericUpDownTimeOut.Enabled = true;
     }
 }

@@ -270,6 +270,7 @@
             radioButtonNetworkConnections.TabIndex = 0;
             radioButtonNetworkConnections.Text = "شبكى";
             radioButtonNetworkConnections.UseVisualStyleBackColor = true;
+            radioButtonNetworkConnections.CheckedChanged += radioButtonNetworkConnections_CheckedChanged;
             // 
             // radioButtonLocalConnections
             // 
@@ -282,6 +283,7 @@
             radioButtonLocalConnections.TabStop = true;
             radioButtonLocalConnections.Text = "محلى";
             radioButtonLocalConnections.UseVisualStyleBackColor = true;
+            radioButtonLocalConnections.CheckedChanged += radioButtonLocalConnections_CheckedChanged;
             // 
             // textBoxDataBase
             // 
@@ -304,6 +306,7 @@
             // 
             // numericUpDownTimeOut
             // 
+            numericUpDownTimeOut.Enabled = false;
             numericUpDownTimeOut.Location = new Point(17, 178);
             numericUpDownTimeOut.Name = "numericUpDownTimeOut";
             numericUpDownTimeOut.Size = new Size(319, 32);
@@ -313,6 +316,7 @@
             // textBoxPassword
             // 
             textBoxPassword.Cursor = Cursors.IBeam;
+            textBoxPassword.Enabled = false;
             textBoxPassword.Location = new Point(17, 284);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PasswordChar = '*';
@@ -333,6 +337,7 @@
             // textBoxUserName
             // 
             textBoxUserName.Cursor = Cursors.IBeam;
+            textBoxUserName.Enabled = false;
             textBoxUserName.Location = new Point(17, 231);
             textBoxUserName.Name = "textBoxUserName";
             textBoxUserName.Size = new Size(319, 32);
@@ -422,6 +427,7 @@
             RightToLeftLayout = true;
             StartPosition = FormStartPosition.CenterScreen;
             Text = " أعدادات النظام";
+            Activated += SettingsForm_Activated;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();

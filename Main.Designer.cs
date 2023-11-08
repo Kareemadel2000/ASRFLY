@@ -35,10 +35,10 @@
             buttonSuppliers = new Button();
             buttonProjects = new Button();
             buttonUsers = new Button();
-            buttonAbouts = new Button();
             buttonSettings = new Button();
             buttonLogOut = new Button();
             buttonHelp = new Button();
+            buttonAbouts = new Button();
             panelContainer = new Panel();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -52,10 +52,10 @@
             flowLayoutPanel1.Controls.Add(buttonSuppliers);
             flowLayoutPanel1.Controls.Add(buttonProjects);
             flowLayoutPanel1.Controls.Add(buttonUsers);
-            flowLayoutPanel1.Controls.Add(buttonAbouts);
             flowLayoutPanel1.Controls.Add(buttonSettings);
             flowLayoutPanel1.Controls.Add(buttonLogOut);
             flowLayoutPanel1.Controls.Add(buttonHelp);
+            flowLayoutPanel1.Controls.Add(buttonAbouts);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
             flowLayoutPanel1.Location = new Point(0, 463);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -165,22 +165,6 @@
             buttonUsers.UseVisualStyleBackColor = true;
             buttonUsers.Click += buttonUsers_Click;
             // 
-            // buttonAbouts
-            // 
-            buttonAbouts.BackColor = Color.White;
-            buttonAbouts.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonAbouts.ForeColor = Color.Black;
-            buttonAbouts.Image = Resources.About;
-            buttonAbouts.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAbouts.Location = new Point(931, 75);
-            buttonAbouts.Margin = new Padding(5);
-            buttonAbouts.Name = "buttonAbouts";
-            buttonAbouts.Padding = new Padding(5);
-            buttonAbouts.Size = new Size(165, 55);
-            buttonAbouts.TabIndex = 6;
-            buttonAbouts.Text = "حول\r\n";
-            buttonAbouts.UseVisualStyleBackColor = true;
-            // 
             // buttonSettings
             // 
             buttonSettings.BackColor = Color.White;
@@ -188,7 +172,7 @@
             buttonSettings.ForeColor = Color.Black;
             buttonSettings.Image = Resources.Automatic;
             buttonSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonSettings.Location = new Point(756, 75);
+            buttonSettings.Location = new Point(931, 75);
             buttonSettings.Margin = new Padding(5);
             buttonSettings.Name = "buttonSettings";
             buttonSettings.Padding = new Padding(5);
@@ -196,6 +180,7 @@
             buttonSettings.TabIndex = 7;
             buttonSettings.Text = "الاعدادات";
             buttonSettings.UseVisualStyleBackColor = true;
+            buttonSettings.Click += buttonSettings_Click;
             // 
             // buttonLogOut
             // 
@@ -204,7 +189,7 @@
             buttonLogOut.ForeColor = Color.Black;
             buttonLogOut.Image = Resources.Logout_1;
             buttonLogOut.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonLogOut.Location = new Point(581, 75);
+            buttonLogOut.Location = new Point(756, 75);
             buttonLogOut.Margin = new Padding(5);
             buttonLogOut.Name = "buttonLogOut";
             buttonLogOut.Padding = new Padding(5);
@@ -220,7 +205,7 @@
             buttonHelp.ForeColor = Color.Black;
             buttonHelp.Image = Resources.Help;
             buttonHelp.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonHelp.Location = new Point(406, 75);
+            buttonHelp.Location = new Point(581, 75);
             buttonHelp.Margin = new Padding(5);
             buttonHelp.Name = "buttonHelp";
             buttonHelp.Padding = new Padding(5);
@@ -228,6 +213,22 @@
             buttonHelp.TabIndex = 9;
             buttonHelp.Text = "مساعدة";
             buttonHelp.UseVisualStyleBackColor = true;
+            // 
+            // buttonAbouts
+            // 
+            buttonAbouts.BackColor = Color.White;
+            buttonAbouts.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonAbouts.ForeColor = Color.Black;
+            buttonAbouts.Image = Resources.About;
+            buttonAbouts.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonAbouts.Location = new Point(406, 75);
+            buttonAbouts.Margin = new Padding(5);
+            buttonAbouts.Name = "buttonAbouts";
+            buttonAbouts.Padding = new Padding(5);
+            buttonAbouts.Size = new Size(165, 55);
+            buttonAbouts.TabIndex = 6;
+            buttonAbouts.Text = "حول\r\n";
+            buttonAbouts.UseVisualStyleBackColor = true;
             // 
             // panelContainer
             // 

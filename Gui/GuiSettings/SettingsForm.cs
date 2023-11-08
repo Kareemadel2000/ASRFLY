@@ -48,6 +48,35 @@ public partial class SettingsForm : Form
 
     private void buttonSaveConnections_Click(object sender, EventArgs e)
     {
-        
+        var Server = textBoxServer.Text;
+        var DataBase = textBoxDataBase.Text;
+        var TimOut = numericUpDownTimeOut.Value;
+        var UserName = textBoxUserName.Text;
+        var Password = textBoxPassword.Text;
+        if (radioButtonLocalConnections.Checked == true)
+        {
+            // Local con
+            SetLocalConnection(Server, DataBase);
+        }
+        else
+        {
+            // NetWork con
+            SetNetWorkConnection(Server, DataBase, TimOut, UserName, Password);
+        }
+    }
+
+    // Local con And NetWork con
+    private void SetNetWorkConnection(string server, string dataBase, decimal timOut, string userName, string password)
+    {
+        var ConString = @"Server=" + server + ";Database=" + dataBase + ";User Id= " + userName + ";Password=" + password + "; Timeout=" + timOut + "";
+        Properties.Settings.Default.SqlServerConString = ConString;
+        Properties.Settings.Default.Save();
+    }
+
+    private void SetLocalConnection(string server, string dataBase)
+    {
+        var ConString = @"Server=" + server + ";Database=" + dataBase + ";Trusted_Connection=True;TrustServerCertificate=True;";
+        Properties.Settings.Default.SqlServerConString = ConString;
+        Properties.Settings.Default.Save();
     }
 }

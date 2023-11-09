@@ -7,7 +7,7 @@ public partial class Main : Form
     {
         InitializeComponent();
         pageManager = new PageManager(this);
-        UserRolesManager.Register("checkBoxHome", false);
+        // UserRolesManager.Register("checkBoxHome", false);
         // UserRolesManager.Register("checkBoxCategories", false);
         // load Home page 
         pageManager.LoadPage(HomeUserControl.Instance());
@@ -62,12 +62,19 @@ public partial class Main : Form
 
     private void buttonSettings_Click(object sender, EventArgs e)
     {
-        Gui.GuiSettings.SettingsForm settingsForm = new Gui.GuiSettings.SettingsForm();
+        Gui.GuiSettings.SettingsForm settingsForm = new Gui.GuiSettings.SettingsForm(false);
         settingsForm.Show();
     }
 
     private void Main_FormClosed(object sender, FormClosedEventArgs e)
     {
         Application.Exit();
+    }
+
+    private void buttonLogOut_Click(object sender, EventArgs e)
+    {
+        UserLogInForm logInForm = new UserLogInForm();
+        logInForm.Show();
+        Hide();
     }
 }

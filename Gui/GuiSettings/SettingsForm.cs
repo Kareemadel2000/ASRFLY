@@ -2,10 +2,15 @@
 
 public partial class SettingsForm : Form
 {
-    public SettingsForm()
+    private LoadingForm loading;
+    private readonly bool firstStart;
+
+    public SettingsForm(bool FirstStart)
     {
         InitializeComponent();
         SetGenralSettings();
+        loading = new LoadingForm();
+        firstStart = FirstStart;
     }
 
     private void buttonSaveSettings_Click(object sender, EventArgs e)

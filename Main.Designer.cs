@@ -197,6 +197,7 @@
             buttonLogOut.TabIndex = 8;
             buttonLogOut.Text = "خروج";
             buttonLogOut.UseVisualStyleBackColor = true;
+            buttonLogOut.Click += buttonLogOut_Click;
             // 
             // buttonHelp
             // 

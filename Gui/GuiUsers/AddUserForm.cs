@@ -7,6 +7,7 @@ public partial class AddUserForm : Form
     //variables
     private readonly int ID;
     private readonly UsersControl _userControl;
+    private readonly bool firstStart;
     private Users users;
     private readonly IDataHelper<Users> _dataHelper;
     private readonly IDataHelper<UsersRoles> _dataHelperUsersRoles;
@@ -16,7 +17,7 @@ public partial class AddUserForm : Form
 
 
     //ctor
-    public AddUserForm(int Id, UsersControl userControl)
+    public AddUserForm(int Id, UsersControl userControl , bool FirstStart)
     {
         InitializeComponent();
         _dataHelper = (IDataHelper<Users>)ConfigrationObjectManager.GetObject("Users");
@@ -24,6 +25,7 @@ public partial class AddUserForm : Form
         _dataHelperSystemRecord = (IDataHelper<SystemRecord>)ConfigrationObjectManager.GetObject("SystemRecord");
         loadingForm = new LoadingForm();
         _userControl = userControl;
+        firstStart = FirstStart;
         ID = Id;
         //_users = users;
     }

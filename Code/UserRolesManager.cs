@@ -13,4 +13,9 @@ public static class UserRolesManager
     {
         return RolesList[RoleKey];
     }
+
+    public static void ClearRoles()
+    {
+        RolesList.Clear();
+    }
 }

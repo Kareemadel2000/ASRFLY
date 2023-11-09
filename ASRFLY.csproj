@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Gui\GuiUsers\UserLogInForm.cs" />
     <Compile Update="Gui\GuiUsers\AddUserForm.cs">
       <SubType>Form</SubType>
     </Compile>

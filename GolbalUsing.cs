@@ -3,6 +3,8 @@ global using System.Linq;
 global using FastMember;
 global using System.Data;
 global using ClosedXML.Excel;
+global using Microsoft.EntityFrameworkCore;
+
 
 
 global using System.Collections.Generic;

@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace ASRFLY.Gui.GuiUsers;
+﻿namespace ASRFLY.Gui.GuiUsers;
 
 public partial class AddUserForm : Form
 {
@@ -17,7 +15,7 @@ public partial class AddUserForm : Form
 
 
     //ctor
-    public AddUserForm(int Id, UsersControl userControl , bool FirstStart)
+    public AddUserForm(int Id, UsersControl userControl, bool FirstStart)
     {
         InitializeComponent();
         _dataHelper = (IDataHelper<Users>)ConfigrationObjectManager.GetObject("Users");
@@ -51,7 +49,15 @@ public partial class AddUserForm : Form
                 {
                     MassageCollection.ShowUpdateNotifications();
                 }
-                Close();
+                if (firstStart == true)
+                {
+                    MessageBox.Show("أعد تشغيل البرنامج مرة اخرى");
+                    Application.Exit();
+                }
+                else
+                {
+                    Close();
+                }
             }
             else
             {
@@ -95,6 +101,18 @@ public partial class AddUserForm : Form
         loadingForm.Show();
         SetFieldData();
         loadingForm.Hide();
+        if (firstStart == true)
+        {
+            buttonSave.Visible = false;
+        }
+    }
+
+    private void AddUserForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        if (firstStart == true)
+        {
+            Application.Exit();
+        }
     }
     #endregion
 
@@ -240,9 +258,9 @@ public partial class AddUserForm : Form
         {
             // Add Roles
             var rolesData = await _dataHelperUsersRoles.GetAllDataAsync();
-            var ListOfRolseId = rolesData.Where(x=>x.UserId == ID).Select(x=> x.Id).ToList();
+            var ListOfRolseId = rolesData.Where(x => x.UserId == ID).Select(x => x.Id).ToList();
             // Loops into ListOfRolseId ==> Delete
-            for (int j = 0;j< ListOfRolseId.Count; j++)
+            for (int j = 0; j < ListOfRolseId.Count; j++)
             {
                 var userid = ListOfRolseId[j];
                 await _dataHelperUsersRoles.DeleteAsync(userid);
@@ -289,7 +307,7 @@ public partial class AddUserForm : Form
             // Set Fields
             users = await _dataHelper.FindAsync(ID);
             var rolesData = await _dataHelperUsersRoles.GetAllDataAsync();
-            var listOfRole = rolesData.Where(x=>x.UserId == ID).Select(v=>v.Value).ToList();
+            var listOfRole = rolesData.Where(x => x.UserId == ID).Select(v => v.Value).ToList();
             if (users != null)
             {
                 textBoxName.Text = users.FullName;
@@ -325,8 +343,8 @@ public partial class AddUserForm : Form
                 checkBoxEdit.Checked = listOfRole[17];
                 checkBoxExport.Checked = listOfRole[18];
                 checkBoxSearch.Checked = listOfRole[19];
-                checkBoxExplor.Checked = listOfRole[20]; 
-              
+                checkBoxExplor.Checked = listOfRole[20];
+
             }
             else
             {
@@ -337,4 +355,5 @@ public partial class AddUserForm : Form
     #endregion
 
 
+  
 }

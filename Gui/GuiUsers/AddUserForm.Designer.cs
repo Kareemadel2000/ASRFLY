@@ -32,6 +32,7 @@ partial class AddUserForm
         buttonSave = new Button();
         buttonSaveAndClose = new Button();
         groupBox1 = new GroupBox();
+        pictureBoxUser = new PictureBox();
         textBoxPhoneNumber = new TextBox();
         label10 = new Label();
         label7 = new Label();
@@ -44,8 +45,8 @@ partial class AddUserForm
         label3 = new Label();
         label6 = new Label();
         textBoxName = new TextBox();
+        label2 = new Label();
         label1 = new Label();
-        pictureBoxUser = new PictureBox();
         groupBox2 = new GroupBox();
         flowLayoutPanel1 = new FlowLayoutPanel();
         checkBoxHome = new CheckBox();
@@ -66,14 +67,13 @@ partial class AddUserForm
         checkBoxAccessOutCome = new CheckBox();
         checkBoxAccessInCome = new CheckBox();
         flowLayoutPanel3 = new FlowLayoutPanel();
-        checkBoxExplor = new CheckBox();
-        checkBoxSearch = new CheckBox();
-        checkBoxExport = new CheckBox();
-        checkBoxEdit = new CheckBox();
-        checkBoxDelete = new CheckBox();
         checkBoxAdd = new CheckBox();
+        checkBoxDelete = new CheckBox();
+        checkBoxEdit = new CheckBox();
+        checkBoxExport = new CheckBox();
+        checkBoxSearch = new CheckBox();
+        checkBoxExplor = new CheckBox();
         groupBox4 = new GroupBox();
-        label2 = new Label();
         panel1.SuspendLayout();
         groupBox1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBoxUser).BeginInit();
@@ -154,6 +154,16 @@ partial class AddUserForm
         groupBox1.TabIndex = 1;
         groupBox1.TabStop = false;
         groupBox1.Text = "معلومات المستخدم";
+        // 
+        // pictureBoxUser
+        // 
+        pictureBoxUser.Image = Resources.Valet_1;
+        pictureBoxUser.Location = new Point(335, 28);
+        pictureBoxUser.Name = "pictureBoxUser";
+        pictureBoxUser.Size = new Size(135, 101);
+        pictureBoxUser.SizeMode = PictureBoxSizeMode.Zoom;
+        pictureBoxUser.TabIndex = 23;
+        pictureBoxUser.TabStop = false;
         // 
         // textBoxPhoneNumber
         // 
@@ -267,6 +277,17 @@ partial class AddUserForm
         textBoxName.TabIndex = 0;
         textBoxName.TextAlign = HorizontalAlignment.Center;
         // 
+        // label2
+        // 
+        label2.AutoSize = true;
+        label2.Font = new Font("Calibri", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
+        label2.ForeColor = Color.DodgerBlue;
+        label2.Location = new Point(26, 34);
+        label2.Name = "label2";
+        label2.Size = new Size(285, 45);
+        label2.TabIndex = 0;
+        label2.Text = "أضافة مستخدم جديد";
+        // 
         // label1
         // 
         label1.AutoSize = true;
@@ -275,16 +296,6 @@ partial class AddUserForm
         label1.Size = new Size(93, 24);
         label1.TabIndex = 0;
         label1.Text = "الاسم الكامل";
-        // 
-        // pictureBoxUser
-        // 
-        pictureBoxUser.Image = Resources.Valet_1;
-        pictureBoxUser.Location = new Point(335, 28);
-        pictureBoxUser.Name = "pictureBoxUser";
-        pictureBoxUser.Size = new Size(135, 101);
-        pictureBoxUser.SizeMode = PictureBoxSizeMode.Zoom;
-        pictureBoxUser.TabIndex = 23;
-        pictureBoxUser.TabStop = false;
         // 
         // groupBox2
         // 
@@ -505,45 +516,15 @@ partial class AddUserForm
         flowLayoutPanel3.Size = new Size(407, 95);
         flowLayoutPanel3.TabIndex = 0;
         // 
-        // checkBoxExplor
+        // checkBoxAdd
         // 
-        checkBoxExplor.AutoSize = true;
-        checkBoxExplor.Location = new Point(338, 34);
-        checkBoxExplor.Name = "checkBoxExplor";
-        checkBoxExplor.Size = new Size(66, 25);
-        checkBoxExplor.TabIndex = 5;
-        checkBoxExplor.Text = "تصفح";
-        checkBoxExplor.UseVisualStyleBackColor = true;
-        // 
-        // checkBoxSearch
-        // 
-        checkBoxSearch.AutoSize = true;
-        checkBoxSearch.Location = new Point(54, 3);
-        checkBoxSearch.Name = "checkBoxSearch";
-        checkBoxSearch.Size = new Size(62, 25);
-        checkBoxSearch.TabIndex = 4;
-        checkBoxSearch.Text = "بحث";
-        checkBoxSearch.UseVisualStyleBackColor = true;
-        // 
-        // checkBoxExport
-        // 
-        checkBoxExport.AutoSize = true;
-        checkBoxExport.Location = new Point(122, 3);
-        checkBoxExport.Name = "checkBoxExport";
-        checkBoxExport.Size = new Size(69, 25);
-        checkBoxExport.TabIndex = 3;
-        checkBoxExport.Text = "تصدير";
-        checkBoxExport.UseVisualStyleBackColor = true;
-        // 
-        // checkBoxEdit
-        // 
-        checkBoxEdit.AutoSize = true;
-        checkBoxEdit.Location = new Point(197, 3);
-        checkBoxEdit.Name = "checkBoxEdit";
-        checkBoxEdit.Size = new Size(66, 25);
-        checkBoxEdit.TabIndex = 2;
-        checkBoxEdit.Text = "تعديل";
-        checkBoxEdit.UseVisualStyleBackColor = true;
+        checkBoxAdd.AutoSize = true;
+        checkBoxAdd.Location = new Point(339, 3);
+        checkBoxAdd.Name = "checkBoxAdd";
+        checkBoxAdd.Size = new Size(65, 25);
+        checkBoxAdd.TabIndex = 0;
+        checkBoxAdd.Text = "أضافة";
+        checkBoxAdd.UseVisualStyleBackColor = true;
         // 
         // checkBoxDelete
         // 
@@ -555,15 +536,45 @@ partial class AddUserForm
         checkBoxDelete.Text = "حذف";
         checkBoxDelete.UseVisualStyleBackColor = true;
         // 
-        // checkBoxAdd
+        // checkBoxEdit
         // 
-        checkBoxAdd.AutoSize = true;
-        checkBoxAdd.Location = new Point(339, 3);
-        checkBoxAdd.Name = "checkBoxAdd";
-        checkBoxAdd.Size = new Size(65, 25);
-        checkBoxAdd.TabIndex = 0;
-        checkBoxAdd.Text = "أضافة";
-        checkBoxAdd.UseVisualStyleBackColor = true;
+        checkBoxEdit.AutoSize = true;
+        checkBoxEdit.Location = new Point(197, 3);
+        checkBoxEdit.Name = "checkBoxEdit";
+        checkBoxEdit.Size = new Size(66, 25);
+        checkBoxEdit.TabIndex = 2;
+        checkBoxEdit.Text = "تعديل";
+        checkBoxEdit.UseVisualStyleBackColor = true;
+        // 
+        // checkBoxExport
+        // 
+        checkBoxExport.AutoSize = true;
+        checkBoxExport.Location = new Point(122, 3);
+        checkBoxExport.Name = "checkBoxExport";
+        checkBoxExport.Size = new Size(69, 25);
+        checkBoxExport.TabIndex = 3;
+        checkBoxExport.Text = "تصدير";
+        checkBoxExport.UseVisualStyleBackColor = true;
+        // 
+        // checkBoxSearch
+        // 
+        checkBoxSearch.AutoSize = true;
+        checkBoxSearch.Location = new Point(54, 3);
+        checkBoxSearch.Name = "checkBoxSearch";
+        checkBoxSearch.Size = new Size(62, 25);
+        checkBoxSearch.TabIndex = 4;
+        checkBoxSearch.Text = "بحث";
+        checkBoxSearch.UseVisualStyleBackColor = true;
+        // 
+        // checkBoxExplor
+        // 
+        checkBoxExplor.AutoSize = true;
+        checkBoxExplor.Location = new Point(338, 34);
+        checkBoxExplor.Name = "checkBoxExplor";
+        checkBoxExplor.Size = new Size(66, 25);
+        checkBoxExplor.TabIndex = 5;
+        checkBoxExplor.Text = "تصفح";
+        checkBoxExplor.UseVisualStyleBackColor = true;
         // 
         // groupBox4
         // 
@@ -575,17 +586,6 @@ partial class AddUserForm
         groupBox4.TabIndex = 2;
         groupBox4.TabStop = false;
         groupBox4.Text = "الصلاحيات/العمليات القياسية";
-        // 
-        // label2
-        // 
-        label2.AutoSize = true;
-        label2.Font = new Font("Calibri", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
-        label2.ForeColor = Color.DodgerBlue;
-        label2.Location = new Point(26, 34);
-        label2.Name = "label2";
-        label2.Size = new Size(285, 45);
-        label2.TabIndex = 0;
-        label2.Text = "أضافة مستخدم جديد";
         // 
         // AddUserForm
         // 
@@ -610,6 +610,7 @@ partial class AddUserForm
         StartPosition = FormStartPosition.CenterScreen;
         Text = "أضافة / تعديل مستخدم";
         TopMost = true;
+        FormClosed += AddUserForm_FormClosed;
         Load += AddCategoryForm_Load;
         panel1.ResumeLayout(false);
         groupBox1.ResumeLayout(false);

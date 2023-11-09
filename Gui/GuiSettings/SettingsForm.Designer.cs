@@ -433,6 +433,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = " أعدادات النظام";
             Activated += SettingsForm_Activated;
+            FormClosing += SettingsForm_FormClosing;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();

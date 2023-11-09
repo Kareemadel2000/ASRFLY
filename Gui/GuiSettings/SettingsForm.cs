@@ -69,8 +69,8 @@ public partial class SettingsForm : Form
             // NetWork con
             SetNetWorkConnection(Server, DataBase, TimOut, UserName, Password);
         }
-        MessageBox.Show("تم حفظ نص الاتصال بنجاح سيتم  أعادة تشغيل البرنامج ");
-        Application.Restart();
+        MessageBox.Show("تم حفظ نص الاتصال بنجاح سيتم  أعد تشغيل البرنامج ");
+        Application.Exit();
 
     }
 
@@ -110,7 +110,7 @@ public partial class SettingsForm : Form
 
     private void linkLabelImportImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-       OpenFileDialog openFileDialog = new OpenFileDialog();
+        OpenFileDialog openFileDialog = new OpenFileDialog();
         openFileDialog.Title = "أختار شعار المؤسسة";
         openFileDialog.RestoreDirectory = true;
         var result = openFileDialog.ShowDialog();
@@ -118,5 +118,13 @@ public partial class SettingsForm : Form
         {
             pictureBoxLogo.Image = Image.FromFile(openFileDialog.FileName);
         }
+    }
+
+    private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (firstStart == true)
+        {
+            Application.Exit();
+        } 
     }
 }

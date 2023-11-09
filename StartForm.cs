@@ -13,10 +13,10 @@ public partial class StartForm : Form
 
     private async void CheckCon()
     {
+        labelstate.Text = "جارى الاتصال بقاعدة البيانات ";
         ApplicationDBContext dB = new ApplicationDBContext();
         if (await dB.Database.CanConnectAsync())
         {
-            labelstate.Text = "جارى الاتصال بقاعدة البيانات ";
             var data = await _dataHelper.GetAllDataAsync();
             if (data.Count > 0)
             {
@@ -35,6 +35,7 @@ public partial class StartForm : Form
         }
         else
         {
+            Hide();
             var result = MessageBox.Show("هناك خطا في الاتصال بقاعدة البيانات , أضغط نعم لضبط الاتصال أو لا للخروج من البرنامج", "خطا في الاتصال",
               MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)

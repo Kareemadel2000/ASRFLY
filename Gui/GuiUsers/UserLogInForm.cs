@@ -89,7 +89,7 @@ public partial class UserLogInForm : Form
 
                 // Loops Into List Of  UsersRole  and Set Roles 
                 UserRolesManager.ClearRoles();
-                foreach (var item in ListOfRoles)
+                foreach (var item in ListRoles)
                 {
                     UserRolesManager.Register(item.Key, item.Value);
                 }

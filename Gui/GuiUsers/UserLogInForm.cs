@@ -79,13 +79,13 @@ public partial class UserLogInForm : Form
         try
         {
             // Check
-            Users? users = _dataHelper.GetAllData().Where(x => x.UserName == UserName && x.Password == Password).FirstOrDefault();
-            if (users != null)
+            Users? user = _dataHelper.GetAllData().Where(x => x.UserName == UserName && x.Password == Password).FirstOrDefault();
+            if (user != null)
             {
-                Properties.Settings.Default.UserName = users.FullName;
+                Properties.Settings.Default.UserName = user.FullName;
                 Properties.Settings.Default.Save();
                 // Get Roles
-                var ListRoles = _dataHelperUsersRoles.GetAllData().Where(x => x.UserId == users.Id);
+                var ListRoles = _dataHelperUsersRoles.GetAllData().Where(x => x.UserId == user.Id);
 
                 // Loops Into List Of  UsersRole  and Set Roles 
                 UserRolesManager.ClearRoles();
@@ -99,8 +99,8 @@ public partial class UserLogInForm : Form
                 {
                     Title = "تسجيل دخول",
                     UserName = Settings.Default.UserName,
-                    Details = "تم تسجيل دخول المستخدم " + users.UserName,
-                    AddedDate = DateTime.Now,
+                    Details = "تم تسجيل دخول المستخدم " + user.UserName,
+                    AddedDate = DateTime.Now
                 };
                 _dataHelperSystemRecord.Add(systemRecord);
                 return 1;
@@ -118,4 +118,8 @@ public partial class UserLogInForm : Form
     }
     #endregion
 
+    private void UserLogInForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        Application.Exit();
+    }
 }

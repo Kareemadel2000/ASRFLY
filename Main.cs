@@ -65,4 +65,9 @@ public partial class Main : Form
         Gui.GuiSettings.SettingsForm settingsForm = new Gui.GuiSettings.SettingsForm();
         settingsForm.Show();
     }
+
+    private void Main_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        Application.Exit();
+    }
 }

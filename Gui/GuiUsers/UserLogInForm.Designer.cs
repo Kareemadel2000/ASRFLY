@@ -185,8 +185,7 @@ partial class UserLogInForm
         ShowInTaskbar = false;
         StartPosition = FormStartPosition.CenterScreen;
         Text = "تسجيل الدخول";
-        TopMost = true;
-        Load += AddCategoryForm_Load;
+        FormClosed += UserLogInForm_FormClosed;
         panel1.ResumeLayout(false);
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();

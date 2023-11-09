@@ -254,6 +254,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ASRFLY";
             WindowState = FormWindowState.Maximized;
+            FormClosed += Main_FormClosed;
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }

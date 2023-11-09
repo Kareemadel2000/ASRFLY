@@ -12,7 +12,7 @@ namespace ASRFLY
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             DependnecyInjection.AddDependnecyValue();
-            Application.Run(new Main());
+            Application.Run(new UserLogInForm());
         }
     }
 }

@@ -122,4 +122,10 @@ public partial class Main : Form
         // load RecordsUsers page 
         pageManager.LoadPage(RecordsUserControl.Instance());
     }
+
+    private void buttonAbouts_Click(object sender, EventArgs e)
+    {
+        About about = new About();
+        about.Show();
+    }
 }

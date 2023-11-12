@@ -61,7 +61,7 @@ namespace ASRFLY.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
         public int DataGridViewRowNo {
             get {
                 return ((int)(this["DataGridViewRowNo"]));
@@ -73,7 +73,7 @@ namespace ASRFLY.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("أدخل هنا اسم المؤسسة ")]
+        [global::System.Configuration.DefaultSettingValueAttribute("شركة بلابل للبرمجة")]
         public string CompanyName {
             get {
                 return ((string)(this["CompanyName"]));

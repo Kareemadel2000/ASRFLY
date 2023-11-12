@@ -69,117 +69,122 @@
             groupBox1.Controls.Add(buttonAddCustomers);
             groupBox1.Controls.Add(buttonAddCategory);
             groupBox1.Controls.Add(buttonAddOutput);
-            groupBox1.Location = new Point(91, 59);
+            groupBox1.Location = new Point(87, 59);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(932, 101);
+            groupBox1.Size = new Size(973, 101);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "أضافه";
             // 
             // buttonAddInput
             // 
-            buttonAddInput.BackColor = Color.White;
+            buttonAddInput.BackColor = Color.WhiteSmoke;
             buttonAddInput.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddInput.ForeColor = Color.Black;
             buttonAddInput.Image = Resources.Input_1;
             buttonAddInput.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddInput.Location = new Point(56, 28);
+            buttonAddInput.Location = new Point(83, 28);
             buttonAddInput.Margin = new Padding(5);
             buttonAddInput.Name = "buttonAddInput";
-            buttonAddInput.Size = new Size(117, 53);
+            buttonAddInput.Size = new Size(120, 53);
             buttonAddInput.TabIndex = 10;
             buttonAddInput.Text = "       قبض";
-            buttonAddInput.UseVisualStyleBackColor = true;
+            buttonAddInput.UseVisualStyleBackColor = false;
             // 
             // buttonAddUsers
             // 
-            buttonAddUsers.BackColor = Color.White;
+            buttonAddUsers.BackColor = Color.WhiteSmoke;
             buttonAddUsers.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddUsers.ForeColor = Color.Black;
             buttonAddUsers.Image = Resources.Conference_Skin_Type_7;
             buttonAddUsers.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddUsers.Location = new Point(296, 27);
+            buttonAddUsers.Location = new Point(323, 27);
             buttonAddUsers.Margin = new Padding(5);
             buttonAddUsers.Name = "buttonAddUsers";
-            buttonAddUsers.Size = new Size(111, 53);
+            buttonAddUsers.Size = new Size(114, 53);
             buttonAddUsers.TabIndex = 9;
             buttonAddUsers.Text = "    مستخدم";
-            buttonAddUsers.UseVisualStyleBackColor = true;
+            buttonAddUsers.UseVisualStyleBackColor = false;
+            buttonAddUsers.Click += buttonAddUsers_Click;
             // 
             // buttonAddProjects
             // 
-            buttonAddProjects.BackColor = Color.White;
+            buttonAddProjects.BackColor = Color.WhiteSmoke;
             buttonAddProjects.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddProjects.ForeColor = Color.Black;
             buttonAddProjects.Image = Resources.Group_of_Projects_1;
             buttonAddProjects.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddProjects.Location = new Point(410, 27);
+            buttonAddProjects.Location = new Point(437, 27);
             buttonAddProjects.Margin = new Padding(5);
             buttonAddProjects.Name = "buttonAddProjects";
-            buttonAddProjects.Size = new Size(117, 53);
+            buttonAddProjects.Size = new Size(120, 53);
             buttonAddProjects.TabIndex = 8;
             buttonAddProjects.Text = "      مشروع\r\n";
-            buttonAddProjects.UseVisualStyleBackColor = true;
+            buttonAddProjects.UseVisualStyleBackColor = false;
+            buttonAddProjects.Click += buttonAddProjects_Click;
             // 
             // buttonAddSuppliers
             // 
-            buttonAddSuppliers.BackColor = Color.White;
+            buttonAddSuppliers.BackColor = Color.WhiteSmoke;
             buttonAddSuppliers.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddSuppliers.ForeColor = Color.Black;
             buttonAddSuppliers.Image = Resources.Crowd;
             buttonAddSuppliers.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddSuppliers.Location = new Point(530, 28);
+            buttonAddSuppliers.Location = new Point(557, 28);
             buttonAddSuppliers.Margin = new Padding(5);
             buttonAddSuppliers.Name = "buttonAddSuppliers";
-            buttonAddSuppliers.Size = new Size(117, 53);
+            buttonAddSuppliers.Size = new Size(120, 53);
             buttonAddSuppliers.TabIndex = 7;
             buttonAddSuppliers.Text = "       مورد";
-            buttonAddSuppliers.UseVisualStyleBackColor = true;
+            buttonAddSuppliers.UseVisualStyleBackColor = false;
+            buttonAddSuppliers.Click += buttonAddSuppliers_Click;
             // 
             // buttonAddCustomers
             // 
-            buttonAddCustomers.BackColor = Color.White;
+            buttonAddCustomers.BackColor = Color.WhiteSmoke;
             buttonAddCustomers.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddCustomers.ForeColor = Color.Black;
             buttonAddCustomers.Image = Resources.Users;
             buttonAddCustomers.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddCustomers.Location = new Point(650, 28);
+            buttonAddCustomers.Location = new Point(677, 28);
             buttonAddCustomers.Margin = new Padding(5);
             buttonAddCustomers.Name = "buttonAddCustomers";
-            buttonAddCustomers.Size = new Size(117, 53);
+            buttonAddCustomers.Size = new Size(120, 53);
             buttonAddCustomers.TabIndex = 6;
             buttonAddCustomers.Text = "       عميل";
-            buttonAddCustomers.UseVisualStyleBackColor = true;
+            buttonAddCustomers.UseVisualStyleBackColor = false;
+            buttonAddCustomers.Click += buttonAddCustomers_Click;
             // 
             // buttonAddCategory
             // 
-            buttonAddCategory.BackColor = Color.White;
+            buttonAddCategory.BackColor = Color.WhiteSmoke;
             buttonAddCategory.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddCategory.ForeColor = Color.Black;
             buttonAddCategory.Image = Resources.Categorize;
             buttonAddCategory.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddCategory.Location = new Point(770, 27);
+            buttonAddCategory.Location = new Point(797, 27);
             buttonAddCategory.Margin = new Padding(5);
             buttonAddCategory.Name = "buttonAddCategory";
-            buttonAddCategory.Size = new Size(117, 53);
+            buttonAddCategory.Size = new Size(120, 53);
             buttonAddCategory.TabIndex = 5;
             buttonAddCategory.Text = "       صنف\r\n";
-            buttonAddCategory.UseVisualStyleBackColor = true;
+            buttonAddCategory.UseVisualStyleBackColor = false;
+            buttonAddCategory.Click += buttonAddCategory_Click;
             // 
             // buttonAddOutput
             // 
-            buttonAddOutput.BackColor = Color.White;
+            buttonAddOutput.BackColor = Color.WhiteSmoke;
             buttonAddOutput.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAddOutput.ForeColor = Color.Black;
             buttonAddOutput.Image = Resources.Output_1;
             buttonAddOutput.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddOutput.Location = new Point(176, 28);
+            buttonAddOutput.Location = new Point(203, 28);
             buttonAddOutput.Margin = new Padding(5);
             buttonAddOutput.Name = "buttonAddOutput";
-            buttonAddOutput.Size = new Size(117, 53);
+            buttonAddOutput.Size = new Size(120, 53);
             buttonAddOutput.TabIndex = 4;
             buttonAddOutput.Text = "       صرف";
-            buttonAddOutput.UseVisualStyleBackColor = true;
+            buttonAddOutput.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -197,9 +202,9 @@
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel2.Controls.Add(labelCompanyName);
             panel2.Controls.Add(pictureBoxLogo);
-            panel2.Location = new Point(789, 49);
+            panel2.Location = new Point(657, 49);
             panel2.Name = "panel2";
-            panel2.Size = new Size(439, 97);
+            panel2.Size = new Size(571, 97);
             panel2.TabIndex = 3;
             // 
             // labelCompanyName
@@ -207,16 +212,17 @@
             labelCompanyName.Font = new Font("Calibri", 24F, FontStyle.Bold, GraphicsUnit.Point);
             labelCompanyName.Location = new Point(3, 6);
             labelCompanyName.Name = "labelCompanyName";
-            labelCompanyName.Size = new Size(345, 85);
+            labelCompanyName.Size = new Size(477, 85);
             labelCompanyName.TabIndex = 0;
             labelCompanyName.Text = "ASRFLY";
             labelCompanyName.TextAlign = ContentAlignment.MiddleLeft;
+            labelCompanyName.Click += labelCompanyName_Click;
             // 
             // pictureBoxLogo
             // 
             pictureBoxLogo.Dock = DockStyle.Right;
             pictureBoxLogo.Image = Resources.Smart_1;
-            pictureBoxLogo.Location = new Point(354, 0);
+            pictureBoxLogo.Location = new Point(486, 0);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(85, 97);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;

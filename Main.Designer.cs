@@ -249,6 +249,7 @@
             buttonAbouts.TabIndex = 6;
             buttonAbouts.Text = "حول\r\n";
             buttonAbouts.UseVisualStyleBackColor = true;
+            buttonAbouts.Click += buttonAbouts_Click;
             // 
             // panelContainer
             // 

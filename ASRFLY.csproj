@@ -6,6 +6,9 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Description>هو أداة ذكية وبسيطه لمتابعه صرفيات المشاريع</Description>
+    <Copyright>جميع الحقوق محفوظة2023</Copyright>
+    <Authors>Kareem Adel</Authors>
   </PropertyGroup>
 
   <ItemGroup>

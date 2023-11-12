@@ -69,7 +69,7 @@ public partial class SettingsForm : Form
             // NetWork con
             SetNetWorkConnection(Server, DataBase, TimOut, UserName, Password);
         }
-        MessageBox.Show("تم حفظ نص الاتصال بنجاح سيتم  أعد تشغيل البرنامج ");
+        MessageBox.Show("تم حفظ نص الاتصال بنجاح , أعد تشغيل البرنامج ");
         Application.Exit();
 
     }

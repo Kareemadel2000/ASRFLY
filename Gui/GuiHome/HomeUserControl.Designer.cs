@@ -98,12 +98,12 @@
             buttonAddUsers.ForeColor = Color.Black;
             buttonAddUsers.Image = Resources.Conference_Skin_Type_7;
             buttonAddUsers.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddUsers.Location = new Point(304, 27);
+            buttonAddUsers.Location = new Point(296, 27);
             buttonAddUsers.Margin = new Padding(5);
             buttonAddUsers.Name = "buttonAddUsers";
             buttonAddUsers.Size = new Size(111, 53);
             buttonAddUsers.TabIndex = 9;
-            buttonAddUsers.Text = "   مستخدم\r\n";
+            buttonAddUsers.Text = "    مستخدم";
             buttonAddUsers.UseVisualStyleBackColor = true;
             // 
             // buttonAddProjects
@@ -113,7 +113,7 @@
             buttonAddProjects.ForeColor = Color.Black;
             buttonAddProjects.Image = Resources.Group_of_Projects_1;
             buttonAddProjects.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddProjects.Location = new Point(416, 27);
+            buttonAddProjects.Location = new Point(410, 27);
             buttonAddProjects.Margin = new Padding(5);
             buttonAddProjects.Name = "buttonAddProjects";
             buttonAddProjects.Size = new Size(117, 53);
@@ -128,7 +128,7 @@
             buttonAddSuppliers.ForeColor = Color.Black;
             buttonAddSuppliers.Image = Resources.Crowd;
             buttonAddSuppliers.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddSuppliers.Location = new Point(534, 28);
+            buttonAddSuppliers.Location = new Point(530, 28);
             buttonAddSuppliers.Margin = new Padding(5);
             buttonAddSuppliers.Name = "buttonAddSuppliers";
             buttonAddSuppliers.Size = new Size(117, 53);
@@ -143,7 +143,7 @@
             buttonAddCustomers.ForeColor = Color.Black;
             buttonAddCustomers.Image = Resources.Users;
             buttonAddCustomers.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddCustomers.Location = new Point(652, 28);
+            buttonAddCustomers.Location = new Point(650, 28);
             buttonAddCustomers.Margin = new Padding(5);
             buttonAddCustomers.Name = "buttonAddCustomers";
             buttonAddCustomers.Size = new Size(117, 53);
@@ -165,7 +165,6 @@
             buttonAddCategory.TabIndex = 5;
             buttonAddCategory.Text = "       صنف\r\n";
             buttonAddCategory.UseVisualStyleBackColor = true;
-            
             // 
             // buttonAddOutput
             // 
@@ -174,7 +173,7 @@
             buttonAddOutput.ForeColor = Color.Black;
             buttonAddOutput.Image = Resources.Output_1;
             buttonAddOutput.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAddOutput.Location = new Point(180, 28);
+            buttonAddOutput.Location = new Point(176, 28);
             buttonAddOutput.Margin = new Padding(5);
             buttonAddOutput.Name = "buttonAddOutput";
             buttonAddOutput.Size = new Size(117, 53);

@@ -37,6 +37,7 @@
             buttonUsers = new Button();
             buttonSettings = new Button();
             buttonLogOut = new Button();
+            buttonSystemRecords = new Button();
             buttonHelp = new Button();
             buttonAbouts = new Button();
             panelContainer = new Panel();
@@ -54,6 +55,7 @@
             flowLayoutPanel1.Controls.Add(buttonUsers);
             flowLayoutPanel1.Controls.Add(buttonSettings);
             flowLayoutPanel1.Controls.Add(buttonLogOut);
+            flowLayoutPanel1.Controls.Add(buttonSystemRecords);
             flowLayoutPanel1.Controls.Add(buttonHelp);
             flowLayoutPanel1.Controls.Add(buttonAbouts);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
@@ -199,6 +201,23 @@
             buttonLogOut.UseVisualStyleBackColor = true;
             buttonLogOut.Click += buttonLogOut_Click;
             // 
+            // buttonSystemRecords
+            // 
+            buttonSystemRecords.BackColor = Color.White;
+            buttonSystemRecords.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSystemRecords.ForeColor = Color.Black;
+            buttonSystemRecords.Image = Resources.Moleskine_1;
+            buttonSystemRecords.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonSystemRecords.Location = new Point(581, 75);
+            buttonSystemRecords.Margin = new Padding(5);
+            buttonSystemRecords.Name = "buttonSystemRecords";
+            buttonSystemRecords.Padding = new Padding(5);
+            buttonSystemRecords.Size = new Size(165, 55);
+            buttonSystemRecords.TabIndex = 10;
+            buttonSystemRecords.Text = "     سجل النظام";
+            buttonSystemRecords.UseVisualStyleBackColor = true;
+            buttonSystemRecords.Click += buttonSystemRecords_Click;
+            // 
             // buttonHelp
             // 
             buttonHelp.BackColor = Color.White;
@@ -206,7 +225,7 @@
             buttonHelp.ForeColor = Color.Black;
             buttonHelp.Image = Resources.Help;
             buttonHelp.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonHelp.Location = new Point(581, 75);
+            buttonHelp.Location = new Point(406, 75);
             buttonHelp.Margin = new Padding(5);
             buttonHelp.Name = "buttonHelp";
             buttonHelp.Padding = new Padding(5);
@@ -222,7 +241,7 @@
             buttonAbouts.ForeColor = Color.Black;
             buttonAbouts.Image = Resources.About;
             buttonAbouts.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonAbouts.Location = new Point(406, 75);
+            buttonAbouts.Location = new Point(231, 75);
             buttonAbouts.Margin = new Padding(5);
             buttonAbouts.Name = "buttonAbouts";
             buttonAbouts.Padding = new Padding(5);
@@ -274,5 +293,6 @@
         private Button buttonLogOut;
         private Button buttonHelp;
         public Panel panelContainer;
+        private Button buttonSystemRecords;
     }
 }

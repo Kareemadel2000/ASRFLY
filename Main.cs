@@ -14,7 +14,7 @@ public partial class Main : Form
         //SetRoles();
     }
 
-    #region Events
+
     private void buttonHome_Click(object sender, EventArgs e)
     {
         // load Home page 
@@ -46,18 +46,57 @@ public partial class Main : Form
         pageManager.LoadPage(UsersControl.Instance());
     }
 
-    private void SetRoles()
-    {
-        if (!UserRolesManager.GetRole("checkBoxHome"))
-        {
-            buttonHome.Visible = false;
-        }
-        //if (!UserRolesManager.GetRole("checkBoxCategories"))
-        //{
-        //    buttonCategory.Visible = false;
-        //}
-    }
-    #endregion
+    //private void SetRoles()
+    //{
+    //    if (!UserRolesManager.GetRole("checkBoxHome"))
+    //    {
+    //        buttonHome.Visible = false;
+    //    }
+    //    //if (!UserRolesManager.GetRole("checkBoxCategories"))
+    //    //{
+    //    //    buttonCategory.Visible = false;
+    //    //}
+    //}
+
+
+
+    //private void SetRoles()
+    //{
+    //    if (!UserRolesManager.GetRole("checkBoxHome"))
+    //    {
+    //        buttonHome.Visible = false;
+    //    }
+    //    if (!UserRolesManager.GetRole("checkBoxCategories"))
+    //    {
+    //        buttonCategory.Visible = false;
+    //    }
+    //    if (!UserRolesManager.GetRole("checkBoxSupplier"))
+    //    {
+    //        buttonSuppliers.Visible = false;
+    //    }
+    //    if (!UserRolesManager.GetRole("checkBoxCustoemr"))
+    //    {
+    //        buttonCustomers.Visible = false;
+    //    }
+    //    if (!UserRolesManager.GetRole("checkBoxProjects"))
+    //    {
+    //        buttonProjects.Visible = false;
+    //    }
+    //    if (!UserRolesManager.GetRole("checkBoxUsers"))
+    //    {
+    //        buttonUsers.Visible = false;
+    //    }
+    //    if (!UserRolesManager.GetRole("checkBoxSettings"))
+    //    {
+    //        buttonSettings.Visible = false;
+    //    }
+    //    //if (!UserRolesManager.GetRole("checkBoxSystemRecords"))
+    //    //{
+    //    //    buttonSystemRecords.Visible = false;
+    //    //}
+
+    //}
+
 
 
     private void buttonSettings_Click(object sender, EventArgs e)
@@ -76,5 +115,11 @@ public partial class Main : Form
         UserLogInForm logInForm = new UserLogInForm();
         logInForm.Show();
         Hide();
+    }
+
+    private void buttonSystemRecords_Click(object sender, EventArgs e)
+    {
+        // load RecordsUsers page 
+        pageManager.LoadPage(RecordsUserControl.Instance());
     }
 }

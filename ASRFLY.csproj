@@ -23,6 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Gui\GuiSystemRecords\RecordsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Gui\GuiUsers\UserLogInForm.cs" />
     <Compile Update="Gui\GuiUsers\AddUserForm.cs">
       <SubType>Form</SubType>

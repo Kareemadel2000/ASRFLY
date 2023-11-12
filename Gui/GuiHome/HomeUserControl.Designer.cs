@@ -42,10 +42,14 @@
             labelCompanyName = new Label();
             pictureBoxLogo = new PictureBox();
             labelWellcome = new Label();
+            panel3 = new Panel();
+            comboBoxProject = new ComboBox();
+            label2 = new Label();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -90,6 +94,7 @@
             buttonAddInput.TabIndex = 10;
             buttonAddInput.Text = "       قبض";
             buttonAddInput.UseVisualStyleBackColor = false;
+            buttonAddInput.Click += buttonAddInput_Click;
             // 
             // buttonAddUsers
             // 
@@ -185,6 +190,7 @@
             buttonAddOutput.TabIndex = 4;
             buttonAddOutput.Text = "       صرف";
             buttonAddOutput.UseVisualStyleBackColor = false;
+            buttonAddOutput.Click += buttonAddOutput_Click;
             // 
             // label1
             // 
@@ -195,7 +201,7 @@
             label1.Size = new Size(174, 37);
             label1.TabIndex = 3;
             label1.Text = "الوصول السريع ";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 
@@ -239,11 +245,44 @@
             labelWellcome.Text = "مرحبا بك مجددا في ASRFLY\r\n";
             labelWellcome.TextAlign = ContentAlignment.BottomCenter;
             // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.Bottom;
+            panel3.Controls.Add(comboBoxProject);
+            panel3.Controls.Add(label2);
+            panel3.Location = new Point(363, 267);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(529, 144);
+            panel3.TabIndex = 12;
+            // 
+            // comboBoxProject
+            // 
+            comboBoxProject.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBoxProject.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            comboBoxProject.FormattingEnabled = true;
+            comboBoxProject.Location = new Point(17, 94);
+            comboBoxProject.Name = "comboBoxProject";
+            comboBoxProject.Size = new Size(494, 32);
+            comboBoxProject.TabIndex = 12;
+            comboBoxProject.SelectedIndexChanged += comboBoxProject_SelectedIndexChanged;
+            // 
+            // label2
+            // 
+            label2.Dock = DockStyle.Top;
+            label2.Font = new Font("Calibri", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(529, 48);
+            label2.TabIndex = 11;
+            label2.Text = "المشاريع";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // HomeUserControl
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(panel3);
             Controls.Add(labelWellcome);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -252,11 +291,13 @@
             Name = "HomeUserControl";
             RightToLeft = RightToLeft.Yes;
             Size = new Size(1262, 600);
+            Load += HomeUserControl_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -276,5 +317,8 @@
         private PictureBox pictureBoxLogo;
         private Label labelWellcome;
         private Button buttonAddUsers;
+        private Panel panel3;
+        private ComboBox comboBoxProject;
+        private Label label2;
     }
 }

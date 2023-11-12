@@ -1,11 +1,17 @@
-﻿namespace ASRFLY.Gui.GuiHome;
+﻿using ASRFLY.Core.Entityes;
+
+namespace ASRFLY.Gui.GuiHome;
 
 public partial class HomeUserControl : UserControl
 {
     private static HomeUserControl _homeUserControl;
+    private int ProjectId;
+    private readonly IDataHelper<Projects> _dataHelper;
+
     public HomeUserControl()
     {
         InitializeComponent();
+        _dataHelper = (IDataHelper<Projects>)ConfigrationObjectManager.GetObject("Projects");
         //SetRoles();
         SetGenralSettings();
         SetHello();
@@ -79,5 +85,53 @@ public partial class HomeUserControl : UserControl
     private void labelCompanyName_Click(object sender, EventArgs e)
     {
 
+    }
+
+    private async void HomeUserControl_Load(object sender, EventArgs e)
+    {
+        // Get List Of Suppliers
+        var ListOfProject = await _dataHelper.GetAllDataAsync();
+        // Fill
+        comboBoxProject.DataSource = ListOfProject.Select(x => x.Name).ToList();
+
+        // Auto Complete
+        AutoCompleteStringCollection autoCompleteString = new AutoCompleteStringCollection();
+        autoCompleteString.AddRange(ListOfProject.Select(x => x.Name).ToArray());
+        comboBoxProject.AutoCompleteCustomSource = autoCompleteString;
+
+        ListOfProject.Clear();//Clear
+    }
+
+    private void comboBoxProject_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var projectName = comboBoxProject.SelectedItem.ToString();
+        ProjectId = _dataHelper.GetAllData().Where(x => x.Name == projectName).Select(x => x.Id).FirstOrDefault();
+
+    }
+
+    private void buttonAddOutput_Click(object sender, EventArgs e)
+    {
+        if (ProjectId > 0)
+        {
+            AddOutComeForm addOutComeForm = new AddOutComeForm(0, ProjectId, new OutComeUserControl(ProjectId));
+            addOutComeForm.Show();
+        }
+        else
+        {
+            MessageBox.Show("أختار المشروع لطفا");
+        }
+    }
+
+    private void buttonAddInput_Click(object sender, EventArgs e)
+    {
+        if (ProjectId > 0)
+        {
+            AddInComeForm addInComeForm = new AddInComeForm(0, ProjectId, new InComeUserControl(ProjectId));
+            addInComeForm.Show();
+        }
+        else
+        {
+            MessageBox.Show("أختار المشروع لطفا");
+        }
     }
 }

@@ -1,6 +1,4 @@
-﻿using ASRFLY.Gui.GuiSettings;
-
-namespace ASRFLY;
+﻿namespace ASRFLY;
 
 public partial class StartForm : Form
 {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             flowLayoutPanel1 = new FlowLayoutPanel();
             buttonHome = new Button();
             buttonCategory = new Button();
@@ -270,6 +271,7 @@
             Controls.Add(panelContainer);
             Controls.Add(flowLayoutPanel1);
             Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Main";
             RightToLeft = RightToLeft.Yes;
             RightToLeftLayout = true;

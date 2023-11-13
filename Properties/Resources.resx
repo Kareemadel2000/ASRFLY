@@ -118,89 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="About" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\About.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Alarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Alarm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Automatic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Automatic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Categorize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Categorize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Conference_Skin_Type_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Conference Skin Type 7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Crowd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Crowd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Database_Restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Database Restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Data_Backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Data Backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DeleteDialogCaption" xml:space="preserve">
-    <value>أجراء حذف </value>
+  <data name="Alarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alarm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DeleteDialogText" xml:space="preserve">
     <value>هل انتا متاكد من هذا الاجراء . لا يمكن استرجاع البيانات مره اخرى</value>
-  </data>
-  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EmptyMassageCaption" xml:space="preserve">
-    <value>لا يوجد بيانات </value>
-  </data>
-  <data name="EmptyMassageText" xml:space="preserve">
-    <value>يبدو ان شبكة عرض البيانات فارغة , لا يمكن تنفيذ هذا الاجراء</value>
-  </data>
-  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FieldsRquiredCaption" xml:space="preserve">
-    <value>خطأ ادخال </value>
-  </data>
-  <data name="FieldsRquiredText" xml:space="preserve">
-    <value>جميع الحقول التى تحتوى علي علامة * هى مطلوبة اعد ادخالها ثم حاول مره اخرى</value>
-  </data>
-  <data name="Group_of_Projects_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Group of Projects_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Input_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Input_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Loading_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Loading_2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logout_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logout_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Moleskine_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Moleskine_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Opened_Folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Opened Folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Output_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Output_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,34 +136,106 @@
   <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Loading_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loading_2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteDialogCaption" xml:space="preserve">
+    <value>أجراء حذف </value>
+  </data>
+  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Automatic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Automatic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Group_of_Projects_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Group of Projects_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldsRquiredCaption" xml:space="preserve">
+    <value>خطأ ادخال </value>
+  </data>
   <data name="Save_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Save_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Search_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ServerErrorCaption" xml:space="preserve">
-    <value>خطأ اتصال في السيرفر</value>
-  </data>
-  <data name="ServerErrorText" xml:space="preserve">
-    <value>يبدو أن لديك خطأ اتصال في السيرفر , حاول مجددا او اعد ضبط الاتصال من اعدادات النظام</value>
-  </data>
-  <data name="ShowReDeleteFieldCaption" xml:space="preserve">
-    <value>أجراء حذف</value>
+  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShowReDeleteFieldText" xml:space="preserve">
     <value>لأجراء الحذف لابدا من تحديد السطر كامل</value>
   </data>
-  <data name="Smart_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Smart_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Technology_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Technology_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Users" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Moleskine_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Moleskine_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Smart_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Smart_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldsRquiredText" xml:space="preserve">
+    <value>جميع الحقول التى تحتوى علي علامة * هى مطلوبة اعد ادخالها ثم حاول مره اخرى</value>
+  </data>
+  <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="About" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\About.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Conference_Skin_Type_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Conference Skin Type 7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerErrorCaption" xml:space="preserve">
+    <value>خطأ اتصال في السيرفر</value>
+  </data>
+  <data name="Data_Backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Data Backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Categorize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Categorize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Valet_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Valet_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShowReDeleteFieldCaption" xml:space="preserve">
+    <value>أجراء حذف</value>
+  </data>
+  <data name="Opened_Folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Opened Folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Database_Restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Database Restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EmptyMassageText" xml:space="preserve">
+    <value>يبدو ان شبكة عرض البيانات فارغة , لا يمكن تنفيذ هذا الاجراء</value>
+  </data>
+  <data name="EmptyMassageCaption" xml:space="preserve">
+    <value>لا يوجد بيانات </value>
+  </data>
+  <data name="Logout_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logout_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Output_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Output_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Asrfly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Asrfly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ServerErrorText" xml:space="preserve">
+    <value>يبدو أن لديك خطأ اتصال في السيرفر , حاول مجددا او اعد ضبط الاتصال من اعدادات النظام</value>
+  </data>
+  <data name="Input_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Input_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -23,6 +23,7 @@ global using ASRFLY.Gui.GuiUsers;
 global using ASRFLY.Core.Entityes;
 global using ASRFLY.Gui.GuiSystemRecords;
 global using ASRFLY.Gui.GuiAbout;
+global using ASRFLY.Gui.GuiSettings;
 global using ASRFLY.Properties;
 global using ASRFLY.Data;
 global using ASRFLY.Gui.GuiLoading;

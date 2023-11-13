@@ -134,6 +134,7 @@ public partial class Main : Form
     private void buttonHelp_Click(object sender, EventArgs e)
     {
         var Url = "https://www.youtube.com/";
-        Process.Start(new ProcessStartInfo { FileName = Url , UseShellExecute = true});
+        Process.Start(new ProcessStartInfo { FileName = Url, UseShellExecute = true });
     }
+
 }

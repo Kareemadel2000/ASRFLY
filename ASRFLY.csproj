@@ -9,7 +9,12 @@
     <Description>هو أداة ذكية وبسيطه لمتابعه صرفيات المشاريع</Description>
     <Copyright>جميع الحقوق محفوظة2023</Copyright>
     <Authors>Kareem Adel</Authors>
+    <ApplicationIcon>Asrfly.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Asrfly.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ClosedXML" Version="0.103.0-beta" />

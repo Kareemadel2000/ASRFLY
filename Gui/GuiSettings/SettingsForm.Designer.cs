@@ -117,7 +117,7 @@
             // 
             // pictureBoxLogo
             // 
-            pictureBoxLogo.Image = Resources.Technology_1;
+            
             pictureBoxLogo.Location = new Point(80, 288);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(247, 112);

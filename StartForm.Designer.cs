@@ -37,18 +37,17 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Image = Resources.Technology_1;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Image = Resources.Asrfly;
+            pictureBox1.Location = new Point(84, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(656, 341);
+            pictureBox1.Size = new Size(524, 405);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(33, 391);
+            progressBar1.Location = new Point(33, 456);
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(587, 29);
             progressBar1.Style = ProgressBarStyle.Marquee;
@@ -57,7 +56,7 @@
             // labelstate
             // 
             labelstate.AutoSize = true;
-            labelstate.Location = new Point(33, 355);
+            labelstate.Location = new Point(33, 420);
             labelstate.Name = "labelstate";
             labelstate.Size = new Size(53, 24);
             labelstate.TabIndex = 2;
@@ -67,7 +66,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(255, 128, 0);
-            label2.Location = new Point(415, 438);
+            label2.Location = new Point(415, 503);
             label2.Name = "label2";
             label2.Size = new Size(205, 24);
             label2.TabIndex = 2;
@@ -77,7 +76,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(656, 482);
+            ClientSize = new Size(656, 543);
             Controls.Add(label2);
             Controls.Add(labelstate);
             Controls.Add(progressBar1);

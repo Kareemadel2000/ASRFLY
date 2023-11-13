@@ -6,7 +6,7 @@
       <Value Profile="(Default)">Server=.;Database=AsrflyDB;Trusted_Connection=True;</Value>
     </Setting>
     <Setting Name="HideNotificationInterval" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2000</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)">كريم بلابل</Value>

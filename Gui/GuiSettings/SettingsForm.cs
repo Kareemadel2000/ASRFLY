@@ -38,7 +38,7 @@ public partial class SettingsForm : Form
     private void SetGenralSettings()
     {
         textBoxCompany.Text = Properties.Settings.Default.CompanyName;
-        numericUpDownnotifications.Value = Convert.ToInt32(Properties.Settings.Default.HideNotificationInterval / 1000);
+        numericUpDownnotifications.Value = Properties.Settings.Default.HideNotificationInterval;
         numericUpDownDataRow.Value = Properties.Settings.Default.DataGridViewRowNo;
 
         // Save Picture 

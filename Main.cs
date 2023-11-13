@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace ASRFLY;
 
 public partial class Main : Form
@@ -127,5 +129,11 @@ public partial class Main : Form
     {
         About about = new About();
         about.Show();
+    }
+
+    private void buttonHelp_Click(object sender, EventArgs e)
+    {
+        var Url = "https://www.youtube.com/";
+        Process.Start(new ProcessStartInfo { FileName = Url , UseShellExecute = true});
     }
 }

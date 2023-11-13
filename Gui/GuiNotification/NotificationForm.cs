@@ -5,7 +5,7 @@ public partial class NotificationForm : Form
     public NotificationForm()
     {
         InitializeComponent();
-        timerNotifications.Interval = Settings.Default.HideNotificationInterval;
+        timerNotifications.Interval = Settings.Default.HideNotificationInterval*1000;
     }
 
     private void labelTitle_Click(object sender, EventArgs e)

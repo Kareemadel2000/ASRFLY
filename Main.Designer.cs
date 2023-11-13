@@ -233,6 +233,7 @@
             buttonHelp.TabIndex = 9;
             buttonHelp.Text = "مساعدة";
             buttonHelp.UseVisualStyleBackColor = true;
+            buttonHelp.Click += buttonHelp_Click;
             // 
             // buttonAbouts
             // 

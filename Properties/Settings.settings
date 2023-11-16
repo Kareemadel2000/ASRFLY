@@ -15,7 +15,7 @@
       <Value Profile="(Default)">25</Value>
     </Setting>
     <Setting Name="CompanyName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">شركة بلابل للبرمجة</Value>
+      <Value Profile="(Default)">أدخل هنا اسم المؤسسة</Value>
     </Setting>
     <Setting Name="CompanyLogo" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

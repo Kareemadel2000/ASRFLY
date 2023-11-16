@@ -12,7 +12,7 @@ namespace ASRFLY
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             DependnecyInjection.AddDependnecyValue();
-            SqlCon.SelConnection = Properties.Settings.Default.SqlServerConString;  
+            SqlCon.SelConnection = Properties.Settings.Default.SqlServerConString;
             Application.Run(new StartForm());
         }
     }
